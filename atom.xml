@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jermain Liu</title>
+  
+  <subtitle>my blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-03-06T16:19:46.738Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Jermain</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Hexo部署一个属于自己的博客</title>
+    <link href="http://yoursite.com/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-03-05T14:39:09.000Z</published>
+    <updated>2020-03-06T16:19:46.738Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;0-说明&quot;&gt;&lt;a href=&quot;#0-说明&quot; class=&quot;headerlink&quot; title=&quot;0. 说明&quot;&gt;&lt;/a&gt;0. 说明&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;本次配置使用的环境为：deepin 15.11桌面版&lt;/li&gt;
+&lt;li&gt;其他操作系统类似&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>First Blog</title>
+    <link href="http://yoursite.com/2020/03/04/First-Blog/"/>
+    <id>http://yoursite.com/2020/03/04/First-Blog/</id>
+    <published>2020-03-04T15:41:29.000Z</published>
+    <updated>2020-03-05T15:55:17.961Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自己的博客基本搭建完成，接下来进行部署即可。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
