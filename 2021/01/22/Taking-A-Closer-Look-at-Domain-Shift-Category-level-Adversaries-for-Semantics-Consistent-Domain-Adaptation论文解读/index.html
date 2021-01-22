@@ -6,23 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://github.io">
-  <title>逻辑斯蒂回归与Softmax回归的极大似然估计 | Jermain Liu</title>
+  <title>Taking A Closer Look at Domain Shift:Category-level Adversaries for Semantics Consistent Domain Adaptation论文解读 | Jermain Liu</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="0. 说明 使用极大似然估计(i.i.d independent and identically distributed) 推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数">
+  <meta name="description" content="0 说明 由于毕业设计需要，进行相关论文的学习 论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逻辑斯蒂回归与Softmax回归的极大似然估计">
-<meta property="og:url" content="http://github.io/2020/03/08/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E4%B8%8ESoftmax%E5%9B%9E%E5%BD%92%E7%9A%84%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/index.html">
+<meta property="og:title" content="Taking A Closer Look at Domain Shift:Category-level Adversaries for Semantics Consistent Domain Adaptation论文解读">
+<meta property="og:url" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/index.html">
 <meta property="og:site_name" content="Jermain Liu">
-<meta property="og:description" content="0. 说明 使用极大似然估计(i.i.d independent and identically distributed) 推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数">
+<meta property="og:description" content="0 说明 由于毕业设计需要，进行相关论文的学习 论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-08T14:56:46.000Z">
-<meta property="article:modified_time" content="2020-03-08T14:56:46.000Z">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic1.1.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic2.1.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic3.1.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic4.1.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.1.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.2.png">
+<meta property="og:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.3.png">
+<meta property="article:published_time" content="2021-01-22T10:02:41.000Z">
+<meta property="article:modified_time" content="2021-01-22T10:02:41.000Z">
 <meta property="article:author" content="Jermain">
-<meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="极大似然估计">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="语义分割">
+<meta property="article:tag" content="论文">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic1.1.png">
   
     <link rel="alternative" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
   
@@ -222,22 +231,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-逻辑斯蒂回归与Softmax回归的极大似然估计" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation论文解读" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      逻辑斯蒂回归与Softmax回归的极大似然估计
+      Taking A Closer Look at Domain Shift:Category-level Adversaries for Semantics Consistent Domain Adaptation论文解读
     </h1>
   
 
 
   
   
-<a href="/2020/03/08/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E4%B8%8ESoftmax%E5%9B%9E%E5%BD%92%E7%9A%84%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" class="archive-article-date">
-        <time datetime="2020-03-08T14:56:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+<a href="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" class="archive-article-date">
+        <time datetime="2021-01-22T10:02:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
 </a>
 
   
@@ -246,72 +255,133 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
-<li>使用极大似然估计(i.i.d independent and identically distributed)</li>
-<li>推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数</li>
+    <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
+<li>由于毕业设计需要，进行相关论文的学习</li>
+<li>论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</li>
 </ul>
 <a id="more"></a>
 
 <hr>
-<h2 id="1-逻辑斯蒂回归的极大似然估计"><a href="#1-逻辑斯蒂回归的极大似然估计" class="headerlink" title="1. 逻辑斯蒂回归的极大似然估计"></a>1. 逻辑斯蒂回归的极大似然估计</h2><ul>
-<li><p>线性回归的任务是预测，单也可用来分类</p>
-</li>
-<li><p>伯努利分布</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega)$</td>
-<td align="center">$p^2(x_n;\omega)$</td>
-</tr>
-</tbody></table>
-</li>
+<h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul>
+<li>基于深度学习的语义分割方法是以像素级的人工标注为代价进行监督训练的，费时费力；借助计算机虚拟图像技术，几乎无成本地获得无限量自动标注数据，但虚拟图像和现实图像间存在严重的数据差异（域迁移），进而导致了训练的模型在真实图像上效果较差。</li>
+<li>如下图所示，在图的第一行有虚拟图像训练得到的全卷积网络（FCN）在虚拟图像数据集上分割效果较好，但是当相同的网络模型迁移到真实数据（Cityscapes数据集）上之后，可以看出分割结果较差。</li>
 </ul>
-<p>  其中<br>  $$p^1(x_n;\omega)+p^2(x_n;\omega)=1$$<br>  $$p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}$$<br>  $$p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}$$</p>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic1.1.png" class="">
+
 <ul>
-<li>极大似然估计(i.i.d)<br>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]$$</li>
-<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \<br>  &amp; =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \<br>  &amp; =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \<br>  &amp; =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \<br>  \end{align}<br>$$</li>
+<li>总结来说就是就是 1)像素级人工标注的代价和 2)域迁移的影响。</li>
 </ul>
 <hr>
-<h2 id="2-Softmax回归的极大似然估计"><a href="#2-Softmax回归的极大似然估计" class="headerlink" title="2. Softmax回归的极大似然估计"></a>2. Softmax回归的极大似然估计</h2><ul>
-<li><p>多类分类</p>
-</li>
-<li><p>概率分布列</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">$\cdots$</th>
-<th align="center">C</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega_1)$</td>
-<td align="center">$p^2(x_n;\omega_2)$</td>
-<td align="center">$\cdots$</td>
-<td align="center">$p^C(x_n;\omega_C)$</td>
-</tr>
-</tbody></table>
-</li>
+<h2 id="2-研究问题"><a href="#2-研究问题" class="headerlink" title="2 研究问题"></a>2 研究问题</h2><ul>
+<li>全局体征分布、负迁移。</li>
+<li>针对域迁移问题，常规的策略是通过对抗学习来调整源域Source与目标域Target之间的分布特征，但是这种全局特征分布（Marginal Distribution）对齐的策略，会产生语义不一致即负迁移（Negative Transfer）的问题。如下图所示：</li>
 </ul>
-<p>  其中<br>$$<br>    \omega^T=<br>    \begin{bmatrix}<br>    \omega_1^T \<br>    \omega_2^T \<br>    \vdots \<br>    \omega_C^T \<br>    \end{bmatrix}=<br>    \begin{bmatrix}<br>    \omega_{1,1} &amp; \omega_{1,2} &amp; \cdots &amp; \omega_{1,N} \<br>    \omega_{2,1} &amp; \omega_{2,2} &amp; \cdots &amp; \omega_{2,N} \<br>    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>    \omega_{C,1} &amp; \omega_{C,2} \cdots &amp; \omega_{C,N} \<br>    \end{bmatrix}<br>$$<br>$$\sum_{c=1}^{C}p^c(x_n;\omega_c)=1$$<br>$$p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$</p>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic2.1.png" class="">
+
 <ul>
-<li>极大似然估计(i.i.d)<br>$$<br>  \text{引入示性函数} \quad I(y_n=c)=<br>  \begin{cases}<br>  1, &amp; y_n=c \<br>  0, &amp; y_n\neq c \<br>  \end{cases}<br>$$</li>
+<li>橙色区域表示源域，绿色区域表示目标域，“+”和“-”号表示特征分布，曲线表示分类边界，灰色箭头大小表示损失的大小。由于对抗损失作用于全局特征，原先分类良好的“+”类别特征为了迎合全局对齐，会被映射到源域中的其他类别，导致语义不一致。</li>
+<li>举例来说，目标域中汽车这一类，假设源域中车辆的特征是接近的，因此，在没有经过域适应算法之前，目标域汽车类也能够正确分割；然而，为了迎合全局特征对齐，目标域中的汽车类特征反而可能被错误映射到源域中的其他类别。</li>
 </ul>
-<p>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]$$</p>
+<hr>
+<h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3 创新点"></a>3 创新点</h2><h3 id="3-1-传统方法"><a href="#3-1-传统方法" class="headerlink" title="3.1 传统方法"></a>3.1 传统方法</h3><p>传统方法广泛使用的是：在网络中加入一个域判别器Discriminator(D)，利用对抗训练机制，减少源域、目标域的不同分布差异，加强原始网络G在域间的泛化能力：</p>
 <ul>
-<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln p(x_1,x_2,\cdots,x_N;\omega) \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \<br>  \end{align}<br>$$<br>令<br>$$y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]$$<br>$$h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$<br>则有<br>$$\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)$$<br>目标函数化简为<br>$$<br>  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}<br>$$</li>
-<li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<br>$$J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}$$</li>
+<li>(1) 利用源域的有标签数据进行有监督学</li>
 </ul>
+<p>$$<br>ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]<br>$$</p>
+<p>​            其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
+<ul>
+<li>(2) 通过对抗学习，降低域判别器D的精度，对齐源域与目标域的特征分布</li>
+</ul>
+<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]<br>$$</p>
+<p>​            其中$X_T$为目标域数据，无标签。</p>
+<h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><p>语义级对抗学习域适应方法：</p>
+<ul>
+<li>在传统的对抗学习框架基础之上加入了协同训练的思想，加入了两个互斥的分类器。</li>
+<li>自适应对抗损失权重实现<ul>
+<li>当两个分类器预测一致时，该特征语义一致性较好，减少全局对齐策略对这些特征的影响；</li>
+<li>反之，需要使用对抗损失，加大对齐力度进行特征对齐。</li>
+</ul>
+</li>
+</ul>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic3.1.png" class="">
+
+<blockquote>
+<p>如上图所示，图(a)在第2节已经了解过，图(b)为自适应对抗损失示意图。使用了两个互斥的分类器，有两个曲线（分别边界线）。</p>
+<p>可以看出，经过创新改进，判断出类别“+”起初便对齐较好，于是对抗损失较小，而类别“-”由于对齐较差，其对抗损失较差，进而起到了保护原来对齐较好特征不受影响，又促进对齐较差的特征对齐。</p>
+</blockquote>
+<hr>
+<h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><p>论文中提出于一级对抗网络(Category-Level Adversarial Network，CLAN)</p>
+<h3 id="4-1-网络结构"><a href="#4-1-网络结构" class="headerlink" title="4.1 网络结构"></a>4.1 网络结构</h3><p>语义级对抗网络由三部分组成：特征提取E、分类器C和判别器D，前两部分组成生成器G。</p>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic4.1.png" class="">
+
+<blockquote>
+<p>橙色线表示源域流，蓝色线表示目标域流。</p>
+</blockquote>
+<ul>
+<li>其中两个互斥的分类器用于判断目标域的隐层特征是否已经达到局部对齐，在后续对抗训练时，网络依据互斥分了器产生的两个预测向量之差来判别网络所受反馈的对抗损失进行加权。</li>
+<li>绿色箭头处使用余弦距离作为分类器损失，训练两个分类器预测产生不同的模型参数。</li>
+<li>源域流通过两个互斥的分类器产生的预测作为源域的集成预测，一方面被标签监督产生分割损失，另一方面进入判别器D，作为源域样本。</li>
+<li>目标域流同样由分类器产生的集成损失进入判别器，同时，求得两个分类器的预测差值，作为局部对齐程度的依据（local alignment score map），该距离与D所反馈的损失相乘得到语义级别的对抗损失。</li>
+</ul>
+<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p>模型损失函数<br>$$<br>ℒ<em>{𝐶𝐿𝐴𝑁} (𝐺,𝐷)=ℒ</em>{𝑠𝑒𝑔} (𝐺)+𝜆<em>{𝑤𝑒𝑖𝑔ℎ𝑡} ℒ</em>{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)+𝜆<em>{𝑎𝑑𝑣} ℒ</em>{𝑎𝑑𝑣} (𝐺,𝐷)<br>𝐺^∗,𝐷^∗=arg⁡𝑚𝑖𝑛_𝐺 𝑚𝑎𝑥<em>𝐷 ℒ</em>{𝐶𝐿𝐴𝑁} (𝐺,𝐷)<br>$$<br>训练目标，交替优化G和D，直至总损失收敛为止。</p>
+<ul>
+<li>分割损失：若给定形状为$3\times H \times W$的图像和形状为$C \times H \times W$的标签图，其中$C$是语义类别的数量</li>
+</ul>
+<p>$$<br>ℒ<em>{𝑠𝑒𝑔} (𝐺)=\sum _{i=1}^{H \times W} \sum _{j=1}^C -y</em>{ic}\log p_{ic}<br>$$</p>
+<p>​            其中，$p_{ic}$表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
+<p>​            即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
+<ul>
+<li>分类器损失：</li>
+</ul>
+<p>$$<br>ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{| \vec{w_1} ||\vec{w_2}|}<br>$$</p>
+<p>​            即两个分类器网络中参数的余弦距离。</p>
+<ul>
+<li>对抗损失：</li>
+</ul>
+<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋<em>𝑆 ))) \right]−𝐸\left[(𝜆</em>{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]<br>$$</p>
+<p>​            其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
+<p>​            即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
+<hr>
+<h2 id="5-实验总结"><a href="#5-实验总结" class="headerlink" title="5 实验总结"></a>5 实验总结</h2><h3 id="5-1-语义分割可视化"><a href="#5-1-语义分割可视化" class="headerlink" title="5.1 语义分割可视化"></a>5.1 语义分割可视化</h3><ol>
+<li>CLAN与传统对抗网络（TAN）的对比</li>
+</ol>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.1.png" class="">
+
+<blockquote>
+<p>重点关注橙色框中的电线杆和交通标志。</p>
+<p>图(e、f、g)为高维特征通过非线性降维算法(t-SNE)到二维空间（仅显示4个相关类，即建筑物为蓝色、交通标志为橙色、杆子为灰色、植被为绿色）</p>
+</blockquote>
+<ul>
+<li>上图表明，有些类别特征在没有进行域迁移之前，就已经是对齐的。传统的全局域适应方法反而会破坏这种语义一致性，造成域迁移；而本文提出的语义级对抗网络降低了全局对齐对这些类的影响。</li>
+</ul>
+<ol start="2">
+<li>特征簇中心距离</li>
+</ol>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.2.png" class="">
+
+<blockquote>
+<p>上图展示隐层隐层空间源域与目标域之间同语义特征簇的中心距离，该距离越小，说明两个域之间的语义对齐越好。</p>
+</blockquote>
+<ol start="3">
+<li>分割效果</li>
+</ol>
+<img src="/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/pic5.3.png" class="">
+
+<blockquote>
+<p>各列为：目标域图、无自适应分割效果、CLAN分割效果、标准效果图。</p>
+</blockquote>
+<h3 id="5-2-总结"><a href="#5-2-总结" class="headerlink" title="5.2 总结"></a>5.2 总结</h3><ul>
+<li>论文提出的语义级对抗学习域适应网络(CLAN)，使用协同训练结合对抗学习的设计，旨在解决无监督域自适应(UDA)语义分割中，由全局特征对齐所引起的语义不一致问题，有效地防止了负迁移。</li>
+<li>在两个域适应语义分割任务，即GTA5 -&gt; Cityscapes 和 SYNTHIA -&gt; Cityscapes 上进行了实验验证，以及实际的语义分割效果中都取得了较好的实验结果。具有良好的应用前景。</li>
+</ul>
+<hr>
+<h2 id="6-相关链接"><a href="#6-相关链接" class="headerlink" title="6 相关链接"></a>6 相关链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1809.09478.pdf">论文原文</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/RoyalVane/CLAN">程序源码</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av53561336/">CVPR2019 Oral Presentation: Taking A Closer Look at Domain Shift</a></li>
+</ul>
+<div style="position: relative; width: 50%; height: 0; padding-bottom: 40%;"><iframe src="//player.bilibili.com/player.html?aid=53561336&bvid=BV174411s7Q3&cid=93744426&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div>
+
 
     
 
@@ -358,7 +428,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://github.io/2020/03/08/逻辑斯蒂回归与Softmax回归的极大似然估计/" title="逻辑斯蒂回归与Softmax回归的极大似然估计" target="_blank">http://github.io/2020/03/08/逻辑斯蒂回归与Softmax回归的极大似然估计/</a>
+          <a href="http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation论文解读/" title="Taking A Closer Look at Domain Shift:Category-level Adversaries for Semantics Consistent Domain Adaptation论文解读" target="_blank">http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation论文解读/</a>
         </li>
         
         <li>
@@ -380,11 +450,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">极大似然估计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">语义分割</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">论文</a>
         		</li>
       		
 		</ul>
@@ -440,7 +514,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://github.io/2020/03/08/%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E4%B8%8ESoftmax%E5%9B%9E%E5%BD%92%E7%9A%84%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://github.io/2021/01/22/Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -455,18 +529,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/09/Hexo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0%E5%8A%9F%E8%83%BD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo主题添加网页访问计数功能
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/07/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo博客添加字数统计和阅读时长</div>
+    <a href="/2020/03/10/Markdown%E4%B8%AD%E5%85%AC%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown中公式的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -493,7 +558,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">0. 说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%80%BB%E8%BE%91%E6%96%AF%E8%92%82%E5%9B%9E%E5%BD%92%E7%9A%84%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">1. 逻辑斯蒂回归的极大似然估计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Softmax%E5%9B%9E%E5%BD%92%E7%9A%84%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">2. Softmax回归的极大似然估计</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">0 说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">1 研究背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">2 研究问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%9B%E6%96%B0%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">3 创新点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 传统方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%9B%E6%96%B0"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 创新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">4 方法总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 网络结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 损失函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">5 实验总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 语义分割可视化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%80%BB%E7%BB%93"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text">6 相关链接</span></a></li></ol>
                     </div>
                 </span>
             </div>
