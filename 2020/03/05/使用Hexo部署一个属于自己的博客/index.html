@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://github.io">
+  <link rel="dns-prefetch" href="http://jermainliu.gitee.io">
   <title>使用Hexo部署一个属于自己的博客 | Jermain Liu</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,18 +13,18 @@
   <meta name="description" content="0. 说明 本次配置使用的环境为：deepin 15.11桌面版 其他操作系统类似">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo部署一个属于自己的博客">
-<meta property="og:url" content="http://github.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:url" content="http://jermainliu.gitee.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Jermain Liu">
 <meta property="og:description" content="0. 说明 本次配置使用的环境为：deepin 15.11桌面版 其他操作系统类似">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://github.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic1.png">
-<meta property="og:image" content="http://github.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic2.png">
+<meta property="og:image" content="http://jermainliu.gitee.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic1.png">
+<meta property="og:image" content="http://jermainliu.gitee.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic2.png">
 <meta property="article:published_time" content="2020-03-05T14:39:09.000Z">
 <meta property="article:modified_time" content="2020-03-05T14:39:09.000Z">
 <meta property="article:author" content="Jermain">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://github.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic1.png">
+<meta name="twitter:image" content="http://jermainliu.gitee.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/pic1.png">
   
     <link rel="alternative" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
   
@@ -253,7 +253,6 @@
 <li>其他操作系统类似</li>
 </ul>
 <a id="more"></a>
-
 <hr>
 <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="Node-js环境包"><a href="#Node-js环境包" class="headerlink" title="Node.js环境包"></a>Node.js环境包</h3><ul>
 <li>因为Hexo是基于Node.js的第三方模块，所以缺少Node.js不可。访问<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a>下载合适自己系统的Node.js安装包。此时最新版本为v13.9.0，我使用的平台为Linux Binaries (x64)</li>
@@ -273,15 +272,14 @@
 <h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3></li>
 <li>安装Hexo完成后，清执行系列命令，Hexo将会在指定文件夹中新建所需要的文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 我以加家目录下创建Hexo文件夹为例进行</span><br><span class="line">cd ~		# 进入家目录</span><br><span class="line">sudo mkdir Hexo			# 创建Hexo目录</span><br><span class="line">hexo init .&#x2F;Hexo 		# 初始化Hexo目录</span><br><span class="line">cd .&#x2F;Hexo</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
 <li>新建完成后，指定文件夹的目录如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4></li>
-<li>网站的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>信息，可以在此配置大部分的参数<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4></li>
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4>-网站的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>信息，可以在此配置大部分的参数<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4></li>
 <li>应用程序的信息。<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>，<a target="_blank" rel="noopener" href="https://stylus-lang.com/">Stylus</a>和<a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">Markdown</a> renderer已默认安装，可以自由移除<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.8.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.3.3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4></li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">写作 | Hexo</a>模板文件夹。当新建文章时，Hexo会根据scaffold来建立文件。</li>
 <li>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您需改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</li>
 </ul>
 <h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><ul>
-<li>资源文件夹是存放用户资源的地方。除_posts文件夹之外，开头命名为_（下划线）的文件/文件夹和隐藏的文件将会被忽略。Markdown和HTML文件会被解析并防盗public文件夹，而其他文件会被拷贝过去。</li>
+<li>资源文件夹是存放用户资源的地方。除<em>posts文件夹之外，开头命名为</em>（下划线）的文件/文件夹和隐藏的文件将会被忽略。Markdown和HTML文件会被解析并防盗public文件夹，而其他文件会被拷贝过去。</li>
 </ul>
 <h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/themes">主题 | Hexo</a>文件夹。Hexo会根据主题来生成静态网页。</li>
@@ -289,13 +287,13 @@
 <hr>
 <h2 id="3-基本操作"><a href="#3-基本操作" class="headerlink" title="3. 基本操作"></a>3. 基本操作</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h4><ul>
 <li>Hexo 3.0 把服务器独立成了个别模块，必须先安装hexo-server才能使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure></li>
-<li>安装完成后，输入以下命令以启动服务器，您的网站会在<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无需重启服务器<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+<li>安装完成后，输入以下命令以启动服务器，您的网站会在<a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无需重启服务器<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
 <li>如果想要更改端口，或是在执行时遇到了EADDRINUSE错误，可以在执行时使用-p选项指定其他端口，如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 5000</span><br></pre></td></tr></table></figure>
 <h4 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h4></li>
 <li>在静态模式下，服务器只处理public文件夹内的文件，而不会处理文件变动，在执行时，你应该先自动执行hexo generate，此模式通常用于生产环境（production mode）下。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -s</span><br></pre></td></tr></table></figure>
 <h4 id="自定义IP"><a href="#自定义IP" class="headerlink" title="自定义IP"></a>自定义IP</h4></li>
 <li>服务器默认运行在0.0.0.0，你可以覆盖默认的IP地址，如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -i 192.168.1.1</span><br></pre></td></tr></table></figure></li>
-<li>使用这个参数后，你就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的127.0.0.1外，通常还有一个192.168.*.*的局域网IP，如果像上面那样使用-i参数，就不能用127.0.0.1来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为-i参数的值，那么就无法通过公网来访问站点。</li>
+<li>使用这个参数后，你就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的127.0.0.1外，通常还有一个192.168.<em>.</em>的局域网IP，如果像上面那样使用-i参数，就不能用127.0.0.1来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为-i参数的值，那么就无法通过公网来访问站点。</li>
 </ul>
 <h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ul>
 <li>执行下列命令来创建一片新的文章或者新的页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># hexo new [layout] &lt;title&gt;</span><br><span class="line">hexo new post “my_first_blog”</span><br></pre></td></tr></table></figure></li>
@@ -328,7 +326,7 @@
 </ul>
 <hr>
 <!--toc-->
-<p><span id="busuanzi_container_page_pv">  本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span></p>
+<p><span id="busuanzi_container_page_pv">  本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次&lt;/span&gt;</p>
 
     
 
@@ -375,7 +373,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://github.io/2020/03/05/使用Hexo部署一个属于自己的博客/" title="使用Hexo部署一个属于自己的博客" target="_blank">http://github.io/2020/03/05/使用Hexo部署一个属于自己的博客/</a>
+          <a href="http://jermainliu.gitee.io/2020/03/05/使用Hexo部署一个属于自己的博客/" title="使用Hexo部署一个属于自己的博客" target="_blank">http://jermainliu.gitee.io/2020/03/05/使用Hexo部署一个属于自己的博客/</a>
         </li>
         
         <li>
@@ -453,7 +451,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://github.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://jermainliu.gitee.io/2020/03/05/%E4%BD%BF%E7%94%A8Hexo%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -535,7 +533,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020-2021 <a href="http://github.io/" target="_blank">Jermain</a>
+    		&copy; 2020-2021 <a href="http://jermainliu.gitee.io/" target="_blank">Jermain</a>
     	</div>
       	<div class="footer-right">
 			
