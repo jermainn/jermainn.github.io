@@ -51,8 +51,8 @@
     mashiro_option.site_name = "jermainjermain";
     mashiro_option.author_name = "jermain";
     mashiro_option.site_url = "https://jermainliu.gitee.io";
-    mashiro_option.v_appId = "";//
-    mashiro_option.v_appKey = "";//
+    mashiro_option.v_appId = "XJsI6dYAln53Ir5K9zj3w3Xd-gzGzoHsz";//
+    mashiro_option.v_appKey = "8Mb4ADzznWzHobRzdznDzSlk";//
     mashiro_option.mathjax = "1";
     mashiro_option.copyright_enable = "false" ;
     mashiro_option.copyright_minCharNumber = parseInt("120") ;
@@ -72,7 +72,10 @@
       alert('朋友，IE浏览器未适配哦~');
     }
   </script>
-<meta name="generator" content="Hexo 5.4.0"></head> 
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
+</head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -386,25 +389,25 @@
 <li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li>
 <li>行中公式：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>独立公式：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>自动编号的公式可以用如下方法表示：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">数学公式</span><br><span class="line">\label&#123;eq:当前公式名&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{equation}</span><br><span class="line">数学公式</span><br><span class="line">\label{eq:当前公式名}</span><br><span class="line">\end{equation}</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>自动编号后的公式可在全文任意处使用<code>\eqref&#123;eq:公式名&#125;</code>语句引用。</p>
+<p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p>
 </blockquote>
 <ul>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text &#123;行中公式示例：&#125; J_\alpha(x) &#x3D; \sum_&#123;m&#x3D;0&#125;^\infty \frac&#123;(-1)^m&#125;&#123;m! \Gamma (m + \alpha + 1)&#125; &#123;\left(&#123; \frac &#123;x&#125;&#123;2&#125; &#125;\right)&#125;^&#123;2m + \alpha&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</p>
@@ -412,17 +415,17 @@
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text &#123;独立公式示例：&#125; J_\alpha(x) &#x3D; \sum_&#123;m&#x3D;0&#125;^\infty \frac&#123;(-1)^m&#125;&#123;m! \Gamma (m + \alpha + 1)&#125; &#123;\left(&#123; \frac &#123;x&#125;&#123;2&#125; &#125;\right)&#125;^&#123;2m + \alpha&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：</p>
 <p>$$\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</p>
 </blockquote>
 <h3 id="1-2-输入上下标"><a href="#1-2-输入上下标" class="headerlink" title="1.2 输入上下标"></a>1.2 输入上下标</h3><ul>
-<li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>&#123;&#125;</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
+<li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^&#123;y^z&#125;&#x3D;(1+&#123;\rm e&#125;^x)^&#123;-2xy^w&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>x^{y^z}=(1+{\rm e}^x)^{-2xy^w}<br>$$</p>
@@ -433,13 +436,13 @@
 <ul>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset&#123;^1_2&#125;&#123;^3_4&#125; x$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset{^1_2}{^3_4} x$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\sideset{^1_2}{^3_4} x<br>$$</p>
 </blockquote>
 <h3 id="1-3-输入括号和分隔符"><a href="#1-3-输入括号和分隔符" class="headerlink" title="1.3 输入括号和分隔符"></a>1.3 输入括号和分隔符</h3><ul>
-<li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\&#123;\&#125;</code>来表示<code>&#123;&#125;</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li>
+<li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\{\}</code>来表示<code>{}</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li>
 <li>一些特殊的括号：</li>
 </ul>
 <table>
@@ -479,7 +482,7 @@
 <ul>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)&#x3D;3y^2z \left( 3+\frac&#123;7x+5&#125;&#123;1+y^2&#125; \right)$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</p>
@@ -490,13 +493,13 @@
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac&#123;du&#125;&#123;dx&#125; \right| _&#123;x&#x3D;0&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac{du}{dx} \right| _{x=0}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\left. \frac{du}{dx} \right| _{x=0}<br>$$</p>
 </blockquote>
 <h3 id="1-4-输入分数"><a href="#1-4-输入分数" class="headerlink" title="1.4 输入分数"></a>1.4 输入分数</h3><ul>
-<li><p>通常使用<code>\frac&#123;分子&#125;&#123;分母&#125;</code>命令产生一个分数，分数可以嵌套。</p>
+<li><p>通常使用<code>\frac{分子}{分母}</code>命令产生一个分数，分数可以嵌套。</p>
 </li>
 <li><p>当分子（分母）只有一个字符时，可以不用花括号。</p>
 </li>
@@ -505,16 +508,16 @@
 <li><p>例子：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;a-1&#125;&#123;b-1&#125; \quad and \quad &#123;a+1\over b+1&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}<br>$$</p>
 </blockquote>
 <h3 id="1-5-输入开方"><a href="#1-5-输入开方" class="headerlink" title="1.5 输入开方"></a>1.5 输入开方</h3><ul>
-<li>使用<code>\sqrt&#123;根指数，省略时默认为2&#125;&#123;被开方数&#125;</code>命令输入开方。</li>
+<li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt&#123;2&#125; \quad and \quad \sqrt&#123;n&#125;&#123;3&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\sqrt{2} \quad and \quad \sqrt{n}{3}<br>$$</p>
@@ -523,16 +526,16 @@
 <li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace&#123;\ldots&#125;_&#123;\rm ldots&#125;, x_n) &#x3D; x_1^2 + x_2^2 \underbrace&#123;\cdots&#125;_&#123;rm \cdots&#125; + x_n^2$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}</em>{rm \cdots} + x_n^2<br>$$</p>
 </blockquote>
 <h3 id="1-7-输入矢量"><a href="#1-7-输入矢量" class="headerlink" title="1.7 输入矢量"></a>1.7 输入矢量</h3><ul>
-<li>使用<code>\vec&#123;矢量&#125;</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
+<li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec&#123;a&#125; \cdot \vec(b)&#x3D;0$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec{a} \cdot \vec(b)=0$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\vec{a} \cdot \vec(b)=0<br>$$</p>
@@ -540,39 +543,39 @@
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow&#123;xy&#125; \quad and \quad \overleftrightarrow&#123;xy&#125; \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)<br>$$</p>
 </blockquote>
 <h3 id="1-8-输入积分"><a href="#1-8-输入积分" class="headerlink" title="1.8 输入积分"></a>1.8 输入积分</h3><ul>
-<li>使用<code>\int_积分下限^积分上限 &#123;被积表达式&#125;</code>来输入一个积分。</li>
+<li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 &#123;x^2&#125; \,&#123;\rm d&#125;x$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 {x^2} \,{\rm d}x$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\int_0^1 {x^2} ,{\rm d}x<br>$$</p>
 </blockquote>
 <blockquote>
-<p>本式中<code>\,</code>和<code>&#123;\rm d&#125;</code>部分可以省略，但建议加入，能使式子更美观。</p>
+<p>本式中<code>\,</code>和<code>{\rm d}</code>部分可以省略，但建议加入，能使式子更美观。</p>
 </blockquote>
 <h3 id="1-9-输入极限符号"><a href="#1-9-输入极限符号" class="headerlink" title="1.9 输入极限符号"></a>1.9 输入极限符号</h3><ul>
-<li>使用<code>\lim_&#123;变量 \to 表达式&#125; 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
+<li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_&#123;n \to +\infty&#125; \frac&#123;1&#125;&#123;n(n+1)&#125; \quad and \quad \lim_&#123;x\leftarrow&#123;示例&#125;&#125; \frac&#123;1&#125;&#123;n(n+1)&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}<br>$$</p>
 </blockquote>
 <h3 id="1-10-输入累加、累乘运算"><a href="#1-10-输入累加、累乘运算" class="headerlink" title="1.10 输入累加、累乘运算"></a>1.10 输入累加、累乘运算</h3><ul>
-<li>使用<code>\sum_&#123;下标表达式&#125;^&#123;上标表达式&#125; &#123;累加表达式&#125;</code>来输入一个累加。</li>
+<li>使用<code>\sum_{下标表达式}^{上标表达式} {累加表达式}</code>来输入一个累加。</li>
 <li>与之类似，使用<code>\prod</code>、<code>\bigcup</code>、<code>\bigcap</code>来分别输入累乘、并集和交集。</li>
 <li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_&#123;i&#x3D;1&#125;^n \frac&#123;1&#125;&#123;i^2&#125; \quad and \quad \prod_&#123;i&#x3D;1&#125;^n \frac&#123;1&#125;&#123;i^2&#125; \quad and \quad \bigcup_&#123;i&#x3D;1&#125;^&#123;2&#125; R$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>显示：<br>$$<br>\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R<br>$$</p>
@@ -701,6 +704,102 @@ gitalk.render('gitalk-container')
 
 
 <!--评论配置-->
+
+
+    <div id="vcomments"></div>
+    <script src="https://unpkg.com/valine/dist/Valine.min.js"></script><!-- 最新版 -->
+    <style>
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            enableQQ: true,
+            boolean: true,
+            appId: 'XJsI6dYAln53Ir5K9zj3w3Xd-gzGzoHsz',
+            appKey: '8Mb4ADzznWzHobRzdznDzSlk',
+            //notify: 'false' === 'true',
+            //verify: 'true' === 'true',
+            visitor: 'false' === 'true',
+            avatar: 'monsterid',
+            pageSize: '10',
+            lang: 'en',
+            placeholder: '之前评论被恶意刷了，现在重新开一个评论，大家文明留言哈~',
+            requiredFields: ['nick','mail'], //设置必填项
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                // ... 更多表情
+            }
+        });
+    </script>
+
+    <!-- 
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        })
+    </script>
+     -->
+
+
+
 
 
 
