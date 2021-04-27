@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation | Jermain Liu</title>
+  <title itemprop="name">Markdown中公式的使用 | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -75,7 +75,7 @@
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
-<script src="/assets/js/DPlayer.min.js"></script></head> 
+</head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -378,132 +378,208 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
-<li>由于毕业设计需要，进行相关论文的学习</li>
-<li>论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</li>
+          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
+<li>学习中使用Markdown记笔记，少不了使用公式；</li>
+<li>本次主要说明基本公式的使用，之后会继续更新。</li>
 </ul>
 <span id="more"></span>
 
 <hr>
-<h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul>
-<li>基于深度学习的语义分割方法是以像素级的人工标注为代价进行监督训练的，费时费力；借助计算机虚拟图像技术，几乎无成本地获得无限量自动标注数据，但虚拟图像和现实图像间存在严重的数据差异（域迁移），进而导致了训练的模型在真实图像上效果较差。</li>
-<li>如下图所示，在图的第一行有虚拟图像训练得到的全卷积网络（FCN）在虚拟图像数据集上分割效果较好，但是当相同的网络模型迁移到真实数据（Cityscapes数据集）上之后，可以看出分割结果较差。</li>
+<h2 id="1-基本公式使用"><a href="#1-基本公式使用" class="headerlink" title="1. 基本公式使用"></a>1. 基本公式使用</h2><h3 id="1-1-插入公式"><a href="#1-1-插入公式" class="headerlink" title="1.1 插入公式"></a>1.1 插入公式</h3><ul>
+<li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li>
+<li>行中公式：</li>
 </ul>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic1.1.png" class="">
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
-<li>总结来说就是就是 1)像素级人工标注的代价和 2)域迁移的影响。</li>
+<li>独立公式：</li>
 </ul>
-<hr>
-<h2 id="2-研究问题"><a href="#2-研究问题" class="headerlink" title="2 研究问题"></a>2 研究问题</h2><ul>
-<li>全局体征分布、负迁移。</li>
-<li>针对域迁移问题，常规的策略是通过对抗学习来调整源域Source与目标域Target之间的分布特征，但是这种全局特征分布（Marginal Distribution）对齐的策略，会产生语义不一致即负迁移（Negative Transfer）的问题。如下图所示：</li>
-</ul>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic2.1.png" class="">
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
-<li>橙色区域表示源域，绿色区域表示目标域，“+”和“-”号表示特征分布，曲线表示分类边界，灰色箭头大小表示损失的大小。由于对抗损失作用于全局特征，原先分类良好的“+”类别特征为了迎合全局对齐，会被映射到源域中的其他类别，导致语义不一致。</li>
-<li>举例来说，目标域中汽车这一类，假设源域中车辆的特征是接近的，因此，在没有经过域适应算法之前，目标域汽车类也能够正确分割；然而，为了迎合全局特征对齐，目标域中的汽车类特征反而可能被错误映射到源域中的其他类别。</li>
+<li>自动编号的公式可以用如下方法表示：</li>
 </ul>
-<hr>
-<h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3 创新点"></a>3 创新点</h2><h3 id="3-1-传统方法"><a href="#3-1-传统方法" class="headerlink" title="3.1 传统方法"></a>3.1 传统方法</h3><p>传统方法广泛使用的是：在网络中加入一个域判别器Discriminator(D)，利用对抗训练机制，减少源域、目标域的不同分布差异，加强原始网络G在域间的泛化能力：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{equation}</span><br><span class="line">数学公式</span><br><span class="line">\label{eq:当前公式名}</span><br><span class="line">\end{equation}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p>
+</blockquote>
 <ul>
-<li>(1) 利用源域的有标签数据进行有监督学</li>
+<li>例子1：</li>
 </ul>
-<p>$$<br>ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]<br>$$</p>
-<p>​            其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</p>
+</blockquote>
 <ul>
-<li>(2) 通过对抗学习，降低域判别器D的精度，对齐源域与目标域的特征分布</li>
+<li>例子2：</li>
 </ul>
-<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]<br>$$</p>
-<p>​            其中$X_T$为目标域数据，无标签。</p>
-<h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><p>语义级对抗学习域适应方法：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：</p>
+<p>$$\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</p>
+</blockquote>
+<h3 id="1-2-输入上下标"><a href="#1-2-输入上下标" class="headerlink" title="1.2 输入上下标"></a>1.2 输入上下标</h3><ul>
+<li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
+<li>例子：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>x^{y^z}=(1+{\rm e}^x)^{-2xy^w}<br>$$</p>
+</blockquote>
+<blockquote>
+<p>另外，如果要在左右两边都有是上下标，可以用<code>\sideset</code>命令。</p>
+</blockquote>
 <ul>
-<li>在传统的对抗学习框架基础之上加入了协同训练的思想，加入了两个互斥的分类器。</li>
-<li>自适应对抗损失权重实现<ul>
-<li>当两个分类器预测一致时，该特征语义一致性较好，减少全局对齐策略对这些特征的影响；</li>
-<li>反之，需要使用对抗损失，加大对齐力度进行特征对齐。</li>
+<li>例子：</li>
 </ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset{^1_2}{^3_4} x$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>\sideset{^1_2}{^3_4} x<br>$$</p>
+</blockquote>
+<h3 id="1-3-输入括号和分隔符"><a href="#1-3-输入括号和分隔符" class="headerlink" title="1.3 输入括号和分隔符"></a>1.3 输入括号和分隔符</h3><ul>
+<li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\{\}</code>来表示<code>{}</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li>
+<li>一些特殊的括号：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">输入</th>
+<th align="center">显示</th>
+<th align="center">输入</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\langle</td>
+<td align="center">$\langle$</td>
+<td align="center">\rangle</td>
+<td align="center">$\rangle$</td>
+</tr>
+<tr>
+<td align="center">\lceil</td>
+<td align="center">$\lceil$</td>
+<td align="center">\rceil</td>
+<td align="center">$\rceil$</td>
+</tr>
+<tr>
+<td align="center">\lfloor</td>
+<td align="center">$\lfloor$</td>
+<td align="center">\rfloor</td>
+<td align="center">$\rfloor$</td>
+</tr>
+<tr>
+<td align="center">\lbrace</td>
+<td align="center">$\lbrace$</td>
+<td align="center">\rbrace</td>
+<td align="center">$\rbrace$</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例子1：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</p>
+</blockquote>
+<blockquote>
+<p>有时需要用<code>\left.</code>或者<code>\right.</code>进行匹配而不显示本身。</p>
+</blockquote>
+<ul>
+<li>例子2：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac{du}{dx} \right| _{x=0}$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>\left. \frac{du}{dx} \right| _{x=0}<br>$$</p>
+</blockquote>
+<h3 id="1-4-输入分数"><a href="#1-4-输入分数" class="headerlink" title="1.4 输入分数"></a>1.4 输入分数</h3><ul>
+<li><p>通常使用<code>\frac{分子}{分母}</code>命令产生一个分数，分数可以嵌套。</p>
+</li>
+<li><p>当分子（分母）只有一个字符时，可以不用花括号。</p>
+</li>
+<li><p>如果分式很复杂，也可以使用<code>分子 \over 分母</code>命令，此时分数仅有一层。</p>
+</li>
+<li><p>例子：</p>
 </li>
 </ul>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic3.1.png" class="">
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>如上图所示，图(a)在第2节已经了解过，图(b)为自适应对抗损失示意图。使用了两个互斥的分类器，有两个曲线（分别边界线）。</p>
-<p>可以看出，经过创新改进，判断出类别“+”起初便对齐较好，于是对抗损失较小，而类别“-”由于对齐较差，其对抗损失较差，进而起到了保护原来对齐较好特征不受影响，又促进对齐较差的特征对齐。</p>
+<p>显示：<br>$$<br>\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}<br>$$</p>
 </blockquote>
-<hr>
-<h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><p>论文中提出于一级对抗网络(Category-Level Adversarial Network，CLAN)</p>
-<h3 id="4-1-网络结构"><a href="#4-1-网络结构" class="headerlink" title="4.1 网络结构"></a>4.1 网络结构</h3><p>语义级对抗网络由三部分组成：特征提取E、分类器C和判别器D，前两部分组成生成器G。</p>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic4.1.png" class="">
+<h3 id="1-5-输入开方"><a href="#1-5-输入开方" class="headerlink" title="1.5 输入开方"></a>1.5 输入开方</h3><ul>
+<li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li>
+<li>例子：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>橙色线表示源域流，蓝色线表示目标域流。</p>
+<p>显示：<br>$$<br>\sqrt{2} \quad and \quad \sqrt{n}{3}<br>$$</p>
 </blockquote>
-<ul>
-<li>其中两个互斥的分类器用于判断目标域的隐层特征是否已经达到局部对齐，在后续对抗训练时，网络依据互斥分了器产生的两个预测向量之差来判别网络所受反馈的对抗损失进行加权。</li>
-<li>绿色箭头处使用余弦距离作为分类器损失，训练两个分类器预测产生不同的模型参数。</li>
-<li>源域流通过两个互斥的分类器产生的预测作为源域的集成预测，一方面被标签监督产生分割损失，另一方面进入判别器D，作为源域样本。</li>
-<li>目标域流同样由分类器产生的集成损失进入判别器，同时，求得两个分类器的预测差值，作为局部对齐程度的依据（local alignment score map），该距离与D所反馈的损失相乘得到语义级别的对抗损失。</li>
+<h3 id="1-6-输入省略号"><a href="#1-6-输入省略号" class="headerlink" title="1.6 输入省略号"></a>1.6 输入省略号</h3><ul>
+<li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li>
+<li>例子：</li>
 </ul>
-<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p>模型损失函数<br>$$<br>ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)=ℒ_{𝑠𝑒𝑔} (𝐺)+𝜆_{𝑤𝑒𝑖𝑔ℎ𝑡} ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)+𝜆_{𝑎𝑑𝑣} ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)<br>𝐺^∗,𝐷^∗=arg⁡𝑚𝑖𝑛<em>𝐺 𝑚𝑎𝑥_𝐷 ℒ</em>{𝐶𝐿𝐴𝑁} (𝐺,𝐷)<br>$$<br>训练目标，交替优化G和D，直至总损失收敛为止。</p>
-<ul>
-<li>分割损失：若给定形状为$3\times H \times W$的图像和形状为$C \times H \times W$的标签图，其中$C$是语义类别的数量</li>
-</ul>
-<p>$$<br>ℒ_{𝑠𝑒𝑔} (𝐺)=\sum <em>{i=1}^{H \times W} \sum <em>{j=1}^C -y</em>{ic}\log p</em>{ic}<br>$$</p>
-<p>​            其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
-<p>​            即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
-<ul>
-<li>分类器损失：</li>
-</ul>
-<p>$$<br>ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{| \vec{w_1} ||\vec{w_2}|}<br>$$</p>
-<p>​            即两个分类器网络中参数的余弦距离。</p>
-<ul>
-<li>对抗损失：</li>
-</ul>
-<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋<em>𝑆 ))) \right]−𝐸\left[(𝜆</em>{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]<br>$$</p>
-<p>​            其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
-<p>​            即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
-<hr>
-<h2 id="5-实验总结"><a href="#5-实验总结" class="headerlink" title="5 实验总结"></a>5 实验总结</h2><h3 id="5-1-语义分割可视化"><a href="#5-1-语义分割可视化" class="headerlink" title="5.1 语义分割可视化"></a>5.1 语义分割可视化</h3><ol>
-<li>CLAN与传统对抗网络（TAN）的对比</li>
-</ol>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic5.1.png" class="">
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>重点关注橙色框中的电线杆和交通标志。</p>
-<p>图(e、f、g)为高维特征通过非线性降维算法(t-SNE)到二维空间（仅显示4个相关类，即建筑物为蓝色、交通标志为橙色、杆子为灰色、植被为绿色）</p>
+<p>显示：<br>$$<br>f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}</em>{rm \cdots} + x_n^2<br>$$</p>
+</blockquote>
+<h3 id="1-7-输入矢量"><a href="#1-7-输入矢量" class="headerlink" title="1.7 输入矢量"></a>1.7 输入矢量</h3><ul>
+<li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
+<li>例子1：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec{a} \cdot \vec(b)=0$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>\vec{a} \cdot \vec(b)=0<br>$$</p>
 </blockquote>
 <ul>
-<li>上图表明，有些类别特征在没有进行域迁移之前，就已经是对齐的。传统的全局域适应方法反而会破坏这种语义一致性，造成域迁移；而本文提出的语义级对抗网络降低了全局对齐对这些类的影响。</li>
+<li>例子2：</li>
 </ul>
-<ol start="2">
-<li>特征簇中心距离</li>
-</ol>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic5.2.png" class="">
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>上图展示隐层隐层空间源域与目标域之间同语义特征簇的中心距离，该距离越小，说明两个域之间的语义对齐越好。</p>
+<p>显示：<br>$$<br>\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)<br>$$</p>
 </blockquote>
-<ol start="3">
-<li>分割效果</li>
-</ol>
-<img src="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/pic5.3.png" class="">
+<h3 id="1-8-输入积分"><a href="#1-8-输入积分" class="headerlink" title="1.8 输入积分"></a>1.8 输入积分</h3><ul>
+<li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li>
+<li>例子：</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 {x^2} \,{\rm d}x$$</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>各列为：目标域图、无自适应分割效果、CLAN分割效果、标准效果图。</p>
+<p>显示：<br>$$<br>\int_0^1 {x^2} ,{\rm d}x<br>$$</p>
 </blockquote>
-<h3 id="5-2-总结"><a href="#5-2-总结" class="headerlink" title="5.2 总结"></a>5.2 总结</h3><ul>
-<li>论文提出的语义级对抗学习域适应网络(CLAN)，使用协同训练结合对抗学习的设计，旨在解决无监督域自适应(UDA)语义分割中，由全局特征对齐所引起的语义不一致问题，有效地防止了负迁移。</li>
-<li>在两个域适应语义分割任务，即GTA5 -&gt; Cityscapes 和 SYNTHIA -&gt; Cityscapes 上进行了实验验证，以及实际的语义分割效果中都取得了较好的实验结果。具有良好的应用前景。</li>
+<blockquote>
+<p>本式中<code>\,</code>和<code>{\rm d}</code>部分可以省略，但建议加入，能使式子更美观。</p>
+</blockquote>
+<h3 id="1-9-输入极限符号"><a href="#1-9-输入极限符号" class="headerlink" title="1.9 输入极限符号"></a>1.9 输入极限符号</h3><ul>
+<li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
+<li>例子：</li>
 </ul>
-<hr>
-<h2 id="6-相关链接"><a href="#6-相关链接" class="headerlink" title="6 相关链接"></a>6 相关链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1809.09478.pdf">论文原文</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/RoyalVane/CLAN">程序源码</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av53561336/">CVPR2019 Oral Presentation: Taking A Closer Look at Domain Shift</a></li>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}<br>$$</p>
+</blockquote>
+<h3 id="1-10-输入累加、累乘运算"><a href="#1-10-输入累加、累乘运算" class="headerlink" title="1.10 输入累加、累乘运算"></a>1.10 输入累加、累乘运算</h3><ul>
+<li>使用<code>\sum_{下标表达式}^{上标表达式} {累加表达式}</code>来输入一个累加。</li>
+<li>与之类似，使用<code>\prod</code>、<code>\bigcup</code>、<code>\bigcap</code>来分别输入累乘、并集和交集。</li>
+<li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li>
+<li>例子：</li>
 </ul>
-<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn@1.0/videos/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look%20at%20-%201.Oral(Av53561336,P1).mp4","pic":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look-Oral.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>显示：<br>$$<br>\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R<br>$$</p>
+</blockquote>
 
         </div>
 
@@ -536,11 +612,9 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="color: #716e77;">深度学习<em>·</em></a>
+              <a href="/tags/Markdown/" style="color: #716e77;">Markdown<em>·</em></a>
               
-              <a href="/tags/%E8%AE%BA%E6%96%87/" style="color: #716e77;">论文<em>·</em></a>
-              
-              <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="color: #716e77;">语义分割<em>·</em></a>
+              <a href="/tags/%E5%85%AC%E5%BC%8F/" style="color: #716e77;">公式<em>·</em></a>
               
             </span>
             <span>
@@ -569,7 +643,7 @@
         
         <div class="post-nepre half previous">
           
-            <a href="/2021/01/24/markdown%E4%BD%BF%E7%94%A8/" rel="prev">
+            <a href="/p/60859" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
@@ -577,7 +651,7 @@
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>markdown使用</h3>
+                <h3>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</h3>
                 <hr>
               </div>
             </a>
@@ -587,7 +661,7 @@
           
           <div class="post-nepre half next">
             
-              <a href="/2020/03/10/Markdown%E4%B8%AD%E5%85%AC%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next">
+              <a href="/p/55524" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
@@ -595,7 +669,7 @@
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>Markdown中公式的使用</h3>
+                  <h3>Hexo主题添加网页访问计数功能</h3>
                   <hr>
                 </div>
               </a>

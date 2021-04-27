@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">伽古拉，感触 | Jermain Liu</title>
+  <title itemprop="name">First Blog | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -368,54 +368,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
-<div class="pattern-center single-center">
-  <!-- 有配图默认渲染第一张 -->
-  <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_jiagula.png);"
-    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_jiagula.png">
-  </div>
-  <header class="pattern-header single-header">
-    <h1 class="entry-title">伽古拉，感触</h1>
-    <p class="entry-census">
-      
-      
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="fa fa-calendar"></i>
-        </span>
-        <span class="post-meta-item-text"> 2021-4-25 </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 浏览数显示 -->
-      <span class="post-meta-item" >
-        <span class="post-meta-item-icon">
-          <i class="iconfont icon-attention"></i>
-        </span>
-        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
-        </span>
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 字数统计-->
-      <span class="post-meta-item" >
-
-        
-      </span>
-      <span class="bull">
-        ·</span>
-      <!-- 评论数显示 -->
-      <!-- <span class="post-meta-item" >
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              </span class="post-meta-item-text">
-                <span class="valine-comment-count" data-xid="/"> </span>
-              </span>
-          </span> -->
-    </p>
-  </header>
-</div>
-
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -426,24 +378,11 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
-<li>最近看了欧布奥特曼相关的系列，我对于其中伽古拉斯·伽古拉印象很深；</li>
-<li>伽古拉斯·伽古拉的是由演员青柳尊哉扮演；</li>
-<li>从一些列剧集里我真正看到了伽古拉这个角色的，是一个有血有人的角色，从这个角色的演绎与内心活动中可以感受这个角色面临的心理痛苦与忧伤，以及对于现实的不甘，不断地寻找自己的答案。</li>
-<li>同时跟随剧集的发展，在伽古拉的成长中，也可以引发一种对人生的磨炼与成长的思考。</li>
-</ul>
-<hr>
-<h2 id="1-相关剧集"><a href="#1-相关剧集" class="headerlink" title="1 相关剧集"></a>1 相关剧集</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep397914?from=search&amp;seid=16792625644855722956">欧布：原生之初</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep397977?from=search&amp;seid=16792625644855722956">欧布奥特曼</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep396176?from=search&amp;seid=16792625644855722956">泽塔奥特曼</a></li>
-</ul>
-<hr>
-<h2 id="2-伽古拉解析"><a href="#2-伽古拉解析" class="headerlink" title="2 伽古拉解析"></a>2 伽古拉解析</h2><ul>
-<li>这里搬运源自bilibili的up主<a target="_blank" rel="noopener" href="https://space.bilibili.com/36810581">佐sa木</a>的相关解析，个人感觉这篇解析很透彻，写的很好，值得一看</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19v41187gn?p=1">【深度解读.】伽古拉斯伽古拉—总集篇【为邪者.】</a></p>
-<div style="position: relative; width: 70%; height: 0; padding-bottom: 40%;"><iframe src="//player.bilibili.com/player.html?247420299&amp;bvid=BV19v41187gn&amp;cid=318048980&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div>
+          <p>自己的博客基本搭建完成，接下来进行部署即可。</p>
+<span id="more"></span>
+
+<p>第一次使用这种博客来写东西，心情还是很激动的呢！！</p>
+
         </div>
 
         <!-- .entry-content -->
@@ -475,10 +414,6 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E5%BD%B1%E8%A7%86/" style="color: #716e77;">影视<em>·</em></a>
-              
-              <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="color: #716e77;">奥特曼<em>·</em></a>
-              
             </span>
             <span>
               <i class="iconfont icon-file"></i>
@@ -503,24 +438,24 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-          
-            <div class="post-nepre full next">
-              
-              <a href="/2021/04/01/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%BC%80%E9%A2%98%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/" rel="next">
-                <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png"
-                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png">
-                </div>
-                <span class="label">Next Post</span>
-                <div class="info">
-                  <h3>毕业设计开题答辩记录</h3>
-                  <hr>
-                </div>
-              </a>
-            </div>
+        
+          <div class="post-nepre full previous">
             
+            <a href="/p/60899" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
+                  src="">
+              </div>
+              <span class="label">Previous Post</span>
+              <div class="info">
+                <h3>使用Hexo部署一个属于自己的博客</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+          
+          
       </section>
       <!-- 加密文章隐藏评论 -->
       <section class="comment" >

@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">markdown使用 | Jermain Liu</title>
+  <title itemprop="name">node.js版本管理工具nvm | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -368,6 +368,54 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_nvm.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_nvm.png">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">node.js版本管理工具nvm</h1>
+    <p class="entry-census">
+      
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-3-21 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/36897"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -379,26 +427,30 @@
         
         <div class="entry-content">
           <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
-<li>markdown是一种轻量级的标记语言，非常方便进行文章排版，支持latex公式编辑显示。</li>
-<li>可以算是一个程序员笔记的利器，支持许多的笔记软件，方便好用。</li>
+<li>在搭建hexo博客的时候需要使用<a target="_blank" rel="noopener" href="http://nodejs.cn/">node.js</a>，但是有时候会出现安装的版本与使用的主题中有的插件不匹配，进行版本变更的时候很不方便，那么使用版本管理工具就会比较的方便。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">nvm</a>全名是<code>node.js version management</code>，是node.js的管理工具，可以在github上进行下载：<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a></li>
 </ul>
-<span id="more"></span>
+<hr>
+<h2 id="1-管理node-js"><a href="#1-管理node-js" class="headerlink" title="1 管理node.js"></a>1 管理<code>node.js</code></h2><ul>
+<li>安装过程就不再详细说明，只要注意安装的时候会出现两次选择目录的选项，第一次出现<code>nvm</code>安装目录，第二次是你用<code>nvm</code>工具安装<code>node.js</code>的目录位置。</li>
+<li>下面列出使用<code>nvm</code>进行管理的一些命令：</li>
+</ul>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 打开<span class="built_in">cmd</span>命令行，输入nvm查看是否安装成功</span><br><span class="line"></span><br><span class="line">nvm list				# 查看本地安装的所有版本</span><br><span class="line">nvm list available		# 查看所有可以下载安装的版本</span><br><span class="line">nvm install <span class="number">12</span>.<span class="number">14</span>		# 安装node.js <span class="number">12</span>.<span class="number">14</span>版本</span><br><span class="line">nvm use <span class="number">12</span>.<span class="number">14</span>			# 启用node.js <span class="number">12</span>.<span class="number">14</span>版本</span><br><span class="line">nvm uninstall <span class="number">12</span>.<span class="number">15</span>		# 卸载node.js <span class="number">12</span>.<span class="number">14</span>版本</span><br><span class="line"></span><br><span class="line">nvm arch				# 显示node运行版本位数</span><br><span class="line">nvm on					# 启用nvm版本管理工具</span><br><span class="line">nvm off					# 关闭nvm版本管理工具</span><br><span class="line">nvm version				# 显示nvm版本</span><br><span class="line">nvm root				# 查看当前安装node.js使用的目录位置</span><br><span class="line">nvm root [<span class="built_in">path</span>]			# 设置node.js安装的目录</span><br></pre></td></tr></tbody></table></figure>
 
 <hr>
-<h2 id="1-资源推荐"><a href="#1-资源推荐" class="headerlink" title="1 资源推荐"></a>1 资源推荐</h2><ul>
-<li>基本教程<ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>：<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></li>
+<h2 id="2-npm的换源使用"><a href="#2-npm的换源使用" class="headerlink" title="2 npm的换源使用"></a>2 <code>npm</code>的换源使用</h2><ul>
+<li>安装.<code>node.js</code>时，会自动安装npm工具，但是默认安装源有时候下载速度不佳，所以可以设置使用淘宝的源。</li>
 </ul>
-</li>
-<li>markdown软件<ul>
-<li><a target="_blank" rel="noopener" href="https://typora.io/">Typora 官网</a>：<a target="_blank" rel="noopener" href="https://typora.io/">https://typora.io/</a></li>
+<h3 id="2-1-方法一：安装cnpm"><a href="#2-1-方法一：安装cnpm" class="headerlink" title="2.1 方法一：安装cnpm"></a>2.1 方法一：安装<code>cnpm</code></h3><ul>
+<li>安装<code>cnpm</code>与<code>npm</code>共存，与<code>npm</code>有相同的功能与命令，自动使用淘宝的源，但是我尝试在<code>nvm</code>环境下无法使用<code>cnpm</code>，所以使用<code>nvm</code>安装<code>node.js</code>时，可以使用第二种方法。</li>
 </ul>
-</li>
-<li>公式编辑<ul>
-<li><a target="_blank" rel="noopener" href="https://ericp.cn/cmd">作业部落Markdown公式编辑手册</a>： <a target="_blank" rel="noopener" href="https://ericp.cn/cmd">https://ericp.cn/cmd</a></li>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装cnpm</span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-2-方法二：设置npm换源"><a href="#2-2-方法二：设置npm换源" class="headerlink" title="2.2 方法二：设置npm换源"></a>2.2 方法二：设置<code>npm</code>换源</h3><ul>
+<li>在<code>cmd</code>中对<code>npm</code>进行换源</li>
 </ul>
-</li>
-</ul>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 设置淘宝源</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line"># 设置默认源</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org</span><br><span class="line"># 查看当前使用的源</span><br><span class="line">npm config get registry</span><br></pre></td></tr></tbody></table></figure>
+
 
         </div>
 
@@ -431,7 +483,9 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/markdown/" style="color: #716e77;">markdown<em>·</em></a>
+              <a href="/tags/node-js/" style="color: #716e77;">node.js<em>·</em></a>
+              
+              <a href="/tags/nvm/" style="color: #716e77;">nvm<em>·</em></a>
               
             </span>
             <span>
@@ -460,15 +514,15 @@
         
         <div class="post-nepre half previous">
           
-            <a href="/2021/01/29/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Bidirectional-Learning-for-Domain-Adaptation-of-Semantic-Segmentation/" rel="prev">
+            <a href="/p/39053" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="">
+                  src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation</h3>
+                <h3>毕业设计开题答辩记录</h3>
                 <hr>
               </div>
             </a>
@@ -478,7 +532,7 @@
           
           <div class="post-nepre half next">
             
-              <a href="/2021/01/22/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-Taking-A-Closer-Look-at-Domain-Shift-Category-level-Adversaries-for-Semantics-Consistent-Domain-Adaptation/" rel="next">
+              <a href="/p/43220" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
@@ -486,7 +540,7 @@
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</h3>
+                  <h3>ArchLinux安装使用</h3>
                   <hr>
                 </div>
               </a>

@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">逻辑斯蒂回归与Softmax回归的极大似然估计 | Jermain Liu</title>
+  <title itemprop="name">Hexo主题添加网页访问计数功能 | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -379,69 +379,29 @@
         
         <div class="entry-content">
           <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
-<li>使用极大似然估计(i.i.d independent and identically distributed)</li>
-<li>推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数</li>
+<li>添加不蒜子访问计数</li>
+<li>以Hexo的yilia主题为例子</li>
 </ul>
 <span id="more"></span>
 
-<hr>
-<h2 id="1-逻辑斯蒂回归的极大似然估计"><a href="#1-逻辑斯蒂回归的极大似然估计" class="headerlink" title="1. 逻辑斯蒂回归的极大似然估计"></a>1. 逻辑斯蒂回归的极大似然估计</h2><ul>
-<li><p>线性回归的任务是预测，单也可用来分类</p>
-</li>
-<li><p>伯努利分布</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega)$</td>
-<td align="center">$p^2(x_n;\omega)$</td>
-</tr>
-</tbody></table>
-<p>其中<br>$$p^1(x_n;\omega)+p^2(x_n;\omega)=1$$<br>$$p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}$$<br>$$p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}$$</p>
-</li>
-</ul>
 <ul>
-<li>极大似然估计(i.i.d)<br>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]$$</li>
-<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \<br>  &amp; =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \<br>  &amp; =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \<br>  &amp; =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \<br>  \end{align}<br>$$</li>
+<li>以Hexo目录作为说明的基点</li>
 </ul>
 <hr>
-<h2 id="2-Softmax回归的极大似然估计"><a href="#2-Softmax回归的极大似然估计" class="headerlink" title="2. Softmax回归的极大似然估计"></a>2. Softmax回归的极大似然估计</h2><ul>
-<li><p>多类分类</p>
-</li>
-<li><p>概率分布列</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">$\cdots$</th>
-<th align="center">C</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega_1)$</td>
-<td align="center">$p^2(x_n;\omega_2)$</td>
-<td align="center">$\cdots$</td>
-<td align="center">$p^C(x_n;\omega_C)$</td>
-</tr>
-</tbody></table>
-<p>其中<br>$$<br>  \omega^T=<br>  \begin{bmatrix}<br>  \omega_1^T \<br>  \omega_2^T \<br>  \vdots \<br>  \omega_C^T \<br>  \end{bmatrix}=<br>  \begin{bmatrix}<br>  \omega_{1,1} &amp; \omega_{1,2} &amp; \cdots &amp; \omega_{1,N} \<br>  \omega_{2,1} &amp; \omega_{2,2} &amp; \cdots &amp; \omega_{2,N} \<br>  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>  \omega_{C,1} &amp; \omega_{C,2} \cdots &amp; \omega_{C,N} \<br>  \end{bmatrix}<br>$$<br>$$\sum_{c=1}^{C}p^c(x_n;\omega_c)=1$$<br>$$p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$</p>
-</li>
-<li><p>极大似然估计(i.i.d)<br>$$<br>  \text{引入示性函数} \quad I(y_n=c)=<br>  \begin{cases}<br>  1, &amp; y_n=c \<br>  0, &amp; y_n\neq c \<br>  \end{cases}<br>$$</p>
+<h2 id="1-配置文件修改"><a href="#1-配置文件修改" class="headerlink" title="1. 配置文件修改"></a>1. 配置文件修改</h2><ul>
+<li>在<code>./themes/yilia/_config.yml</code>中添加属性<ul>
+<li>本身yilia主题没有在_config.yml中保留不算子的属性，所有直接在末尾追加就行<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 开启不算子访问统计</span><br><span class="line">busuanzi:</span><br><span class="line">	enable: true</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
 </li>
 </ul>
-<p>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]$$</p>
-<ul>
-<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln p(x_1,x_2,\cdots,x_N;\omega) \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \<br>  \end{align}<br>$$<br>令<br>$$y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]$$<br>$$h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$<br>则有<br>$$\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)$$<br>目标函数化简为<br>$$<br>  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}<br>$$</li>
-<li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<br>$$J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}$$</li>
+<hr>
+<h2 id="2-添加不蒜子插件"><a href="#2-添加不蒜子插件" class="headerlink" title="2. 添加不蒜子插件"></a>2. 添加不蒜子插件</h2><ul>
+<li>添加统计数据显示以及不蒜子网站访问脚本</li>
+<li>在<code>./themes/yilia/layout/_partla/footer.ejs</code>末尾<code>&lt;/footer&gt;</code>与其上面的<code>&lt;/div&gt;</code>之间插入下面代码：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable){ %&gt;</span><br><span class="line">  &lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">  &lt;span id="busuanzi_container_site_pv"&gt;</span><br><span class="line">    本站总访问量&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &lt;span class="post-meta-divider"&gt; | &lt;/span&gt;</span><br><span class="line">  &lt;span id="busuanzi_container_site_uv"&gt;</span><br><span class="line">    本站访客数&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人次</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;% } %&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<hr>
+<h2 id="3-资源"><a href="#3-资源" class="headerlink" title="3. 资源"></a>3. 资源</h2><ul>
+<li>不蒜子本人官网链接：<a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子 | 不如</a></li>
 </ul>
 
         </div>
@@ -475,9 +435,9 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #716e77;">机器学习<em>·</em></a>
+              <a href="/tags/Hexo/" style="color: #716e77;">Hexo<em>·</em></a>
               
-              <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="color: #716e77;">极大似然估计<em>·</em></a>
+              <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="color: #716e77;">不蒜子<em>·</em></a>
               
             </span>
             <span>
@@ -506,7 +466,7 @@
         
         <div class="post-nepre half previous">
           
-            <a href="/2020/03/09/Hexo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0%E5%8A%9F%E8%83%BD/" rel="prev">
+            <a href="/p/23853" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
@@ -514,7 +474,7 @@
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>Hexo主题添加网页访问计数功能</h3>
+                <h3>Markdown中公式的使用</h3>
                 <hr>
               </div>
             </a>
@@ -524,7 +484,7 @@
           
           <div class="post-nepre half next">
             
-              <a href="/2020/03/07/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF/" rel="next">
+              <a href="/p/11737" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
@@ -532,7 +492,7 @@
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>Hexo博客添加字数统计和阅读时长</h3>
+                  <h3>逻辑斯蒂回归与Softmax回归的极大似然估计</h3>
                   <hr>
                 </div>
               </a>
