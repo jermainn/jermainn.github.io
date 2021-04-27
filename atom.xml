@@ -6,7 +6,7 @@
   <link href="http://jermainliu.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jermainliu.gitee.io/"/>
-  <updated>2021-04-25T13:14:02.000Z</updated>
+  <updated>2021-04-27T06:13:38.000Z</updated>
   <id>http://jermainliu.gitee.io/</id>
   
   <author>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>毕业设计中期汇报记录</title>
+    <link href="http://jermainliu.gitee.io/p/59a184e6.html"/>
+    <id>http://jermainliu.gitee.io/p/59a184e6.html</id>
+    <published>2021-04-27T06:13:38.000Z</published>
+    <updated>2021-04-27T06:13:38.000Z</updated>
+    
+    
+    <summary type="html">记录自己的毕业设计中期汇报</summary>
+    
+    
+    
+    
+    <category term="毕业设计" scheme="http://jermainliu.gitee.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="答辩" scheme="http://jermainliu.gitee.io/tags/%E7%AD%94%E8%BE%A9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>伽古拉，感触</title>
-    <link href="http://jermainliu.gitee.io/p/23551"/>
-    <id>http://jermainliu.gitee.io/p/23551</id>
+    <link href="http://jermainliu.gitee.io/p/23551.html"/>
+    <id>http://jermainliu.gitee.io/p/23551.html</id>
     <published>2021-04-25T13:14:02.000Z</published>
     <updated>2021-04-25T13:14:02.000Z</updated>
     
@@ -43,8 +64,8 @@
   
   <entry>
     <title>毕业设计开题答辩记录</title>
-    <link href="http://jermainliu.gitee.io/p/39053"/>
-    <id>http://jermainliu.gitee.io/p/39053</id>
+    <link href="http://jermainliu.gitee.io/p/39053.html"/>
+    <id>http://jermainliu.gitee.io/p/39053.html</id>
     <published>2021-04-01T10:51:11.000Z</published>
     <updated>2021-04-01T10:51:11.000Z</updated>
     
@@ -70,8 +91,8 @@
   
   <entry>
     <title>node.js版本管理工具nvm</title>
-    <link href="http://jermainliu.gitee.io/p/36897"/>
-    <id>http://jermainliu.gitee.io/p/36897</id>
+    <link href="http://jermainliu.gitee.io/p/36897.html"/>
+    <id>http://jermainliu.gitee.io/p/36897.html</id>
     <published>2021-03-21T08:48:14.000Z</published>
     <updated>2021-03-21T08:48:14.000Z</updated>
     
@@ -95,8 +116,8 @@
   
   <entry>
     <title>ArchLinux安装使用</title>
-    <link href="http://jermainliu.gitee.io/p/43220"/>
-    <id>http://jermainliu.gitee.io/p/43220</id>
+    <link href="http://jermainliu.gitee.io/p/43220.html"/>
+    <id>http://jermainliu.gitee.io/p/43220.html</id>
     <published>2021-02-15T11:44:47.000Z</published>
     <updated>2021-02-15T11:44:47.000Z</updated>
     
@@ -114,8 +135,8 @@
   
   <entry>
     <title>PPT模板网站推荐</title>
-    <link href="http://jermainliu.gitee.io/p/53034"/>
-    <id>http://jermainliu.gitee.io/p/53034</id>
+    <link href="http://jermainliu.gitee.io/p/53034.html"/>
+    <id>http://jermainliu.gitee.io/p/53034.html</id>
     <published>2021-02-02T13:27:48.000Z</published>
     <updated>2021-02-02T13:27:48.000Z</updated>
     
@@ -135,8 +156,8 @@
   
   <entry>
     <title>论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation</title>
-    <link href="http://jermainliu.gitee.io/p/2717"/>
-    <id>http://jermainliu.gitee.io/p/2717</id>
+    <link href="http://jermainliu.gitee.io/p/2717.html"/>
+    <id>http://jermainliu.gitee.io/p/2717.html</id>
     <published>2021-01-29T01:22:36.000Z</published>
     <updated>2021-01-29T01:22:36.000Z</updated>
     
@@ -159,8 +180,8 @@
   
   <entry>
     <title>markdown使用</title>
-    <link href="http://jermainliu.gitee.io/p/61039"/>
-    <id>http://jermainliu.gitee.io/p/61039</id>
+    <link href="http://jermainliu.gitee.io/p/61039.html"/>
+    <id>http://jermainliu.gitee.io/p/61039.html</id>
     <published>2021-01-24T12:25:10.000Z</published>
     <updated>2021-01-24T12:25:10.000Z</updated>
     
@@ -179,8 +200,8 @@
   
   <entry>
     <title>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</title>
-    <link href="http://jermainliu.gitee.io/p/60859"/>
-    <id>http://jermainliu.gitee.io/p/60859</id>
+    <link href="http://jermainliu.gitee.io/p/60859.html"/>
+    <id>http://jermainliu.gitee.io/p/60859.html</id>
     <published>2021-01-22T10:02:41.000Z</published>
     <updated>2021-01-22T10:02:41.000Z</updated>
     
@@ -203,8 +224,8 @@
   
   <entry>
     <title>Markdown中公式的使用</title>
-    <link href="http://jermainliu.gitee.io/p/23853"/>
-    <id>http://jermainliu.gitee.io/p/23853</id>
+    <link href="http://jermainliu.gitee.io/p/23853.html"/>
+    <id>http://jermainliu.gitee.io/p/23853.html</id>
     <published>2020-03-10T12:24:04.000Z</published>
     <updated>2020-03-10T12:24:04.000Z</updated>
     
@@ -225,8 +246,8 @@
   
   <entry>
     <title>Hexo主题添加网页访问计数功能</title>
-    <link href="http://jermainliu.gitee.io/p/55524"/>
-    <id>http://jermainliu.gitee.io/p/55524</id>
+    <link href="http://jermainliu.gitee.io/p/55524.html"/>
+    <id>http://jermainliu.gitee.io/p/55524.html</id>
     <published>2020-03-09T14:24:29.000Z</published>
     <updated>2020-03-09T14:24:29.000Z</updated>
     
@@ -247,8 +268,8 @@
   
   <entry>
     <title>逻辑斯蒂回归与Softmax回归的极大似然估计</title>
-    <link href="http://jermainliu.gitee.io/p/11737"/>
-    <id>http://jermainliu.gitee.io/p/11737</id>
+    <link href="http://jermainliu.gitee.io/p/11737.html"/>
+    <id>http://jermainliu.gitee.io/p/11737.html</id>
     <published>2020-03-08T14:56:46.000Z</published>
     <updated>2020-03-08T14:56:46.000Z</updated>
     
@@ -269,8 +290,8 @@
   
   <entry>
     <title>Hexo博客添加字数统计和阅读时长</title>
-    <link href="http://jermainliu.gitee.io/p/25241"/>
-    <id>http://jermainliu.gitee.io/p/25241</id>
+    <link href="http://jermainliu.gitee.io/p/25241.html"/>
+    <id>http://jermainliu.gitee.io/p/25241.html</id>
     <published>2020-03-07T15:32:36.000Z</published>
     <updated>2020-03-07T15:32:36.000Z</updated>
     
@@ -288,8 +309,8 @@
   
   <entry>
     <title>使用Hexo部署一个属于自己的博客</title>
-    <link href="http://jermainliu.gitee.io/p/60899"/>
-    <id>http://jermainliu.gitee.io/p/60899</id>
+    <link href="http://jermainliu.gitee.io/p/60899.html"/>
+    <id>http://jermainliu.gitee.io/p/60899.html</id>
     <published>2020-03-05T14:39:09.000Z</published>
     <updated>2020-03-05T14:39:09.000Z</updated>
     
@@ -308,8 +329,8 @@
   
   <entry>
     <title>First Blog</title>
-    <link href="http://jermainliu.gitee.io/p/45015"/>
-    <id>http://jermainliu.gitee.io/p/45015</id>
+    <link href="http://jermainliu.gitee.io/p/45015.html"/>
+    <id>http://jermainliu.gitee.io/p/45015.html</id>
     <published>2020-03-04T15:41:29.000Z</published>
     <updated>2020-03-04T15:41:29.000Z</updated>
     

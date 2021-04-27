@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">ArchLinux安装使用 | Jermain Liu</title>
+  <title itemprop="name">逻辑斯蒂回归与Softmax回归的极大似然估计 | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -378,35 +378,71 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
-<li>Arch Linux是通用x86_64 GNU/Linux发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。</li>
+          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
+<li>使用极大似然估计(i.i.d independent and identically distributed)</li>
+<li>推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数</li>
 </ul>
 <span id="more"></span>
 
 <hr>
-<h2 id="1-下载地址"><a href="#1-下载地址" class="headerlink" title="1 下载地址"></a>1 下载地址</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://archlinux.org/">Arch Linux官网</a></li>
-<li><a target="_blank" rel="noopener" href="https://archlinux.org/download/">Arch Linux下载地址</a></li>
-</ul>
-<hr>
-<h2 id="2-安装教程"><a href="#2-安装教程" class="headerlink" title="2 安装教程"></a>2 安装教程</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide">官方文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/">另一大佬给出的安装使用说明</a><ul>
-<li>与下方第一个视频教程出自同一人</li>
-</ul>
+<h2 id="1-逻辑斯蒂回归的极大似然估计"><a href="#1-逻辑斯蒂回归的极大似然估计" class="headerlink" title="1. 逻辑斯蒂回归的极大似然估计"></a>1. 逻辑斯蒂回归的极大似然估计</h2><ul>
+<li><p>线性回归的任务是预测，单也可用来分类</p>
+</li>
+<li><p>伯努利分布</p>
+<table>
+<thead>
+<tr>
+<th align="center">$y_n$</th>
+<th align="center">1</th>
+<th align="center">0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$p_n$</td>
+<td align="center">$p^1(x_n;\omega)$</td>
+<td align="center">$p^2(x_n;\omega)$</td>
+</tr>
+</tbody></table>
+<p>其中<br>$$p^1(x_n;\omega)+p^2(x_n;\omega)=1$$<br>$$p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}$$<br>$$p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}$$</p>
 </li>
 </ul>
-<hr>
-<h2 id="3-视频教程"><a href="#3-视频教程" class="headerlink" title="3 视频教程"></a>3 视频教程</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/77485509/channel/detail?cid=65643">科大_吴亦凡 教程</a></li>
-</ul>
-<div style="position: relative; width: 70%; height: 0; padding-bottom: 40%;"><iframe src="//player.bilibili.com/player.html?287210810&amp;bvid=BV1qf4y1D7Da&amp;cid=239230514&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div>
-
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11J411a7Tp">TheCW 教程</a></li>
+<li>极大似然估计(i.i.d)<br>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]$$</li>
+<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \<br>  &amp; =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \<br>  &amp; =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \<br>  &amp; =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \<br>  \end{align}<br>$$</li>
 </ul>
-<div style="position: relative; width: 70%; height: 0; padding-bottom: 40%;"><iframe src="//player.bilibili.com/player.html?81146687&amp;bvid=BV11J411a7Tp&amp;cid=138874808&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div>
-
+<hr>
+<h2 id="2-Softmax回归的极大似然估计"><a href="#2-Softmax回归的极大似然估计" class="headerlink" title="2. Softmax回归的极大似然估计"></a>2. Softmax回归的极大似然估计</h2><ul>
+<li><p>多类分类</p>
+</li>
+<li><p>概率分布列</p>
+<table>
+<thead>
+<tr>
+<th align="center">$y_n$</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">$\cdots$</th>
+<th align="center">C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$p_n$</td>
+<td align="center">$p^1(x_n;\omega_1)$</td>
+<td align="center">$p^2(x_n;\omega_2)$</td>
+<td align="center">$\cdots$</td>
+<td align="center">$p^C(x_n;\omega_C)$</td>
+</tr>
+</tbody></table>
+<p>其中<br>$$<br>  \omega^T=<br>  \begin{bmatrix}<br>  \omega_1^T \<br>  \omega_2^T \<br>  \vdots \<br>  \omega_C^T \<br>  \end{bmatrix}=<br>  \begin{bmatrix}<br>  \omega_{1,1} &amp; \omega_{1,2} &amp; \cdots &amp; \omega_{1,N} \<br>  \omega_{2,1} &amp; \omega_{2,2} &amp; \cdots &amp; \omega_{2,N} \<br>  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>  \omega_{C,1} &amp; \omega_{C,2} \cdots &amp; \omega_{C,N} \<br>  \end{bmatrix}<br>$$<br>$$\sum_{c=1}^{C}p^c(x_n;\omega_c)=1$$<br>$$p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$</p>
+</li>
+<li><p>极大似然估计(i.i.d)<br>$$<br>  \text{引入示性函数} \quad I(y_n=c)=<br>  \begin{cases}<br>  1, &amp; y_n=c \<br>  0, &amp; y_n\neq c \<br>  \end{cases}<br>$$</p>
+</li>
+</ul>
+<p>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]$$</p>
+<ul>
+<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln p(x_1,x_2,\cdots,x_N;\omega) \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \<br>  \end{align}<br>$$<br>令<br>$$y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]$$<br>$$h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$<br>则有<br>$$\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)$$<br>目标函数化简为<br>$$<br>  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}<br>$$</li>
+<li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<br>$$J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}$$</li>
+</ul>
 
         </div>
 
@@ -439,7 +475,9 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/linux/" style="color: #716e77;">linux<em>·</em></a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="color: #716e77;">机器学习<em>·</em></a>
+              
+              <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="color: #716e77;">极大似然估计<em>·</em></a>
               
             </span>
             <span>
@@ -457,7 +495,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 10px; color: #f06966">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px; color: #9592a7">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 10px; color: #f06966">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -468,15 +506,15 @@
         
         <div class="post-nepre half previous">
           
-            <a href="/p/36897" rel="prev">
+            <a href="/p/55524.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_nvm.png"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_nvm.png">
+                  src="">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>node.js版本管理工具nvm</h3>
+                <h3>Hexo主题添加网页访问计数功能</h3>
                 <hr>
               </div>
             </a>
@@ -486,7 +524,7 @@
           
           <div class="post-nepre half next">
             
-              <a href="/p/53034" rel="next">
+              <a href="/p/25241.html" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
@@ -494,7 +532,7 @@
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>PPT模板网站推荐</h3>
+                  <h3>Hexo博客添加字数统计和阅读时长</h3>
                   <hr>
                 </div>
               </a>

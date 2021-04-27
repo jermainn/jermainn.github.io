@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation | Jermain Liu</title>
+  <title itemprop="name">伽古拉，感触 | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -368,6 +368,54 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+<div class="pattern-center single-center">
+  <!-- 有配图默认渲染第一张 -->
+  <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_jiagula.png);"
+    src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_jiagula.png">
+  </div>
+  <header class="pattern-header single-header">
+    <h1 class="entry-title">伽古拉，感触</h1>
+    <p class="entry-census">
+      
+      
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        <span class="post-meta-item-text"> 2021-4-25 </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+      <span class="post-meta-item" >
+        <span class="post-meta-item-icon">
+          <i class="iconfont icon-attention"></i>
+        </span>
+        <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+        </span>
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 字数统计-->
+      <span class="post-meta-item" >
+
+        
+      </span>
+      <span class="bull">
+        ·</span>
+      <!-- 评论数显示 -->
+      <!-- <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              </span class="post-meta-item-text">
+                <span class="valine-comment-count" data-xid="/23551"> </span>
+              </span>
+          </span> -->
+    </p>
+  </header>
+</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -379,56 +427,24 @@
         
         <div class="entry-content">
           <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul>
-<li>论文解读第二篇；</li>
-<li>《Bidirectional Learning for Domain Adaptation of Semantic Segmentation》来自于CVPR 2019学术会议论文。</li>
+<li>最近看了欧布奥特曼相关的系列，我对于其中伽古拉斯·伽古拉印象很深；</li>
+<li>伽古拉斯·伽古拉的是由演员青柳尊哉扮演；</li>
+<li>从一些列剧集里我真正看到了伽古拉这个角色的，是一个有血有人的角色，从这个角色的演绎与内心活动中可以感受这个角色面临的心理痛苦与忧伤，以及对于现实的不甘，不断地寻找自己的答案。</li>
+<li>同时跟随剧集的发展，在伽古拉的成长中，也可以引发一种对人生的磨炼与成长的思考。</li>
 </ul>
-<span id="more"></span>
+<hr>
+<h2 id="1-相关剧集"><a href="#1-相关剧集" class="headerlink" title="1 相关剧集"></a>1 相关剧集</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep397914?from=search&amp;seid=16792625644855722956">欧布：原生之初</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep397977?from=search&amp;seid=16792625644855722956">欧布奥特曼</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/bangumi/play/ep396176?from=search&amp;seid=16792625644855722956">泽塔奥特曼</a></li>
+</ul>
+<hr>
+<h2 id="2-伽古拉解析"><a href="#2-伽古拉解析" class="headerlink" title="2 伽古拉解析"></a>2 伽古拉解析</h2><ul>
+<li>这里搬运源自bilibili的up主<a target="_blank" rel="noopener" href="https://space.bilibili.com/36810581">佐sa木</a>的相关解析，个人感觉这篇解析很透彻，写的很好，值得一看</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19v41187gn?p=1">【深度解读.】伽古拉斯伽古拉—总集篇【为邪者.】</a></p>
+<div style="position: relative; width: 70%; height: 0; padding-bottom: 40%;"><iframe src="//player.bilibili.com/player.html?247420299&amp;bvid=BV19v41187gn&amp;cid=318048980&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div>
 
-<hr>
-<h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul>
-<li>人工标注、合成图像</li>
-<li>在大型数据集上训练深度学习神经网络推动了图像语义分割的迅速发展，但是由于需要大量的人工、收集和手动标注具有像素级标签的图像，成本过高。</li>
-<li>计算机图像学进展的推动下，可以产生具有标签的较为逼真的合成图像，但是与实际图像之间仍然存在域适应问题。</li>
-</ul>
-<hr>
-<h2 id="2-研究问题"><a href="#2-研究问题" class="headerlink" title="2 研究问题"></a>2 研究问题</h2><ul>
-<li>无监督、域适应问题</li>
-<li>由合成数据训练的模型面临的问题<ul>
-<li>域迁移：生成图像（源域）与真实图像（目标域）不匹配问题；</li>
-<li>无标签：极端情况下目标域无可用标签；</li>
-</ul>
-</li>
-<li>应对<ul>
-<li>域适应着重解决域不匹配问题；</li>
-<li>极端情况下则属于是无监督域适应问题。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3 创新点"></a>3 创新点</h2><h3 id="3-1-传统方法"><a href="#3-1-传统方法" class="headerlink" title="3.1 传统方法"></a>3.1 传统方法</h3><ul>
-<li>传统方法是通过减小源域和目标域之间的均值或者方差度量标准，将源域的数据进行一定程度的变换，映射到目标域，但这种方法受限，且不易实现。</li>
-<li>由于CycleGAN的提出，将语义分割分解为两个步骤，进一步减小了域间差异，语义分割自适应取得良好的发展。定义两个子网络，一个为域变换子网络（转换模型），另一个为分割子网络（分割自适应模型）。<ul>
-<li>先使用域变换子网络将源域转换到目标域，将源图像与变换图像喂给分割网络，并在分割网络中加入判别器，对输出的特征图判别源域与目标域的对齐程度，进一步优化网络。</li>
-<li>优点：转换模型F有助于减少域间误差，进而更容易学得分割模型M，获得更好的性能。</li>
-<li>缺点：分割模型极其依赖于转换模型，一旦转换实效，在下一阶段无能为力。</li>
-</ul>
-</li>
-</ul>
-<img src="/p/2717/pic3.1.png" class="">
-
-<h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><ul>
-<li>双向学习系统：在CycleGAN的基础之上，双向学习形成一个闭环，迭代优化两个子网络；</li>
-<li>自监督学习算法：用于分割自适应模型，在特征级别上逐步对齐源域和目标域，有利于分割网络实现域适应，进而有利于反向过程优化；</li>
-<li>感知损失（perceptual loss ）：通过更新分割自适应模型来监督转换模型。</li>
-</ul>
-<img src="/p/2717/pic3.2.png" class="">
-
-<hr>
-<h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><h3 id="4-1-双向学习（Bidirectional-Learning）"><a href="#4-1-双向学习（Bidirectional-Learning）" class="headerlink" title="4.1 双向学习（Bidirectional Learning）"></a>4.1 双向学习（Bidirectional Learning）</h3><ul>
-<li>正向学习：translation-to-segmentation（$F-&gt;M$）</li>
-</ul>
-<h4 id="未完……"><a href="#未完……" class="headerlink" title="未完……"></a>未完……</h4><p>首先简单介绍双向学习和自监督学习</p>
-<p>然后放出网络结构图，通过算法解释网络结构图和算法，以及各个损失的作用。</p>
 
         </div>
 
@@ -461,11 +477,9 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E8%AE%BA%E6%96%87/" style="color: #716e77;">论文<em>·</em></a>
+              <a href="/tags/%E5%BD%B1%E8%A7%86/" style="color: #716e77;">影视<em>·</em></a>
               
-              <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="color: #716e77;">语义分割<em>·</em></a>
-              
-              <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="color: #716e77;">域适应<em>·</em></a>
+              <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="color: #716e77;">奥特曼<em>·</em></a>
               
             </span>
             <span>
@@ -483,7 +497,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 10px; color: #f06966">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px; color: #9592a7">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 10px; color: #f06966">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -494,15 +508,15 @@
         
         <div class="post-nepre half previous">
           
-            <a href="/p/53034" rel="prev">
+            <a href="/p/59a184e6.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_zhongqi.png"
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="">
+                  src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_zhongqi.png">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>PPT模板网站推荐</h3>
+                <h3>毕业设计中期汇报记录</h3>
                 <hr>
               </div>
             </a>
@@ -512,15 +526,15 @@
           
           <div class="post-nepre half next">
             
-              <a href="/p/61039" rel="next">
+              <a href="/p/39053.html" rel="next">
                 <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
+                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png"
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="">
+                    onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png">
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>markdown使用</h3>
+                  <h3>毕业设计开题答辩记录</h3>
                   <hr>
                 </div>
               </a>
