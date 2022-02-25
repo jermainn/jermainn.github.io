@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Markdown中公式的使用 | Jermain Liu</title>
+  <title itemprop="name">archive_a: 2022/2 | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -364,349 +364,463 @@
 
       
       <!-- body -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cungudafa/cdn/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-<div class="pattern-center-blank"></div>
-
-<div id="content" class="site-content">
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-      <article id="post-1"
-        class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content">  -->
-        <!--套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
-<li>学习中使用Markdown记笔记，少不了使用公式；</li>
-<li>本次主要说明基本公式的使用，之后会继续更新。</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<h2 id="1-基本公式使用"><a href="#1-基本公式使用" class="headerlink" title="1. 基本公式使用"></a>1. 基本公式使用</h2><h3 id="1-1-插入公式"><a href="#1-1-插入公式" class="headerlink" title="1.1 插入公式"></a>1.1 插入公式</h3><ul>
-<li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li>
-<li>行中公式：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>独立公式：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>自动编号的公式可以用如下方法表示：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{equation}</span><br><span class="line">数学公式</span><br><span class="line">\label{eq:当前公式名}</span><br><span class="line">\end{equation}</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p>
-</blockquote>
-<ul>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：</p>
-<p>$$\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</p>
-</blockquote>
-<h3 id="1-2-输入上下标"><a href="#1-2-输入上下标" class="headerlink" title="1.2 输入上下标"></a>1.2 输入上下标</h3><ul>
-<li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>x^{y^z}=(1+{\rm e}^x)^{-2xy^w}<br>$$</p>
-</blockquote>
-<blockquote>
-<p>另外，如果要在左右两边都有是上下标，可以用<code>\sideset</code>命令。</p>
-</blockquote>
-<ul>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset{^1_2}{^3_4} x$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sideset{^1_2}{^3_4} x<br>$$</p>
-</blockquote>
-<h3 id="1-3-输入括号和分隔符"><a href="#1-3-输入括号和分隔符" class="headerlink" title="1.3 输入括号和分隔符"></a>1.3 输入括号和分隔符</h3><ul>
-<li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\{\}</code>来表示<code>{}</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li>
-<li>一些特殊的括号：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">输入</th>
-<th align="center">显示</th>
-<th align="center">输入</th>
-<th align="center">显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\langle</td>
-<td align="center">$\langle$</td>
-<td align="center">\rangle</td>
-<td align="center">$\rangle$</td>
-</tr>
-<tr>
-<td align="center">\lceil</td>
-<td align="center">$\lceil$</td>
-<td align="center">\rceil</td>
-<td align="center">$\rceil$</td>
-</tr>
-<tr>
-<td align="center">\lfloor</td>
-<td align="center">$\lfloor$</td>
-<td align="center">\rfloor</td>
-<td align="center">$\rfloor$</td>
-</tr>
-<tr>
-<td align="center">\lbrace</td>
-<td align="center">$\lbrace$</td>
-<td align="center">\rbrace</td>
-<td align="center">$\rbrace$</td>
-</tr>
-</tbody></table>
-<ul>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</p>
-</blockquote>
-<blockquote>
-<p>有时需要用<code>\left.</code>或者<code>\right.</code>进行匹配而不显示本身。</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac{du}{dx} \right| _{x=0}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\left. \frac{du}{dx} \right| _{x=0}<br>$$</p>
-</blockquote>
-<h3 id="1-4-输入分数"><a href="#1-4-输入分数" class="headerlink" title="1.4 输入分数"></a>1.4 输入分数</h3><ul>
-<li><p>通常使用<code>\frac{分子}{分母}</code>命令产生一个分数，分数可以嵌套。</p>
-</li>
-<li><p>当分子（分母）只有一个字符时，可以不用花括号。</p>
-</li>
-<li><p>如果分式很复杂，也可以使用<code>分子 \over 分母</code>命令，此时分数仅有一层。</p>
-</li>
-<li><p>例子：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}<br>$$</p>
-</blockquote>
-<h3 id="1-5-输入开方"><a href="#1-5-输入开方" class="headerlink" title="1.5 输入开方"></a>1.5 输入开方</h3><ul>
-<li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sqrt{2} \quad and \quad \sqrt{n}{3}<br>$$</p>
-</blockquote>
-<h3 id="1-6-输入省略号"><a href="#1-6-输入省略号" class="headerlink" title="1.6 输入省略号"></a>1.6 输入省略号</h3><ul>
-<li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}</em>{rm \cdots} + x_n^2<br>$$</p>
-</blockquote>
-<h3 id="1-7-输入矢量"><a href="#1-7-输入矢量" class="headerlink" title="1.7 输入矢量"></a>1.7 输入矢量</h3><ul>
-<li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec{a} \cdot \vec(b)=0$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\vec{a} \cdot \vec(b)=0<br>$$</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)<br>$$</p>
-</blockquote>
-<h3 id="1-8-输入积分"><a href="#1-8-输入积分" class="headerlink" title="1.8 输入积分"></a>1.8 输入积分</h3><ul>
-<li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 {x^2} \,{\rm d}x$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\int_0^1 {x^2} ,{\rm d}x<br>$$</p>
-</blockquote>
-<blockquote>
-<p>本式中<code>\,</code>和<code>{\rm d}</code>部分可以省略，但建议加入，能使式子更美观。</p>
-</blockquote>
-<h3 id="1-9-输入极限符号"><a href="#1-9-输入极限符号" class="headerlink" title="1.9 输入极限符号"></a>1.9 输入极限符号</h3><ul>
-<li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}<br>$$</p>
-</blockquote>
-<h3 id="1-10-输入累加、累乘运算"><a href="#1-10-输入累加、累乘运算" class="headerlink" title="1.10 输入累加、累乘运算"></a>1.10 输入累加、累乘运算</h3><ul>
-<li>使用<code>\sum_{下标表达式}^{上标表达式} {累加表达式}</code>来输入一个累加。</li>
-<li>与之类似，使用<code>\prod</code>、<code>\bigcup</code>、<code>\bigcap</code>来分别输入累乘、并集和交集。</li>
-<li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R<br>$$</p>
-</blockquote>
-
-        </div>
-
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/donate/alipay.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/donate/wechatpay.png"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent">
-        </div>
-        <!-- 评分 -->
-        <div class="single-reward">
-          
-        </div>
-        <!-- 自定义署名方式 -->
-        <footer class="post-footer">
-          <div class="post-lincenses" style="color: #ff9966;">
-            欢迎转载，转载时请注明来源哦！
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" style="color: #ff9966;" target="_blank"
-              rel="nofollow">
-              <i class="fa fa-creative-commons" aria-hidden="true"></i>ncsa4.0</a>
-          </div>
-          
-          <div class="post-tags" style="color: #a39391">
-            <span><i class="fa fa-tags"></i>
-              
-              <a href="/tags/Markdown/" style="color: #716e77;">Markdown<em>·</em></a>
-              
-              <a href="/tags/%E5%85%AC%E5%BC%8F/" style="color: #716e77;">公式<em>·</em></a>
-              
-            </span>
-            <span>
-              <i class="iconfont icon-file"></i>
-              
-            </span>
-          </div>
-          
-          <div class="post-share" >
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-        <!-- <div class="tag-cloud">
-          <div class="tag-cloud-title">
-          </div>
-          <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
-          </div>
-        </div> -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/p/60859.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-          
-          
-          
-          <div class="post-nepre half next">
-            
-              <a href="/p/55524.html" rel="next">
-                <div class="background">
-                  <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
-                    style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
-                    onerror="imgError(this,3)" src="">
-                </div>
-                <span class="label">Next Post</span>
-                <div class="info">
-                  <h3>Hexo主题添加网页访问计数功能</h3>
-                  <hr>
-                </div>
-              </a>
-            </div>
-            
-      </section>
-      <!-- 加密文章隐藏评论 -->
-      <section class="comment" >
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container" class="comment"></div> 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="/js/md5.min.js"></script>
-<script type="text/javascript">
-	var gitalk = new Gitalk({
-  	clientID: '',
-  	clientSecret: '',
-  	repo: 'cungudafa.github.io',
-  	owner: 'cungudafa',
-	admin: ['cungudafa'],
-	distractionFreeMode: 'true',
-    id: md5(location.pathname)
-})
-gitalk.render('gitalk-container') 
-</script>
-
-      </section>
-      <!-- 加密文章隐藏作者信息 -->
-      
-    </main><!-- #main -->
-  </div><!-- #primary -->
+      <div class="blank" style="padding-top: 75px;">
 </div>
+<div id="content" class="site-content">
+  <div id="main">
+    <header class="page-header">
+      <h1 class="cat-title">
+        归档</h1>
+      <span class="cat-des">
+        <p>
+          Archives</p>
+      </span>
+      <br>
+      <span class="post-meta-item-icon">
+        <i class="iconfont icon-attention"></i>
+      </span>
+      <span class="post-meta-item-text"><span id="busuanzi_value_page_pv"> </span>
+      </span>
+    </header>
+    <div id="main-part">
+      <article class="art">
+        <div class="art-main">
+          <div class="art-content">
+            <div id="archives">
+              <p style="text-align:right;">
+                [<span id="al_expand_collapse" style="cursor: s-resize;">
+                  全部展开/收缩</span>
+                ]</p>
+              
+              
+              
+              
+              
+              
+              <h3 class="al_year">2022年</h3>
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    02月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/959ff33c.html">
+                        <span style="color:#0bf;">
+                          25日17:12:54</span>
+                        temporary
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    01月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/811cab0f.html">
+                        <span style="color:#0bf;">
+                          21日18:50:17</span>
+                        测试m3u8
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              <h3 class="al_year">2021年</h3>
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    04月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/59a184e6.html">
+                        <span style="color:#0bf;">
+                          27日14:13:38</span>
+                        毕业设计中期汇报记录
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/23551.html">
+                        <span style="color:#0bf;">
+                          25日21:14:02</span>
+                        伽古拉，感触
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/39053.html">
+                        <span style="color:#0bf;">
+                          01日18:51:11</span>
+                        毕业设计开题答辩记录
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    03月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/36897.html">
+                        <span style="color:#0bf;">
+                          21日16:48:14</span>
+                        node.js版本管理工具nvm
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    02月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/43220.html">
+                        <span style="color:#0bf;">
+                          15日19:44:47</span>
+                        ArchLinux安装使用
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/53034.html">
+                        <span style="color:#0bf;">
+                          02日21:27:48</span>
+                        PPT模板网站推荐
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    01月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/2717.html">
+                        <span style="color:#0bf;">
+                          29日09:22:36</span>
+                        论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/61039.html">
+                        <span style="color:#0bf;">
+                          24日20:25:10</span>
+                        markdown使用
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/60859.html">
+                        <span style="color:#0bf;">
+                          22日18:02:41</span>
+                        论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              <h3 class="al_year">2020年</h3>
+              
+              
+              
+              <ul class="al_mon_list">
+                <li class="al_li">
+                  <span class="al_mon" style="cursor: s-resize;">
+                    03月(<span id="post-num">
+                      3</span>
+                    篇文章)</span>
+                  <ul class="al_post_list" style="">
+                    
+                    <li>
+                      <a href="/p/23853.html">
+                        <span style="color:#0bf;">
+                          10日20:24:04</span>
+                        Markdown中公式的使用
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/55524.html">
+                        <span style="color:#0bf;">
+                          09日22:24:29</span>
+                        Hexo主题添加网页访问计数功能
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/11737.html">
+                        <span style="color:#0bf;">
+                          08日22:56:46</span>
+                        逻辑斯蒂回归与Softmax回归的极大似然估计
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/25241.html">
+                        <span style="color:#0bf;">
+                          07日23:32:36</span>
+                        Hexo博客添加字数统计和阅读时长
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/60899.html">
+                        <span style="color:#0bf;">
+                          05日22:39:09</span>
+                        使用Hexo部署一个属于自己的博客
+                      </a>
+                    </li>
+                    
+              
+              
+              
+              
+              
+                    <li>
+                      <a href="/p/45015.html">
+                        <span style="color:#0bf;">
+                          04日23:41:29</span>
+                        First Blog
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+              </ul>
+              
+              
+            </div>
+            <div id="calendar">
+              
+                <div class="container archive-calendar">
+    <div class="card">
+        <div id="post-calendar" class="card-content"></div>
+    </div>
+</div>
+<style type="text/css">
+    #post-calendar {
+        width: 100%;
+        height: 225px;
+        margin-top: 20px;
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255,0.5);
+    }
+</style>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/js/echarts.min.js"></script>
+<script type="text/javascript">
+    let myChart = echarts.init(document.getElementById('post-calendar'));
 
-<!--评论配置-->
+    
 
+    let option = {
+        title: {
+            top: 0,
+            text: '文章日历',
+            left: 'center',
+            textStyle: {
+                color: '#3C4858'
+            }
+        },
+        tooltip: {
+            padding: 10,
+            backgroundColor: '#555',
+            borderColor: '#777',
+            borderWidth: 1,
+            formatter: function (obj) {
+                var value = obj.value;
+                return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
+            }
+        },
+        visualMap: {
+            show: true,
+            showLabel: true,
+            categories: [0, 1, 2, 3, 4],
+            calculable: true,
+            inRange: {
+                symbol: 'rect',
+                color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+            },
+            itemWidth: 12,
+            itemHeight: 12,
+            orient: 'horizontal',
+            left: 'center',
+            bottom: 0
+        },
+        calendar: [{
+            left: 'center',
+            range: ["2021-02-25", "2022-02-25"],
+            cellSize: [13, 13],
+            splitLine: {
+                show: false
+            },
+            itemStyle: {
+                width: '1.88679%',
+                height: '15px',
+                color: '#EEEEEE',
+                borderColor: '#FFF',
+                borderWidth: 2
+            },
+            yearLabel: {
+                show: false
+            },
+            monthLabel: {
+                nameMap: 'cn',
+                fontWeight: 'lighter',
+                fontSize: 12
+            },
+            dayLabel: {
+                show: true,
+                formatter: '{start}  1st',
+                fontWeight: 'lighter',
+                nameMap: ['日',' ','二',' ','四',' ','六',],
+                fontSize: 12
+            }
+        }],
+        series: [{
+            type: 'heatmap',
+            coordinateSystem: 'calendar',
+            calendarIndex: 0,
+            data: [["2021-02-25", 0], ["2021-02-26", 0], ["2021-02-27", 0], ["2021-02-28", 0], ["2021-03-01", 0], ["2021-03-02", 0], ["2021-03-03", 0], ["2021-03-04", 0], ["2021-03-05", 0], ["2021-03-06", 0], ["2021-03-07", 0], ["2021-03-08", 0], ["2021-03-09", 0], ["2021-03-10", 0], ["2021-03-11", 0], ["2021-03-12", 0], ["2021-03-13", 0], ["2021-03-14", 0], ["2021-03-15", 0], ["2021-03-16", 0], ["2021-03-17", 0], ["2021-03-18", 0], ["2021-03-19", 0], ["2021-03-20", 0], ["2021-03-21", 1], ["2021-03-22", 0], ["2021-03-23", 0], ["2021-03-24", 0], ["2021-03-25", 0], ["2021-03-26", 0], ["2021-03-27", 0], ["2021-03-28", 0], ["2021-03-29", 0], ["2021-03-30", 0], ["2021-03-31", 0], ["2021-04-01", 1], ["2021-04-02", 0], ["2021-04-03", 0], ["2021-04-04", 0], ["2021-04-05", 0], ["2021-04-06", 0], ["2021-04-07", 0], ["2021-04-08", 0], ["2021-04-09", 0], ["2021-04-10", 0], ["2021-04-11", 0], ["2021-04-12", 0], ["2021-04-13", 0], ["2021-04-14", 0], ["2021-04-15", 0], ["2021-04-16", 0], ["2021-04-17", 0], ["2021-04-18", 0], ["2021-04-19", 0], ["2021-04-20", 0], ["2021-04-21", 0], ["2021-04-22", 0], ["2021-04-23", 0], ["2021-04-24", 0], ["2021-04-25", 1], ["2021-04-26", 0], ["2021-04-27", 1], ["2021-04-28", 0], ["2021-04-29", 0], ["2021-04-30", 0], ["2021-05-01", 0], ["2021-05-02", 0], ["2021-05-03", 0], ["2021-05-04", 0], ["2021-05-05", 0], ["2021-05-06", 0], ["2021-05-07", 0], ["2021-05-08", 0], ["2021-05-09", 0], ["2021-05-10", 0], ["2021-05-11", 0], ["2021-05-12", 0], ["2021-05-13", 0], ["2021-05-14", 0], ["2021-05-15", 0], ["2021-05-16", 0], ["2021-05-17", 0], ["2021-05-18", 0], ["2021-05-19", 0], ["2021-05-20", 0], ["2021-05-21", 0], ["2021-05-22", 0], ["2021-05-23", 0], ["2021-05-24", 0], ["2021-05-25", 0], ["2021-05-26", 0], ["2021-05-27", 0], ["2021-05-28", 0], ["2021-05-29", 0], ["2021-05-30", 0], ["2021-05-31", 0], ["2021-06-01", 0], ["2021-06-02", 0], ["2021-06-03", 0], ["2021-06-04", 0], ["2021-06-05", 0], ["2021-06-06", 0], ["2021-06-07", 0], ["2021-06-08", 0], ["2021-06-09", 0], ["2021-06-10", 0], ["2021-06-11", 0], ["2021-06-12", 0], ["2021-06-13", 0], ["2021-06-14", 0], ["2021-06-15", 0], ["2021-06-16", 0], ["2021-06-17", 0], ["2021-06-18", 0], ["2021-06-19", 0], ["2021-06-20", 0], ["2021-06-21", 0], ["2021-06-22", 0], ["2021-06-23", 0], ["2021-06-24", 0], ["2021-06-25", 0], ["2021-06-26", 0], ["2021-06-27", 0], ["2021-06-28", 0], ["2021-06-29", 0], ["2021-06-30", 0], ["2021-07-01", 0], ["2021-07-02", 0], ["2021-07-03", 0], ["2021-07-04", 0], ["2021-07-05", 0], ["2021-07-06", 0], ["2021-07-07", 0], ["2021-07-08", 0], ["2021-07-09", 0], ["2021-07-10", 0], ["2021-07-11", 0], ["2021-07-12", 0], ["2021-07-13", 0], ["2021-07-14", 0], ["2021-07-15", 0], ["2021-07-16", 0], ["2021-07-17", 0], ["2021-07-18", 0], ["2021-07-19", 0], ["2021-07-20", 0], ["2021-07-21", 0], ["2021-07-22", 0], ["2021-07-23", 0], ["2021-07-24", 0], ["2021-07-25", 0], ["2021-07-26", 0], ["2021-07-27", 0], ["2021-07-28", 0], ["2021-07-29", 0], ["2021-07-30", 0], ["2021-07-31", 0], ["2021-08-01", 0], ["2021-08-02", 0], ["2021-08-03", 0], ["2021-08-04", 0], ["2021-08-05", 0], ["2021-08-06", 0], ["2021-08-07", 0], ["2021-08-08", 0], ["2021-08-09", 0], ["2021-08-10", 0], ["2021-08-11", 0], ["2021-08-12", 0], ["2021-08-13", 0], ["2021-08-14", 0], ["2021-08-15", 0], ["2021-08-16", 0], ["2021-08-17", 0], ["2021-08-18", 0], ["2021-08-19", 0], ["2021-08-20", 0], ["2021-08-21", 0], ["2021-08-22", 0], ["2021-08-23", 0], ["2021-08-24", 0], ["2021-08-25", 0], ["2021-08-26", 0], ["2021-08-27", 0], ["2021-08-28", 0], ["2021-08-29", 0], ["2021-08-30", 0], ["2021-08-31", 0], ["2021-09-01", 0], ["2021-09-02", 0], ["2021-09-03", 0], ["2021-09-04", 0], ["2021-09-05", 0], ["2021-09-06", 0], ["2021-09-07", 0], ["2021-09-08", 0], ["2021-09-09", 0], ["2021-09-10", 0], ["2021-09-11", 0], ["2021-09-12", 0], ["2021-09-13", 0], ["2021-09-14", 0], ["2021-09-15", 0], ["2021-09-16", 0], ["2021-09-17", 0], ["2021-09-18", 0], ["2021-09-19", 0], ["2021-09-20", 0], ["2021-09-21", 0], ["2021-09-22", 0], ["2021-09-23", 0], ["2021-09-24", 0], ["2021-09-25", 0], ["2021-09-26", 0], ["2021-09-27", 0], ["2021-09-28", 0], ["2021-09-29", 0], ["2021-09-30", 0], ["2021-10-01", 0], ["2021-10-02", 0], ["2021-10-03", 0], ["2021-10-04", 0], ["2021-10-05", 0], ["2021-10-06", 0], ["2021-10-07", 0], ["2021-10-08", 0], ["2021-10-09", 0], ["2021-10-10", 0], ["2021-10-11", 0], ["2021-10-12", 0], ["2021-10-13", 0], ["2021-10-14", 0], ["2021-10-15", 0], ["2021-10-16", 0], ["2021-10-17", 0], ["2021-10-18", 0], ["2021-10-19", 0], ["2021-10-20", 0], ["2021-10-21", 0], ["2021-10-22", 0], ["2021-10-23", 0], ["2021-10-24", 0], ["2021-10-25", 0], ["2021-10-26", 0], ["2021-10-27", 0], ["2021-10-28", 0], ["2021-10-29", 0], ["2021-10-30", 0], ["2021-10-31", 0], ["2021-11-01", 0], ["2021-11-02", 0], ["2021-11-03", 0], ["2021-11-04", 0], ["2021-11-05", 0], ["2021-11-06", 0], ["2021-11-07", 0], ["2021-11-08", 0], ["2021-11-09", 0], ["2021-11-10", 0], ["2021-11-11", 0], ["2021-11-12", 0], ["2021-11-13", 0], ["2021-11-14", 0], ["2021-11-15", 0], ["2021-11-16", 0], ["2021-11-17", 0], ["2021-11-18", 0], ["2021-11-19", 0], ["2021-11-20", 0], ["2021-11-21", 0], ["2021-11-22", 0], ["2021-11-23", 0], ["2021-11-24", 0], ["2021-11-25", 0], ["2021-11-26", 0], ["2021-11-27", 0], ["2021-11-28", 0], ["2021-11-29", 0], ["2021-11-30", 0], ["2021-12-01", 0], ["2021-12-02", 0], ["2021-12-03", 0], ["2021-12-04", 0], ["2021-12-05", 0], ["2021-12-06", 0], ["2021-12-07", 0], ["2021-12-08", 0], ["2021-12-09", 0], ["2021-12-10", 0], ["2021-12-11", 0], ["2021-12-12", 0], ["2021-12-13", 0], ["2021-12-14", 0], ["2021-12-15", 0], ["2021-12-16", 0], ["2021-12-17", 0], ["2021-12-18", 0], ["2021-12-19", 0], ["2021-12-20", 0], ["2021-12-21", 0], ["2021-12-22", 0], ["2021-12-23", 0], ["2021-12-24", 0], ["2021-12-25", 0], ["2021-12-26", 0], ["2021-12-27", 0], ["2021-12-28", 0], ["2021-12-29", 0], ["2021-12-30", 0], ["2021-12-31", 0], ["2022-01-01", 0], ["2022-01-02", 0], ["2022-01-03", 0], ["2022-01-04", 0], ["2022-01-05", 0], ["2022-01-06", 0], ["2022-01-07", 0], ["2022-01-08", 0], ["2022-01-09", 0], ["2022-01-10", 0], ["2022-01-11", 0], ["2022-01-12", 0], ["2022-01-13", 0], ["2022-01-14", 0], ["2022-01-15", 0], ["2022-01-16", 0], ["2022-01-17", 0], ["2022-01-18", 0], ["2022-01-19", 0], ["2022-01-20", 0], ["2022-01-21", 1], ["2022-01-22", 0], ["2022-01-23", 0], ["2022-01-24", 0], ["2022-01-25", 0], ["2022-01-26", 0], ["2022-01-27", 0], ["2022-01-28", 0], ["2022-01-29", 0], ["2022-01-30", 0], ["2022-01-31", 0], ["2022-02-01", 0], ["2022-02-02", 0], ["2022-02-03", 0], ["2022-02-04", 0], ["2022-02-05", 0], ["2022-02-06", 0], ["2022-02-07", 0], ["2022-02-08", 0], ["2022-02-09", 0], ["2022-02-10", 0], ["2022-02-11", 0], ["2022-02-12", 0], ["2022-02-13", 0], ["2022-02-14", 0], ["2022-02-15", 0], ["2022-02-16", 0], ["2022-02-17", 0], ["2022-02-18", 0], ["2022-02-19", 0], ["2022-02-20", 0], ["2022-02-21", 0], ["2022-02-22", 0], ["2022-02-23", 0], ["2022-02-24", 0], ["2022-02-25", 1]]
+        }]
 
+    };
 
+    myChart.setOption(option);
+</script>
+              
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
       <!-- body.end -->
     </div>
     <!-- search -->    

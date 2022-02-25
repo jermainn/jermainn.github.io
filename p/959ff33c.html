@@ -6,7 +6,7 @@
   <!-- <meta name="baidu-site-verification" content="LukfTcyXmC" /> -->
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Markdown中公式的使用 | Jermain Liu</title>
+  <title itemprop="name">temporary | Jermain Liu</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/avatar.png">
   
@@ -75,7 +75,7 @@
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
-</head> 
+<script src="/assets/js/DPlayer.min.js"></script></head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -378,208 +378,15 @@
         <!--套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul>
-<li>学习中使用Markdown记笔记，少不了使用公式；</li>
-<li>本次主要说明基本公式的使用，之后会继续更新。</li>
-</ul>
-<span id="more"></span>
+          <div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/videos/temporary/video_mv/mv2.0.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
-<hr>
-<h2 id="1-基本公式使用"><a href="#1-基本公式使用" class="headerlink" title="1. 基本公式使用"></a>1. 基本公式使用</h2><h3 id="1-1-插入公式"><a href="#1-1-插入公式" class="headerlink" title="1.1 插入公式"></a>1.1 插入公式</h3><ul>
-<li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li>
-<li>行中公式：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></tbody></table></figure>
 
-<ul>
-<li>独立公式：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></tbody></table></figure>
 
-<ul>
-<li>自动编号的公式可以用如下方法表示：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{equation}</span><br><span class="line">数学公式</span><br><span class="line">\label{eq:当前公式名}</span><br><span class="line">\end{equation}</span><br></pre></td></tr></tbody></table></figure>
+<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/videos/temporary/video_mv/mv3.0.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
-<blockquote>
-<p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p>
-</blockquote>
-<ul>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</span><br></pre></td></tr></tbody></table></figure>
 
-<blockquote>
-<p>显示：$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</span><br></pre></td></tr></tbody></table></figure>
 
-<blockquote>
-<p>显示：</p>
-<p>$$\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</p>
-</blockquote>
-<h3 id="1-2-输入上下标"><a href="#1-2-输入上下标" class="headerlink" title="1.2 输入上下标"></a>1.2 输入上下标</h3><ul>
-<li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>x^{y^z}=(1+{\rm e}^x)^{-2xy^w}<br>$$</p>
-</blockquote>
-<blockquote>
-<p>另外，如果要在左右两边都有是上下标，可以用<code>\sideset</code>命令。</p>
-</blockquote>
-<ul>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset{^1_2}{^3_4} x$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sideset{^1_2}{^3_4} x<br>$$</p>
-</blockquote>
-<h3 id="1-3-输入括号和分隔符"><a href="#1-3-输入括号和分隔符" class="headerlink" title="1.3 输入括号和分隔符"></a>1.3 输入括号和分隔符</h3><ul>
-<li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\{\}</code>来表示<code>{}</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li>
-<li>一些特殊的括号：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">输入</th>
-<th align="center">显示</th>
-<th align="center">输入</th>
-<th align="center">显示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\langle</td>
-<td align="center">$\langle$</td>
-<td align="center">\rangle</td>
-<td align="center">$\rangle$</td>
-</tr>
-<tr>
-<td align="center">\lceil</td>
-<td align="center">$\lceil$</td>
-<td align="center">\rceil</td>
-<td align="center">$\rceil$</td>
-</tr>
-<tr>
-<td align="center">\lfloor</td>
-<td align="center">$\lfloor$</td>
-<td align="center">\rfloor</td>
-<td align="center">$\rfloor$</td>
-</tr>
-<tr>
-<td align="center">\lbrace</td>
-<td align="center">$\lbrace$</td>
-<td align="center">\rbrace</td>
-<td align="center">$\rbrace$</td>
-</tr>
-</tbody></table>
-<ul>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</p>
-</blockquote>
-<blockquote>
-<p>有时需要用<code>\left.</code>或者<code>\right.</code>进行匹配而不显示本身。</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac{du}{dx} \right| _{x=0}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\left. \frac{du}{dx} \right| _{x=0}<br>$$</p>
-</blockquote>
-<h3 id="1-4-输入分数"><a href="#1-4-输入分数" class="headerlink" title="1.4 输入分数"></a>1.4 输入分数</h3><ul>
-<li><p>通常使用<code>\frac{分子}{分母}</code>命令产生一个分数，分数可以嵌套。</p>
-</li>
-<li><p>当分子（分母）只有一个字符时，可以不用花括号。</p>
-</li>
-<li><p>如果分式很复杂，也可以使用<code>分子 \over 分母</code>命令，此时分数仅有一层。</p>
-</li>
-<li><p>例子：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}<br>$$</p>
-</blockquote>
-<h3 id="1-5-输入开方"><a href="#1-5-输入开方" class="headerlink" title="1.5 输入开方"></a>1.5 输入开方</h3><ul>
-<li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sqrt{2} \quad and \quad \sqrt{n}{3}<br>$$</p>
-</blockquote>
-<h3 id="1-6-输入省略号"><a href="#1-6-输入省略号" class="headerlink" title="1.6 输入省略号"></a>1.6 输入省略号</h3><ul>
-<li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}</em>{rm \cdots} + x_n^2<br>$$</p>
-</blockquote>
-<h3 id="1-7-输入矢量"><a href="#1-7-输入矢量" class="headerlink" title="1.7 输入矢量"></a>1.7 输入矢量</h3><ul>
-<li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
-<li>例子1：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec{a} \cdot \vec(b)=0$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\vec{a} \cdot \vec(b)=0<br>$$</p>
-</blockquote>
-<ul>
-<li>例子2：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)<br>$$</p>
-</blockquote>
-<h3 id="1-8-输入积分"><a href="#1-8-输入积分" class="headerlink" title="1.8 输入积分"></a>1.8 输入积分</h3><ul>
-<li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 {x^2} \,{\rm d}x$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\int_0^1 {x^2} ,{\rm d}x<br>$$</p>
-</blockquote>
-<blockquote>
-<p>本式中<code>\,</code>和<code>{\rm d}</code>部分可以省略，但建议加入，能使式子更美观。</p>
-</blockquote>
-<h3 id="1-9-输入极限符号"><a href="#1-9-输入极限符号" class="headerlink" title="1.9 输入极限符号"></a>1.9 输入极限符号</h3><ul>
-<li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}<br>$$</p>
-</blockquote>
-<h3 id="1-10-输入累加、累乘运算"><a href="#1-10-输入累加、累乘运算" class="headerlink" title="1.10 输入累加、累乘运算"></a>1.10 输入累加、累乘运算</h3><ul>
-<li>使用<code>\sum_{下标表达式}^{上标表达式} {累加表达式}</code>来输入一个累加。</li>
-<li>与之类似，使用<code>\prod</code>、<code>\bigcup</code>、<code>\bigcap</code>来分别输入累乘、并集和交集。</li>
-<li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li>
-<li>例子：</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
-<p>显示：<br>$$<br>\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R<br>$$</p>
-</blockquote>
+<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/videos/temporary/video_mv/mv1.0.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
         </div>
 
@@ -612,10 +419,6 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/Markdown/" style="color: #716e77;">Markdown<em>·</em></a>
-              
-              <a href="/tags/%E5%85%AC%E5%BC%8F/" style="color: #716e77;">公式<em>·</em></a>
-              
             </span>
             <span>
               <i class="iconfont icon-file"></i>
@@ -640,28 +443,11 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-        <div class="post-nepre half previous">
-          
-            <a href="/p/60859.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
-                  style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
           
           
-          
-          <div class="post-nepre half next">
-            
-              <a href="/p/55524.html" rel="next">
+            <div class="post-nepre full next">
+              
+              <a href="/p/811cab0f.html" rel="next">
                 <div class="background">
                   <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                     style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"
@@ -669,7 +455,7 @@
                 </div>
                 <span class="label">Next Post</span>
                 <div class="info">
-                  <h3>Hexo主题添加网页访问计数功能</h3>
+                  <h3>测试m3u8</h3>
                   <hr>
                 </div>
               </a>
