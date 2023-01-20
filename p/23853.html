@@ -72,10 +72,10 @@
       alert('朋友，IE浏览器未适配哦~');
     }
   </script>
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
-</head> 
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -389,34 +389,37 @@
 <li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li>
 <li>行中公式：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$数学公式$
+</code></pre>
 <ul>
 <li>独立公式：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$独立公式$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$独立公式$$
+</code></pre>
 <ul>
 <li>自动编号的公式可以用如下方法表示：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{equation}</span><br><span class="line">数学公式</span><br><span class="line">\label{eq:当前公式名}</span><br><span class="line">\end{equation}</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>\begin{equation}
+数学公式
+\label{eq:当前公式名}
+\end{equation}
+</code></pre>
 <blockquote>
 <p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p>
 </blockquote>
 <ul>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$
+</code></pre>
 <blockquote>
-<p>显示：$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</p>
+<p>显示：$ \text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha} $</p>
 </blockquote>
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$
+</code></pre>
 <blockquote>
 <p>显示：</p>
 <p>$$\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</p>
@@ -425,8 +428,8 @@
 <li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>x^{y^z}=(1+{\rm e}^x)^{-2xy^w}<br>$$</p>
 </blockquote>
@@ -436,8 +439,8 @@
 <ul>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset{^1_2}{^3_4} x$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\sideset{^1_2}{^3_4} x$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\sideset{^1_2}{^3_4} x<br>$$</p>
 </blockquote>
@@ -482,8 +485,8 @@
 <ul>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)<br>$$</p>
 </blockquote>
@@ -493,8 +496,8 @@
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\left. \frac{du}{dx} \right| _{x=0}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\left. \frac{du}{dx} \right| _{x=0}$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\left. \frac{du}{dx} \right| _{x=0}<br>$$</p>
 </blockquote>
@@ -508,8 +511,8 @@
 <li><p>例子：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}<br>$$</p>
 </blockquote>
@@ -517,8 +520,8 @@
 <li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\sqrt{2} \quad and \quad \sqrt{n}{3}<br>$$</p>
 </blockquote>
@@ -526,8 +529,8 @@
 <li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>f(x_1,x_2,\underbrace{\ldots}<em>{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}</em>{rm \cdots} + x_n^2<br>$$</p>
 </blockquote>
@@ -535,16 +538,16 @@
 <li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li>
 <li>例子1：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec{a} \cdot \vec(b)=0$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\vec{a} \cdot \vec(b)=0$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\vec{a} \cdot \vec(b)=0<br>$$</p>
 </blockquote>
 <ul>
 <li>例子2：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)<br>$$</p>
 </blockquote>
@@ -552,8 +555,8 @@
 <li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 {x^2} \,{\rm d}x$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\int_0^1 {x^2} \,{\rm d}x$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\int_0^1 {x^2} ,{\rm d}x<br>$$</p>
 </blockquote>
@@ -564,8 +567,8 @@
 <li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}<br>$$</p>
 </blockquote>
@@ -575,8 +578,8 @@
 <li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li>
 <li>例子：</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</span><br></pre></td></tr></tbody></table></figure>
-
+<pre><code>$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$
+</code></pre>
 <blockquote>
 <p>显示：<br>$$<br>\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R<br>$$</p>
 </blockquote>
@@ -632,7 +635,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -793,7 +796,7 @@ gitalk.render('gitalk-container')
         <div class="footer-device">
           <p style="font-family: 'Ubuntu', sans-serif;">
               <span style="color: #b9b9b9;">
-                Copyright &copy; 2022
+                Copyright &copy; 2023
                 &nbsp;<a style="color: #ff9999;display:inline-block"> Jermain </a>
                 &nbsp;<i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
                 &nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
@@ -841,9 +844,9 @@ gitalk.render('gitalk-container')
 <script type="text/javascript">
   /* <![CDATA[ */
   if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   } else {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   }
   /* ]]> */
   
@@ -1131,5 +1134,20 @@ gitalk.render('gitalk-container')
   </script>
 
 
- </body>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

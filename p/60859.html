@@ -72,10 +72,10 @@
       alert('朋友，IE浏览器未适配哦~');
     }
   </script>
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
-<script src="/assets/js/DPlayer.min.js"></script></head> 
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/assets/js/DPlayer.min.js"></script></head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -411,12 +411,12 @@
 <li>(1) 利用源域的有标签数据进行有监督学</li>
 </ul>
 <p>$$<br>ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]<br>$$</p>
-<p>​            其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
+<p>​			其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
 <ul>
 <li>(2) 通过对抗学习，降低域判别器D的精度，对齐源域与目标域的特征分布</li>
 </ul>
 <p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]<br>$$</p>
-<p>​            其中$X_T$为目标域数据，无标签。</p>
+<p>​			其中$X_T$为目标域数据，无标签。</p>
 <h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><p>语义级对抗学习域适应方法：</p>
 <ul>
 <li>在传统的对抗学习框架基础之上加入了协同训练的思想，加入了两个互斥的分类器。</li>
@@ -451,19 +451,19 @@
 <li>分割损失：若给定形状为$3\times H \times W$的图像和形状为$C \times H \times W$的标签图，其中$C$是语义类别的数量</li>
 </ul>
 <p>$$<br>ℒ_{𝑠𝑒𝑔} (𝐺)=\sum <em>{i=1}^{H \times W} \sum <em>{j=1}^C -y</em>{ic}\log p</em>{ic}<br>$$</p>
-<p>​            其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
-<p>​            即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
+<p>​			其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
+<p>​			即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
 <ul>
 <li>分类器损失：</li>
 </ul>
 <p>$$<br>ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{| \vec{w_1} ||\vec{w_2}|}<br>$$</p>
-<p>​            即两个分类器网络中参数的余弦距离。</p>
+<p>​			即两个分类器网络中参数的余弦距离。</p>
 <ul>
 <li>对抗损失：</li>
 </ul>
 <p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋<em>𝑆 ))) \right]−𝐸\left[(𝜆</em>{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]<br>$$</p>
-<p>​            其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
-<p>​            即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
+<p>​			其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
+<p>​			即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
 <hr>
 <h2 id="5-实验总结"><a href="#5-实验总结" class="headerlink" title="5 实验总结"></a>5 实验总结</h2><h3 id="5-1-语义分割可视化"><a href="#5-1-语义分割可视化" class="headerlink" title="5.1 语义分割可视化"></a>5.1 语义分割可视化</h3><ol>
 <li>CLAN与传统对抗网络（TAN）的对比</li>
@@ -558,7 +558,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -719,7 +719,7 @@ gitalk.render('gitalk-container')
         <div class="footer-device">
           <p style="font-family: 'Ubuntu', sans-serif;">
               <span style="color: #b9b9b9;">
-                Copyright &copy; 2022
+                Copyright &copy; 2023
                 &nbsp;<a style="color: #ff9999;display:inline-block"> Jermain </a>
                 &nbsp;<i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
                 &nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
@@ -767,9 +767,9 @@ gitalk.render('gitalk-container')
 <script type="text/javascript">
   /* <![CDATA[ */
   if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   } else {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   }
   /* ]]> */
   
@@ -1057,5 +1057,20 @@ gitalk.render('gitalk-container')
   </script>
 
 
- </body>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

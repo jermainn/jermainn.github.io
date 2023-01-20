@@ -72,10 +72,10 @@
       alert('朋友，IE浏览器未适配哦~');
     }
   </script>
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
-</head> 
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head> 
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <!-- Dynamic sliders -->
@@ -387,27 +387,99 @@
 <hr>
 <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="Node-js环境包"><a href="#Node-js环境包" class="headerlink" title="Node.js环境包"></a>Node.js环境包</h3><ul>
 <li>因为Hexo是基于Node.js的第三方模块，所以缺少Node.js不可。访问<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a>下载合适自己系统的Node.js安装包。此时最新版本为v13.9.0，我使用的平台为Linux Binaries (x64)</li>
-<li>创建安装路径，并进行解压(我们以/usr/local/lib/nodejs文件夹为例)<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/local/lib/nodejs 		# 创建解压安装目录</span><br><span class="line">sudo tar -xJvf node-v13.9.0-linux-x64.tar.xz -C /usr/local/lib/nodejs 		# 将安装包解压安装</span><br></pre></td></tr></tbody></table></figure></li>
-<li>添加换将变量，在～/.bashrc文件后追加<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin</span><br><span class="line"># 或者</span><br><span class="line">export PATH=/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin:$PATH</span><br><span class="line"># 或者直接使用命令添加</span><br><span class="line">echo 'export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin"' &gt;&gt; ~/.bashrc</span><br></pre></td></tr></tbody></table></figure></li>
-<li>测试安装<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm version</span><br><span class="line">npx -v</span><br></pre></td></tr></tbody></table></figure></li>
+<li>创建安装路径，并进行解压(我们以/usr/local/lib/nodejs文件夹为例)</li>
 </ul>
+<pre><code>sudo mkdir -p /usr/local/lib/nodejs 		# 创建解压安装目录
+sudo tar -xJvf node-v13.9.0-linux-x64.tar.xz -C /usr/local/lib/nodejs 		# 将安装包解压安装
+</code></pre>
+<ul>
+<li>添加换将变量，在～/.bashrc文件后追加</li>
+</ul>
+<pre><code>export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin
+# 或者
+export PATH=/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin:$PATH
+# 或者直接使用命令添加
+echo 'export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin"' &gt;&gt; ~/.bashrc
+</code></pre>
+<ul>
+<li>测试安装</li>
+</ul>
+<pre><code>node -v
+npm version
+npx -v
+</code></pre>
 <h3 id="Git工具包"><a href="#Git工具包" class="headerlink" title="Git工具包"></a>Git工具包</h3><ul>
-<li>在bash中使用apt-get方法进行安装即可<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></tbody></table></figure></li>
-<li>测试安装<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></tbody></table></figure></li>
+<li>在bash中使用apt-get方法进行安装即可</li>
 </ul>
+<pre><code>sudo apt-get install git-core
+</code></pre>
+<ul>
+<li>测试安装</li>
+</ul>
+<pre><code>git --version
+</code></pre>
 <hr>
 <h2 id="2-开始工作"><a href="#2-开始工作" class="headerlink" title="2. 开始工作"></a>2. 开始工作</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
-<li>Hexo是基于Node.js的第三方模块，所有我们需要对其进行单独安装，使用npm安装Hexo<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line"># 对于熟悉npm的进阶用户，可以仅局部安装Hexo包</span><br><span class="line"># npm install hexo</span><br></pre></td></tr></tbody></table></figure></li>
-<li>自动安装到Nodejs目录中,也无需添加环境变量，只有上一步安装Node.js中添加了即可</li>
-<li>测试<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></tbody></table></figure></li>
+<li>Hexo是基于Node.js的第三方模块，所有我们需要对其进行单独安装，使用npm安装Hexo</li>
 </ul>
+<pre><code>npm install -g hexo-cli
+# 对于熟悉npm的进阶用户，可以仅局部安装Hexo包
+# npm install hexo
+</code></pre>
+<ul>
+<li>自动安装到Nodejs目录中,也无需添加环境变量，只有上一步安装Node.js中添加了即可</li>
+<li>测试</li>
+</ul>
+<pre><code>hexo -v
+</code></pre>
 <h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><ul>
-<li>安装Hexo完成后，清执行系列命令，Hexo将会在指定文件夹中新建所需要的文件<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 我以加家目录下创建Hexo文件夹为例进行</span><br><span class="line">cd ~		# 进入家目录</span><br><span class="line">sudo mkdir Hexo			# 创建Hexo目录</span><br><span class="line">hexo init ./Hexo 		# 初始化Hexo目录</span><br><span class="line">cd ./Hexo</span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure></li>
-<li>新建完成后，指定文件夹的目录如下：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4></li>
-<li>网站的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>信息，可以在此配置大部分的参数<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4></li>
-<li>应用程序的信息。<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>，<a target="_blank" rel="noopener" href="https://stylus-lang.com/">Stylus</a>和<a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">Markdown</a> renderer已默认安装，可以自由移除<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">{</span><br><span class="line">  "name": "hexo-site",</span><br><span class="line">  "version": "0.0.0",</span><br><span class="line">  "private": true,</span><br><span class="line">  "hexo": {</span><br><span class="line">    "version": ""</span><br><span class="line">  },</span><br><span class="line">  "dependencies": {</span><br><span class="line">    "hexo": "^3.8.0",</span><br><span class="line">    "hexo-generator-archive": "^0.1.5",</span><br><span class="line">    "hexo-generator-category": "^0.1.3",</span><br><span class="line">    "hexo-generator-index": "^0.2.1",</span><br><span class="line">    "hexo-generator-tag": "^0.2.0",</span><br><span class="line">    "hexo-renderer-ejs": "^0.3.1",</span><br><span class="line">    "hexo-renderer-stylus": "^0.3.3",</span><br><span class="line">    "hexo-renderer-marked": "^0.3.2",</span><br><span class="line">    "hexo-server": "^0.3.3"</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4></li>
+<li>安装Hexo完成后，清执行系列命令，Hexo将会在指定文件夹中新建所需要的文件</li>
+</ul>
+<pre><code># 我以加家目录下创建Hexo文件夹为例进行
+cd ~		# 进入家目录
+sudo mkdir Hexo			# 创建Hexo目录
+hexo init ./Hexo 		# 初始化Hexo目录
+cd ./Hexo
+npm install
+</code></pre>
+<ul>
+<li>新建完成后，指定文件夹的目录如下：</li>
+</ul>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre>
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>-网站的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>信息，可以在此配置大部分的参数</p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><ul>
+<li>应用程序的信息。<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>，<a target="_blank" rel="noopener" href="https://stylus-lang.com/">Stylus</a>和<a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">Markdown</a> renderer已默认安装，可以自由移除</li>
+</ul>
+<pre><code>package.json
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": ""
+  },
+  "dependencies": {
+    "hexo": "^3.8.0",
+    "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-renderer-marked": "^0.3.2",
+    "hexo-server": "^0.3.3"
+  }
+}
+</code></pre>
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">写作 | Hexo</a>模板文件夹。当新建文章时，Hexo会根据scaffold来建立文件。</li>
 <li>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您需改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</li>
 </ul>
@@ -419,24 +491,49 @@
 </ul>
 <hr>
 <h2 id="3-基本操作"><a href="#3-基本操作" class="headerlink" title="3. 基本操作"></a>3. 基本操作</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h4><ul>
-<li>Hexo 3.0 把服务器独立成了个别模块，必须先安装hexo-server才能使用<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></tbody></table></figure></li>
-<li>安装完成后，输入以下命令以启动服务器，您的网站会在<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无需重启服务器<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></tbody></table></figure></li>
-<li>如果想要更改端口，或是在执行时遇到了EADDRINUSE错误，可以在执行时使用-p选项指定其他端口，如下：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 5000</span><br></pre></td></tr></tbody></table></figure></li>
+<li>Hexo 3.0 把服务器独立成了个别模块，必须先安装hexo-server才能使用</li>
 </ul>
+<pre><code>npm install hexo-server --save
+</code></pre>
+<ul>
+<li>安装完成后，输入以下命令以启动服务器，您的网站会在<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无需重启服务器</li>
+</ul>
+<pre><code>hexo server
+</code></pre>
+<ul>
+<li>如果想要更改端口，或是在执行时遇到了EADDRINUSE错误，可以在执行时使用-p选项指定其他端口，如下：</li>
+</ul>
+<pre><code>hexo server -p 5000
+</code></pre>
 <h4 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h4><ul>
-<li>在静态模式下，服务器只处理public文件夹内的文件，而不会处理文件变动，在执行时，你应该先自动执行hexo generate，此模式通常用于生产环境（production mode）下。<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -s</span><br></pre></td></tr></tbody></table></figure></li>
+<li>在静态模式下，服务器只处理public文件夹内的文件，而不会处理文件变动，在执行时，你应该先自动执行hexo generate，此模式通常用于生产环境（production mode）下。</li>
 </ul>
+<pre><code>hexo server -s
+</code></pre>
 <h4 id="自定义IP"><a href="#自定义IP" class="headerlink" title="自定义IP"></a>自定义IP</h4><ul>
-<li>服务器默认运行在0.0.0.0，你可以覆盖默认的IP地址，如下：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -i 192.168.1.1</span><br></pre></td></tr></tbody></table></figure></li>
+<li>服务器默认运行在0.0.0.0，你可以覆盖默认的IP地址，如下：</li>
+</ul>
+<pre><code>hexo server -i 192.168.1.1
+</code></pre>
+<ul>
 <li>使用这个参数后，你就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的127.0.0.1外，通常还有一个192.168.*.*的局域网IP，如果像上面那样使用-i参数，就不能用127.0.0.1来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为-i参数的值，那么就无法通过公网来访问站点。</li>
 </ul>
 <h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ul>
-<li>执行下列命令来创建一片新的文章或者新的页面<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># hexo new [layout] &lt;title&gt;</span><br><span class="line">hexo new post “my_first_blog”</span><br></pre></td></tr></tbody></table></figure></li>
+<li>执行下列命令来创建一片新的文章或者新的页面</li>
+</ul>
+<pre><code># hexo new [layout] &lt;title&gt;
+hexo new post “my_first_blog”
+</code></pre>
+<ul>
 <li>可以在命令中指定文章的布局(layout)，默认为post，可以通过修改_config.yml中的default_layout参数来指定默认布局。</li>
 <li>在./source/_posts/中产生新的.md文件</li>
 <li>通过终端或者编辑器进行写入内容，网站会自动更新</li>
-<li>其他有关命令<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean			# 清除缓存文件(db.json)和已生成的静态文件(public)</span><br><span class="line">hexo generate			# hexo g  生成静态文件</span><br><span class="line">hexo list &lt;type&gt;			# 列出网站资料</span><br></pre></td></tr></tbody></table></figure></li>
+<li>其他有关命令</li>
 </ul>
+<pre><code>hexo clean			# 清除缓存文件(db.json)和已生成的静态文件(public)
+hexo generate			# hexo g  生成静态文件
+hexo list &lt;type&gt;			# 列出网站资料
+</code></pre>
 <hr>
 <h2 id="4-部署（github）"><a href="#4-部署（github）" class="headerlink" title="4. 部署（github）"></a>4. 部署（github）</h2><h3 id="github仓库"><a href="#github仓库" class="headerlink" title="github仓库"></a>github仓库</h3><ul>
 <li>登录github仓库</li>
@@ -449,12 +546,38 @@
 </li>
 </ul>
 <h3 id="进行git部署"><a href="#进行git部署" class="headerlink" title="进行git部署"></a>进行git部署</h3><ul>
-<li>进入创建的Hexo博客目录，执行下列命令安装git插件<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></tbody></table></figure></li>
-<li>修改配置文件_config.yml，使用nano、或者使用vim编辑<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano _config.yml</span><br></pre></td></tr></tbody></table></figure></li>
-<li>下滑至最后，在# Deployment部分进行修改添加<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/JermainLiu/JermainLiu.github.io.git 		# 刚刚在上面的创建的仓库后出现的http地址</span><br><span class="line">  branch: master 		# 不写默认为master</span><br></pre></td></tr></tbody></table></figure></li>
+<li>进入创建的Hexo博客目录，执行下列命令安装git插件</li>
+</ul>
+<pre><code>npm install --save hexo-deployer-git
+</code></pre>
+<ul>
+<li>修改配置文件_config.yml，使用nano、或者使用vim编辑</li>
+</ul>
+<pre><code>nano _config.yml
+</code></pre>
+<ul>
+<li>下滑至最后，在# Deployment部分进行修改添加</li>
+</ul>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/JermainLiu/JermainLiu.github.io.git 		# 刚刚在上面的创建的仓库后出现的http地址
+  branch: master 		# 不写默认为master
+</code></pre>
+<ul>
 <li>Ctrl+o，Enter，保存，Ctrl+x退出编辑</li>
-<li>配置git信息，用自己的信息替换下面引号中的内容。如果之前配置过git config的话，跳过<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></tbody></table></figure></li>
-<li>执行部署命令<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure></li>
+<li>配置git信息，用自己的信息替换下面引号中的内容。如果之前配置过git config的话，跳过</li>
+</ul>
+<pre><code>git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+</code></pre>
+<ul>
+<li>执行部署命令</li>
+</ul>
+<pre><code>hexo deploy
+</code></pre>
+<ul>
 <li>在这个过程中会提示你输入github账户昵称和密码。</li>
 <li>完成之后，刷新刚刚新建的github仓库，文件已经部署进github中，在地址栏访问你的仓库名称“username.github.io”即可访问博客。</li>
 </ul>
@@ -511,7 +634,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/linux/" style="font-size: 10px; color: #f06966">linux</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E5%A5%A5%E7%89%B9%E6%9B%BC/" style="font-size: 10px; color: #f06966">奥特曼</a> <a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 10px; color: #f06966">影视</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -672,7 +795,7 @@ gitalk.render('gitalk-container')
         <div class="footer-device">
           <p style="font-family: 'Ubuntu', sans-serif;">
               <span style="color: #b9b9b9;">
-                Copyright &copy; 2022
+                Copyright &copy; 2023
                 &nbsp;<a style="color: #ff9999;display:inline-block"> Jermain </a>
                 &nbsp;<i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
                 &nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank" style="color: #ff9999;display:inline-block">Hexo</a>
@@ -720,9 +843,9 @@ gitalk.render('gitalk-container')
 <script type="text/javascript">
   /* <![CDATA[ */
   if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   } else {
-    var Poi = {"pjax":"0","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+    var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
   }
   /* ]]> */
   
@@ -1010,5 +1133,20 @@ gitalk.render('gitalk-container')
   </script>
 
 
- </body>
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
