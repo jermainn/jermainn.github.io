@@ -6,7 +6,7 @@
   <link href="http://jermainliu.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jermainliu.gitee.io/"/>
-  <updated>2022-01-21T10:50:17.000Z</updated>
+  <updated>2023-01-21T06:16:22.711Z</updated>
   <id>http://jermainliu.gitee.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>当傅里叶拿起画笔</title>
+    <link href="http://jermainliu.gitee.io/p/8719.html"/>
+    <id>http://jermainliu.gitee.io/p/8719.html</id>
+    <published>2023-01-21T06:16:22.711Z</published>
+    <updated>2023-01-21T06:16:22.711Z</updated>
+    
+    
+    <summary type="html">manim绘图</summary>
+    
+    
+    
+    
+    <category term="manim" scheme="http://jermainliu.gitee.io/tags/manim/"/>
+    
+    <category term="傅里叶级数" scheme="http://jermainliu.gitee.io/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>测试m3u8</title>
@@ -34,54 +53,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>毕业设计中期汇报记录</title>
-    <link href="http://jermainliu.gitee.io/p/59a184e6.html"/>
-    <id>http://jermainliu.gitee.io/p/59a184e6.html</id>
-    <published>2021-04-27T06:13:38.000Z</published>
-    <updated>2021-04-27T06:13:38.000Z</updated>
-    
-    
-    <summary type="html">记录自己的毕业设计中期汇报</summary>
-    
-    
-    
-    
-    <category term="毕业设计" scheme="http://jermainliu.gitee.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="答辩" scheme="http://jermainliu.gitee.io/tags/%E7%AD%94%E8%BE%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>毕业设计开题答辩记录</title>
-    <link href="http://jermainliu.gitee.io/p/39053.html"/>
-    <id>http://jermainliu.gitee.io/p/39053.html</id>
-    <published>2021-04-01T10:51:11.000Z</published>
-    <updated>2021-04-01T10:51:11.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="毕业设计" scheme="http://jermainliu.gitee.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="答辩" scheme="http://jermainliu.gitee.io/tags/%E7%AD%94%E8%BE%A9/"/>
     
   </entry>
   
@@ -191,11 +162,11 @@
     
     
     
-    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="论文" scheme="http://jermainliu.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
     
     <category term="语义分割" scheme="http://jermainliu.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

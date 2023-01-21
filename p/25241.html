@@ -380,56 +380,52 @@
         <div class="entry-content">
           <h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><p>hexo-wordcount 插件提供了字数统计和阅读时长预计功能，项目地址为：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-wordcount">hexo-wordcount</a></p>
 <span id="more"></span>
-
 <p>下面均以Hexo博客根目录为基点。</p>
 <hr>
 <h2 id="1-安装hexo-wordcount字数和阅读时长统计插件"><a href="#1-安装hexo-wordcount字数和阅读时长统计插件" class="headerlink" title="1. 安装hexo-wordcount字数和阅读时长统计插件"></a>1. 安装hexo-wordcount字数和阅读时长统计插件</h2><ul>
 <li>进入博客根目录，使用npm安装hexo-wordcount插件</li>
 </ul>
 <pre><code>npm install hexo-wordcount --save
-</code></pre>
-<blockquote>
-<p> 加–save参数可以将安装信息写入package.json，方便以后可能需要再次安装。</p>
+</code></pre><blockquote>
+<p> 加—save参数可以将安装信息写入package.json，方便以后可能需要再次安装。</p>
 <p> 安装完成之后，可以在hexo根目录的node_modules文件夹中找到hexo_wordcount文件夹，里面的index.js就是插件的全部内容。</p>
 </blockquote>
 <hr>
 <h2 id="2-添加字数和阅读时长数据"><a href="#2-添加字数和阅读时长数据" class="headerlink" title="2. 添加字数和阅读时长数据"></a>2. 添加字数和阅读时长数据</h2><ul>
-<li><p>在文章的标题下方添加字数统计和时长估计数据</p>
-</li>
-<li><p>在目录 <code>./themes/yilia/layout/_partial/post/</code> 创建新文件 <code>wordcount.ejs</code>，文件内容如下：</p>
-</li>
+<li>在文章的标题下方添加字数统计和时长估计数据</li>
+<li>在目录 <code>./themes/yilia/layout/_partial/post/</code> 创建新文件 <code>wordcount.ejs</code>，文件内容如下：</li>
 </ul>
-<pre><code>&lt;div style="margin-top:10px;"&gt;
-    &lt;span class="post-time"&gt;
-        &lt;span class="post-meta-item-icon"&gt;
-            &lt;i class="fa fa-file-word"&gt;&lt;/i&gt;
-            &lt;span class="post-meta-item-text"&gt;  字数统计: &lt;/span&gt;
-            &lt;span class="post-count"&gt;&lt;%= wordcount(post.content) %&gt;字 &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;
-    
-    &lt;span class="post-time"&gt;
-        &amp;nbsp; | &amp;nbsp;
-        &lt;span class="post-meta-item-icon"&gt;
-            &lt;i class="fa fa-hourglass-half"&gt;&lt;/i&gt;
-            &lt;span class="post-meta-item-text"&gt;  阅读时长: &lt;/span&gt;
-            &lt;span class="post-count"&gt;&lt;%= min2read(post.content) %&gt;分 &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;
-    
-&lt;/div&gt;
+<pre class=" language-lang-html"><code class="language-lang-html"><div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-file-word"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count"><%= wordcount(post.content) %>字 </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count"><%= min2read(post.content) %>分 </span>
+        </span>
+    </span>
+
+</div>
 </code></pre>
 <ul>
 <li>然后，在<code>./themes/yilia/layout/_partial/artivle.ejs</code>中修改文件内容为：</li>
 </ul>
-<pre><code>&lt;div class="article-inner"&gt;
-    &lt;% if (post.link || post.title){ %&gt;
-      &lt;header class="article-header"&gt;
-        &lt;%- partial('post/title', {class_name: 'article-title'}) %&gt;
-        &lt;% if (!post.noDate){ %&gt;
-        &lt;%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %&gt;
-        &lt;!--添加字数统计位置--&gt;
-        &lt;% if(theme.word_count &amp;&amp; !post.no_word_count){%&gt;
+<p>```html</p>
+<pre><code>&lt;% if (post.link || post.title){ %&gt;
+  &lt;header class="article-header"&gt;
+    &lt;%- partial('post/title', {class_name: 'article-title'}) %&gt;
+    &lt;% if (!post.noDate){ %&gt;
+    &lt;%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %&gt;
+    &lt;!--添加字数统计位置--&gt;
+    &lt;% if(theme.word_count &amp;&amp; !post.no_word_count){%&gt;
           &lt;%- partial('post/wordcount') %&gt;
           &lt;% } %&gt;
         <!--添加完成-->
@@ -461,7 +457,6 @@ word_count: true
 
 {% asset_img pic2.1.png %}
 </code></pre>
-
         </div>
 
         <!-- .entry-content -->
@@ -513,7 +508,7 @@ word_count: true
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/manim/" style="font-size: 10px; color: #f06966">manim</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 10px; color: #f06966">傅里叶级数</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">深度学习</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -1027,5 +1022,7 @@ gitalk.render('gitalk-container')
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

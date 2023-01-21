@@ -383,14 +383,12 @@
 <li>论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</li>
 </ul>
 <span id="more"></span>
-
 <hr>
 <h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul>
 <li>基于深度学习的语义分割方法是以像素级的人工标注为代价进行监督训练的，费时费力；借助计算机虚拟图像技术，几乎无成本地获得无限量自动标注数据，但虚拟图像和现实图像间存在严重的数据差异（域迁移），进而导致了训练的模型在真实图像上效果较差。</li>
 <li>如下图所示，在图的第一行有虚拟图像训练得到的全卷积网络（FCN）在虚拟图像数据集上分割效果较好，但是当相同的网络模型迁移到真实数据（Cityscapes数据集）上之后，可以看出分割结果较差。</li>
 </ul>
 <img src="/p/60859/pic1.1.png" class="">
-
 <ul>
 <li>总结来说就是就是 1)像素级人工标注的代价和 2)域迁移的影响。</li>
 </ul>
@@ -400,7 +398,6 @@
 <li>针对域迁移问题，常规的策略是通过对抗学习来调整源域Source与目标域Target之间的分布特征，但是这种全局特征分布（Marginal Distribution）对齐的策略，会产生语义不一致即负迁移（Negative Transfer）的问题。如下图所示：</li>
 </ul>
 <img src="/p/60859/pic2.1.png" class="">
-
 <ul>
 <li>橙色区域表示源域，绿色区域表示目标域，“+”和“-”号表示特征分布，曲线表示分类边界，灰色箭头大小表示损失的大小。由于对抗损失作用于全局特征，原先分类良好的“+”类别特征为了迎合全局对齐，会被映射到源域中的其他类别，导致语义不一致。</li>
 <li>举例来说，目标域中汽车这一类，假设源域中车辆的特征是接近的，因此，在没有经过域适应算法之前，目标域汽车类也能够正确分割；然而，为了迎合全局特征对齐，目标域中的汽车类特征反而可能被错误映射到源域中的其他类别。</li>
@@ -410,13 +407,13 @@
 <ul>
 <li>(1) 利用源域的有标签数据进行有监督学</li>
 </ul>
-<p>$$<br>ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]<br>$$</p>
-<p>​			其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
+<script type="math/tex; mode=display">
+ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]</script><p>​            其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p>
 <ul>
 <li>(2) 通过对抗学习，降低域判别器D的精度，对齐源域与目标域的特征分布</li>
 </ul>
-<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]<br>$$</p>
-<p>​			其中$X_T$为目标域数据，无标签。</p>
+<script type="math/tex; mode=display">
+ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]</script><p>​            其中$X_T$为目标域数据，无标签。</p>
 <h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><p>语义级对抗学习域适应方法：</p>
 <ul>
 <li>在传统的对抗学习框架基础之上加入了协同训练的思想，加入了两个互斥的分类器。</li>
@@ -427,7 +424,6 @@
 </li>
 </ul>
 <img src="/p/60859/pic3.1.png" class="">
-
 <blockquote>
 <p>如上图所示，图(a)在第2节已经了解过，图(b)为自适应对抗损失示意图。使用了两个互斥的分类器，有两个曲线（分别边界线）。</p>
 <p>可以看出，经过创新改进，判断出类别“+”起初便对齐较好，于是对抗损失较小，而类别“-”由于对齐较差，其对抗损失较差，进而起到了保护原来对齐较好特征不受影响，又促进对齐较差的特征对齐。</p>
@@ -436,7 +432,6 @@
 <h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><p>论文中提出于一级对抗网络(Category-Level Adversarial Network，CLAN)</p>
 <h3 id="4-1-网络结构"><a href="#4-1-网络结构" class="headerlink" title="4.1 网络结构"></a>4.1 网络结构</h3><p>语义级对抗网络由三部分组成：特征提取E、分类器C和判别器D，前两部分组成生成器G。</p>
 <img src="/p/60859/pic4.1.png" class="">
-
 <blockquote>
 <p>橙色线表示源域流，蓝色线表示目标域流。</p>
 </blockquote>
@@ -446,30 +441,32 @@
 <li>源域流通过两个互斥的分类器产生的预测作为源域的集成预测，一方面被标签监督产生分割损失，另一方面进入判别器D，作为源域样本。</li>
 <li>目标域流同样由分类器产生的集成损失进入判别器，同时，求得两个分类器的预测差值，作为局部对齐程度的依据（local alignment score map），该距离与D所反馈的损失相乘得到语义级别的对抗损失。</li>
 </ul>
-<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p>模型损失函数<br>$$<br>ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)=ℒ_{𝑠𝑒𝑔} (𝐺)+𝜆_{𝑤𝑒𝑖𝑔ℎ𝑡} ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)+𝜆_{𝑎𝑑𝑣} ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)<br>𝐺^∗,𝐷^∗=arg⁡𝑚𝑖𝑛<em>𝐺 𝑚𝑎𝑥_𝐷 ℒ</em>{𝐶𝐿𝐴𝑁} (𝐺,𝐷)<br>$$<br>训练目标，交替优化G和D，直至总损失收敛为止。</p>
+<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p>模型损失函数</p>
+<script type="math/tex; mode=display">
+ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)=ℒ_{𝑠𝑒𝑔} (𝐺)+𝜆_{𝑤𝑒𝑖𝑔ℎ𝑡} ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)+𝜆_{𝑎𝑑𝑣} ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)
+𝐺^∗,𝐷^∗=arg⁡𝑚𝑖𝑛_𝐺 𝑚𝑎𝑥_𝐷 ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)</script><p>训练目标，交替优化G和D，直至总损失收敛为止。</p>
 <ul>
 <li>分割损失：若给定形状为$3\times H \times W$的图像和形状为$C \times H \times W$的标签图，其中$C$是语义类别的数量</li>
 </ul>
-<p>$$<br>ℒ_{𝑠𝑒𝑔} (𝐺)=\sum <em>{i=1}^{H \times W} \sum <em>{j=1}^C -y</em>{ic}\log p</em>{ic}<br>$$</p>
-<p>​			其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
-<p>​			即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
+<script type="math/tex; mode=display">
+ℒ_{𝑠𝑒𝑔} (𝐺)=\sum _{i=1}^{H \times W} \sum _{j=1}^C -y_{ic}\log p_{ic}</script><p>​            其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p>
+<p>​            即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p>
 <ul>
 <li>分类器损失：</li>
 </ul>
-<p>$$<br>ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{| \vec{w_1} ||\vec{w_2}|}<br>$$</p>
-<p>​			即两个分类器网络中参数的余弦距离。</p>
+<script type="math/tex; mode=display">
+ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{\| \vec{w_1} \|\|\vec{w_2}\|}</script><p>​            即两个分类器网络中参数的余弦距离。</p>
 <ul>
 <li>对抗损失：</li>
 </ul>
-<p>$$<br>ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋<em>𝑆 ))) \right]−𝐸\left[(𝜆</em>{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]<br>$$</p>
-<p>​			其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
-<p>​			即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
+<script type="math/tex; mode=display">
+ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋_𝑆 ))) \right]−𝐸\left[(𝜆_{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]</script><p>​            其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p>
+<p>​            即在传统对抗损失上加权了由两个分类器的预测差异权重。</p>
 <hr>
 <h2 id="5-实验总结"><a href="#5-实验总结" class="headerlink" title="5 实验总结"></a>5 实验总结</h2><h3 id="5-1-语义分割可视化"><a href="#5-1-语义分割可视化" class="headerlink" title="5.1 语义分割可视化"></a>5.1 语义分割可视化</h3><ol>
 <li>CLAN与传统对抗网络（TAN）的对比</li>
 </ol>
 <img src="/p/60859/pic5.1.png" class="">
-
 <blockquote>
 <p>重点关注橙色框中的电线杆和交通标志。</p>
 <p>图(e、f、g)为高维特征通过非线性降维算法(t-SNE)到二维空间（仅显示4个相关类，即建筑物为蓝色、交通标志为橙色、杆子为灰色、植被为绿色）</p>
@@ -477,19 +474,17 @@
 <ul>
 <li>上图表明，有些类别特征在没有进行域迁移之前，就已经是对齐的。传统的全局域适应方法反而会破坏这种语义一致性，造成域迁移；而本文提出的语义级对抗网络降低了全局对齐对这些类的影响。</li>
 </ul>
-<ol start="2">
+<ol>
 <li>特征簇中心距离</li>
 </ol>
 <img src="/p/60859/pic5.2.png" class="">
-
 <blockquote>
 <p>上图展示隐层隐层空间源域与目标域之间同语义特征簇的中心距离，该距离越小，说明两个域之间的语义对齐越好。</p>
 </blockquote>
-<ol start="3">
+<ol>
 <li>分割效果</li>
 </ol>
 <img src="/p/60859/pic5.3.png" class="">
-
 <blockquote>
 <p>各列为：目标域图、无自适应分割效果、CLAN分割效果、标准效果图。</p>
 </blockquote>
@@ -503,7 +498,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/RoyalVane/CLAN">程序源码</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av53561336/">CVPR2019 Oral Presentation: Taking A Closer Look at Domain Shift</a></li>
 </ul>
-<div id="dplayer3" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer3"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn@1.0/videos/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look%20at%20-%201.Oral(Av53561336,P1).mp4","pic":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look-Oral.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn@1.0/videos/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look%20at%20-%201.Oral(Av53561336,P1).mp4","pic":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look-Oral.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
         </div>
 
@@ -536,11 +531,11 @@
           <div class="post-tags" style="color: #a39391">
             <span><i class="fa fa-tags"></i>
               
-              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="color: #716e77;">深度学习<em>·</em></a>
-              
               <a href="/tags/%E8%AE%BA%E6%96%87/" style="color: #716e77;">论文<em>·</em></a>
               
               <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="color: #716e77;">语义分割<em>·</em></a>
+              
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="color: #716e77;">深度学习<em>·</em></a>
               
             </span>
             <span>
@@ -558,7 +553,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/manim/" style="font-size: 10px; color: #f06966">manim</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 10px; color: #f06966">傅里叶级数</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">深度学习</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -1072,5 +1067,7 @@ gitalk.render('gitalk-container')
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

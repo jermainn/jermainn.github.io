@@ -383,40 +383,38 @@
 <li>以Hexo的yilia主题为例子</li>
 </ul>
 <span id="more"></span>
-
 <ul>
 <li>以Hexo目录作为说明的基点</li>
 </ul>
 <hr>
 <h2 id="1-配置文件修改"><a href="#1-配置文件修改" class="headerlink" title="1. 配置文件修改"></a>1. 配置文件修改</h2><ul>
 <li>在<code>./themes/yilia/_config.yml</code>中添加属性<ul>
-<li>本身yilia主题没有在_config.yml中保留不算子的属性，所有直接在末尾追加就行</li>
+<li>本身yilia主题没有在_config.yml中保留不算子的属性，所有直接在末尾追加就行<pre><code># 开启不算子访问统计
+busuanzi:
+enable: true
+</code></pre></li>
 </ul>
 </li>
 </ul>
-<pre><code># 开启不算子访问统计
-busuanzi:
-    enable: true
-</code></pre>
 <hr>
 <h2 id="2-添加不蒜子插件"><a href="#2-添加不蒜子插件" class="headerlink" title="2. 添加不蒜子插件"></a>2. 添加不蒜子插件</h2><ul>
 <li>添加统计数据显示以及不蒜子网站访问脚本</li>
-<li>在<code>./themes/yilia/layout/_partla/footer.ejs</code>末尾<code>&lt;/footer&gt;</code>与其上面的<code>&lt;/div&gt;</code>之间插入下面代码：</li>
-</ul>
-<pre><code>  &lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable){ %&gt;
-    &lt;!-- 不蒜子统计 --&gt;
-    &lt;span id="busuanzi_container_site_pv"&gt;
-      本站总访问量&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次
-    &lt;/span&gt;
-    &lt;span class="post-meta-divider"&gt; | &lt;/span&gt;
-    &lt;span id="busuanzi_container_site_uv"&gt;
-      本站访客数&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人次
-    &lt;/span&gt;
+<li><p>在<code>./themes/yilia/layout/_partla/footer.ejs</code>末尾<code>&lt;/footer&gt;</code>与其上面的<code>&lt;/div&gt;</code>之间插入下面代码：</p>
+<pre><code>&lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable){ %&gt;
+  &lt;!-- 不蒜子统计 --&gt;
+  &lt;span id="busuanzi_container_site_pv"&gt;
+    本站总访问量&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次
+  &lt;/span&gt;
+  &lt;span class="post-meta-divider"&gt; | &lt;/span&gt;
+  &lt;span id="busuanzi_container_site_uv"&gt;
+    本站访客数&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人次
+  &lt;/span&gt;
 
-    &lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;
-    &lt;/script&gt;
-  &lt;% } %&gt;
-</code></pre>
+  &lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;
+  &lt;/script&gt;
+&lt;% } %&gt;
+</code></pre></li>
+</ul>
 <hr>
 <h2 id="3-资源"><a href="#3-资源" class="headerlink" title="3. 资源"></a>3. 资源</h2><ul>
 <li>不蒜子本人官网链接：<a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子 | 不如</a></li>
@@ -473,7 +471,7 @@ busuanzi:
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/manim/" style="font-size: 10px; color: #f06966">manim</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 10px; color: #f06966">傅里叶级数</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">深度学习</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -987,5 +985,7 @@ gitalk.render('gitalk-container')
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

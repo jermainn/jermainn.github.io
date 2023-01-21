@@ -435,20 +435,20 @@
 <li>安装过程就不再详细说明，只要注意安装的时候会出现两次选择目录的选项，第一次出现<code>nvm</code>安装目录，第二次是你用<code>nvm</code>工具安装<code>node.js</code>的目录位置。</li>
 <li>下面列出使用<code>nvm</code>进行管理的一些命令：</li>
 </ul>
-<pre class=" language-cmd"><code class="language-cmd"># 打开cmd命令行，输入nvm查看是否安装成功
+<pre class=" language-lang-cmd"><code class="language-lang-cmd"># 打开cmd命令行，输入nvm查看是否安装成功
 
-nvm list				# 查看本地安装的所有版本
-nvm list available		# 查看所有可以下载安装的版本
-nvm install 12.14		# 安装node.js 12.14版本
-nvm use 12.14			# 启用node.js 12.14版本
-nvm uninstall 12.15		# 卸载node.js 12.14版本
+nvm list                # 查看本地安装的所有版本
+nvm list available        # 查看所有可以下载安装的版本
+nvm install 12.14        # 安装node.js 12.14版本
+nvm use 12.14            # 启用node.js 12.14版本
+nvm uninstall 12.15        # 卸载node.js 12.14版本
 
-nvm arch				# 显示node运行版本位数
-nvm on					# 启用nvm版本管理工具
-nvm off					# 关闭nvm版本管理工具
-nvm version				# 显示nvm版本
-nvm root				# 查看当前安装node.js使用的目录位置
-nvm root [path]			# 设置node.js安装的目录
+nvm arch                # 显示node运行版本位数
+nvm on                    # 启用nvm版本管理工具
+nvm off                    # 关闭nvm版本管理工具
+nvm version                # 显示nvm版本
+nvm root                # 查看当前安装node.js使用的目录位置
+nvm root [path]            # 设置node.js安装的目录
 </code></pre>
 <hr>
 <h2 id="2-npm的换源使用"><a href="#2-npm的换源使用" class="headerlink" title="2 npm的换源使用"></a>2 <code>npm</code>的换源使用</h2><ul>
@@ -457,13 +457,13 @@ nvm root [path]			# 设置node.js安装的目录
 <h3 id="2-1-方法一：安装cnpm"><a href="#2-1-方法一：安装cnpm" class="headerlink" title="2.1 方法一：安装cnpm"></a>2.1 方法一：安装<code>cnpm</code></h3><ul>
 <li>安装<code>cnpm</code>与<code>npm</code>共存，与<code>npm</code>有相同的功能与命令，自动使用淘宝的源，但是我尝试在<code>nvm</code>环境下无法使用<code>cnpm</code>，所以使用<code>nvm</code>安装<code>node.js</code>时，可以使用第二种方法。</li>
 </ul>
-<pre class=" language-cmd"><code class="language-cmd"># 安装cnpm
+<pre class=" language-lang-cmd"><code class="language-lang-cmd"># 安装cnpm
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 </code></pre>
 <h3 id="2-2-方法二：设置npm换源"><a href="#2-2-方法二：设置npm换源" class="headerlink" title="2.2 方法二：设置npm换源"></a>2.2 方法二：设置<code>npm</code>换源</h3><ul>
 <li>在<code>cmd</code>中对<code>npm</code>进行换源</li>
 </ul>
-<pre class=" language-cmd"><code class="language-cmd"># 设置淘宝源
+<pre class=" language-lang-cmd"><code class="language-lang-cmd"># 设置淘宝源
 npm config set registry https://registry.npm.taobao.org
 # 设置默认源
 npm config set registry https://registry.npmjs.org
@@ -522,7 +522,7 @@ npm config get registry
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/manim/" style="font-size: 10px; color: #f06966">manim</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 10px; color: #f06966">傅里叶级数</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">深度学习</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -533,15 +533,15 @@ npm config get registry
         
         <div class="post-nepre half previous">
           
-            <a href="/p/39053.html" rel="prev">
+            <a href="/p/811cab0f.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png"
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/cungudafa/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src=""
                   style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)"
-                  src="https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/cover_photo/post_kaiti.png">
+                  src="">
               </div>
               <span class="label">Previous Post</span>
               <div class="info">
-                <h3>毕业设计开题答辩记录</h3>
+                <h3>测试m3u8</h3>
                 <hr>
               </div>
             </a>
@@ -1036,5 +1036,7 @@ gitalk.render('gitalk-container')
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

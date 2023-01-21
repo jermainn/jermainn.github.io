@@ -383,67 +383,63 @@
 <li>推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数</li>
 </ul>
 <span id="more"></span>
-
 <hr>
 <h2 id="1-逻辑斯蒂回归的极大似然估计"><a href="#1-逻辑斯蒂回归的极大似然估计" class="headerlink" title="1. 逻辑斯蒂回归的极大似然估计"></a>1. 逻辑斯蒂回归的极大似然估计</h2><ul>
 <li><p>线性回归的任务是预测，单也可用来分类</p>
 </li>
-<li><p>伯努利分布</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega)$</td>
-<td align="center">$p^2(x_n;\omega)$</td>
-</tr>
-</tbody></table>
-<p>其中<br>$$p^1(x_n;\omega)+p^2(x_n;\omega)=1$$<br>$$p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}$$<br>$$p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}$$</p>
+<li><p>伯努利分布<br>| $y_n$ |         1         |         0         |<br>| :—-: | :———————-: | :———————-: |<br>| $p_n$ | $p^1(x_n;\omega)$ | $p^2(x_n;\omega)$ |</p>
 </li>
-<li><p>极大似然估计(i.i.d)<br>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]$$</p>
-</li>
-<li><p>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \<br>  &amp; =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \<br>  &amp; =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \<br>  &amp; =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \<br>  \end{align}<br>$$</p>
-</li>
+</ul>
+<p>  其中</p>
+<script type="math/tex; mode=display">p^1(x_n;\omega)+p^2(x_n;\omega)=1</script><script type="math/tex; mode=display">p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}</script><script type="math/tex; mode=display">p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}</script><ul>
+<li>极大似然估计(i.i.d)<script type="math/tex; mode=display">p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}</script><script type="math/tex; mode=display">max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]</script></li>
+<li>目标函数<script type="math/tex; mode=display">
+\begin{align}
+  L(\omega) & =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \\
+  & =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \\
+  & =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \\
+  & =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \\
+  \end{align}</script></li>
 </ul>
 <hr>
 <h2 id="2-Softmax回归的极大似然估计"><a href="#2-Softmax回归的极大似然估计" class="headerlink" title="2. Softmax回归的极大似然估计"></a>2. Softmax回归的极大似然估计</h2><ul>
 <li><p>多类分类</p>
 </li>
 <li><p>概率分布列</p>
-<table>
-<thead>
-<tr>
-<th align="center">$y_n$</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">$\cdots$</th>
-<th align="center">C</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$p_n$</td>
-<td align="center">$p^1(x_n;\omega_1)$</td>
-<td align="center">$p^2(x_n;\omega_2)$</td>
-<td align="center">$\cdots$</td>
-<td align="center">$p^C(x_n;\omega_C)$</td>
-</tr>
-</tbody></table>
-<p>其中</p>
+<p>| $y_n$ |          1          |          2          | $\cdots$ |          C          |<br>| :—-: | :————————-: | :————————-: | :———: | :————————-: |<br>| $p_n$ | $p^1(x_n;\omega_1)$ | $p^2(x_n;\omega_2)$ | $\cdots$ | $p^C(x_n;\omega_C)$ |</p>
 </li>
 </ul>
-<p>$$<br>    \omega^T=<br>    \begin{bmatrix}<br>    \omega_1^T \<br>    \omega_2^T \<br>    \vdots \<br>    \omega_C^T \<br>    \end{bmatrix}=<br>    \begin{bmatrix}<br>    \omega_{1,1} &amp; \omega_{1,2} &amp; \cdots &amp; \omega_{1,N} \<br>    \omega_{2,1} &amp; \omega_{2,2} &amp; \cdots &amp; \omega_{2,N} \<br>    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>    \omega_{C,1} &amp; \omega_{C,2} \cdots &amp; \omega_{C,N} \<br>    \end{bmatrix}<br>$$<br>$$\sum_{c=1}^{C}p^c(x_n;\omega_c)=1$$<br>$$p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$</p>
-<ul>
-<li>极大似然估计(i.i.d)<br>$$<br>  \text{引入示性函数} \quad I(y_n=c)=<br>  \begin{cases}<br>  1, &amp; y_n=c \<br>  0, &amp; y_n\neq c \<br>  \end{cases}<br>$$</li>
+<p>  其中</p>
+<script type="math/tex; mode=display">
+    \omega^T=
+    \begin{bmatrix}
+    \omega_1^T \\
+    \omega_2^T \\
+    \vdots \\
+    \omega_C^T \\
+    \end{bmatrix}=
+    \begin{bmatrix}
+    \omega_{1,1} & \omega_{1,2} & \cdots & \omega_{1,N} \\
+    \omega_{2,1} & \omega_{2,2} & \cdots & \omega_{2,N} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \omega_{C,1} & \omega_{C,2} \cdots & \omega_{C,N} \\
+    \end{bmatrix}</script><script type="math/tex; mode=display">\sum_{c=1}^{C}p^c(x_n;\omega_c)=1</script><script type="math/tex; mode=display">p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}</script><ul>
+<li>极大似然估计(i.i.d)<script type="math/tex; mode=display">
+  \text{引入示性函数} \quad I(y_n=c)=
+  \begin{cases}
+  1, & y_n=c \\
+  0, & y_n\neq c \\
+  \end{cases}</script></li>
 </ul>
-<p>$$p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}$$<br>$$max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]$$</p>
-<ul>
-<li>目标函数<br>$$<br>\begin{align}<br>  L(\omega) &amp; =-\ln p(x_1,x_2,\cdots,x_N;\omega) \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \<br>  &amp; =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \<br>  \end{align}<br>$$<br>令<br>$$y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]$$<br>$$h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}$$<br>则有<br>$$\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)$$<br>目标函数化简为<br>$$<br>  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}<br>$$</li>
-<li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<br>$$J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}$$</li>
+<script type="math/tex; mode=display">p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}</script><script type="math/tex; mode=display">max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]</script><ul>
+<li>目标函数<script type="math/tex; mode=display">
+\begin{align}
+  L(\omega) & =-\ln p(x_1,x_2,\cdots,x_N;\omega) \\
+  & =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \\
+  & =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \\
+  \end{align}</script>令<script type="math/tex; mode=display">y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]</script><script type="math/tex; mode=display">h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}</script>则有<script type="math/tex; mode=display">\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)</script>目标函数化简为<script type="math/tex; mode=display">
+  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}</script></li>
+<li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<script type="math/tex; mode=display">J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}</script></li>
 </ul>
 
         </div>
@@ -497,7 +493,7 @@
           <div class="tag-cloud-title">
           </div>
           <div class="tag-cloud-tags">
-            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="font-size: 15px; color: #9592a7">毕业设计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px; color: #39bae8">深度学习</a> <a href="/tags/%E7%AD%94%E8%BE%A9/" style="font-size: 15px; color: #9592a7">答辩</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
+            <a href="/tags/Hexo/" style="font-size: 20px; color: #39bae8">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px; color: #f06966">Markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 10px; color: #f06966">PPT模板</a> <a href="/tags/manim/" style="font-size: 10px; color: #f06966">manim</a> <a href="/tags/markdown/" style="font-size: 10px; color: #f06966">markdown</a> <a href="/tags/node-js/" style="font-size: 10px; color: #f06966">node.js</a> <a href="/tags/nvm/" style="font-size: 10px; color: #f06966">nvm</a> <a href="/tags/wordcount/" style="font-size: 10px; color: #f06966">wordcount</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 10px; color: #f06966">不蒜子</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 10px; color: #f06966">傅里叶级数</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 10px; color: #f06966">公式</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 10px; color: #f06966">域适应</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">机器学习</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 10px; color: #f06966">极大似然估计</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px; color: #f06966">深度学习</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 15px; color: #9592a7">论文</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 15px; color: #9592a7">语义分割</a>
           </div>
         </div> -->
       </article>
@@ -1011,5 +1007,7 @@ gitalk.render('gitalk-container')
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
