@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>当傅里叶拿起画笔</title>
+      <link href="/p/8719.html"/>
+      <url>/p/8719.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><p>希望大家都有所收获，能手执傅里叶画笔，写了这篇文稿，由于时间和精力有限采用文本形式</p><p>个人对傅里叶级数展开的绘图与原理的简单理解，希望能有所收获</p><p>文稿写的可能不够完善，比较粗糙，欢迎批评指正</p><span id="more"></span><p>拜读了 3Blue1Brown 和 <a href="https://www.youtube.com/watch?v=2tTshwWTEic">[OUTDATED] ManimCairo tutorial - Fourier Scene - YouTube</a> 视频相关大佬给出的相关程序，是基于 ManimCairo，我对其进行了简单的适配，适配到社区版的 ManimCE</p><p>原程序：</p><p><a href="https://pastebin.com/eeQ4mbLj">https://pastebin.com/eeQ4mbLj</a></p><p><a href="https://gitlab.com/zavden/manim-backup/-/raw/master/fourier.py">https://gitlab.com/zavden/manim-backup/-/raw/master/fourier.py</a></p><p>svg文件：<a href="https://drive.google.com/drive/folders/1l9Q9RCmzAs-ZbNbLLXyjeAVKEVYAVVan">music_svg - Google 云端硬盘</a></p><p>适配后的程序(含原程序)：</p><p><a href="https://github.com/JermainLiu/Manim_Fourier">https://github.com/JermainLiu/Manim_Fourier</a></p><p>链接到：</p><p><a href="https://www.bilibili.com/video/BV1q84y187EK/?vd_source=43a4b55496ceb031cd19527449c3aa23">当傅里叶拿起画笔——manim_fourier 程序分享、、、_哔哩哔哩_bilibili</a></p><p><a href="https://www.bilibili.com/video/BV18G4y1F7Uk/?vd_source=43a4b55496ceb031cd19527449c3aa23">兔年到，manim画个兔_哔哩哔哩_bilibili</a></p><hr><h2 id="1-傅里叶级数展开"><a href="#1-傅里叶级数展开" class="headerlink" title="1 傅里叶级数展开"></a>1 傅里叶级数展开</h2><h3 id="1-1-狄利赫里条件"><a href="#1-1-狄利赫里条件" class="headerlink" title="1.1 狄利赫里条件"></a>1.1 狄利赫里条件</h3><p>对于周期信号：</p><p>(1) 在一个周期内，如果有间断点，则间断点的数目应该为有限个；</p><p>(2) 在一个周期内，极大值和极小值的数目应是有限个；</p><p>(3) 在一个周期内，信号是绝对可积的。</p><h3 id="1-2-傅里叶级数展开"><a href="#1-2-傅里叶级数展开" class="headerlink" title="1.2 傅里叶级数展开"></a>1.2 傅里叶级数展开</h3><p>满足狄利赫里条件的周期函数可以展开成傅里叶级数形式</p><p>对于有限区间（时域有限）函数（信号）可以通过周期延拓得到周期函数，展开为傅里叶级数</p><p>周期为$T_1$函数 $f(t)$展开成傅里叶级数指数形式，如下</p><script type="math/tex; mode=display">\begin{align}    f(t) & = \sum_{n=-\infty}^{\infty} {F_n e^{jnw_1t}} \quad 其中 \, w_1 = \frac{2\pi}{T_1} \, 为基波频率 \\         & = \sum_{n=-\infty}^{\infty} {F_n e^{jw_nt}} \quad 其中 \, w_n =nw_1  为 \, n 次谐波频率\end{align}</script><p>傅里叶级数系数 $F_n$ 计算公式：</p><script type="math/tex; mode=display">F_n = \frac{1}{T_1} \int_{T_1}{f(t)e^{-jw_n t}} \, {\rm d}t</script><p>当 $T_1 = 1 $ 时，</p><script type="math/tex; mode=display">\left\{    \begin{array}{c}        f(t) = \sum_{n=-\infty}^{\infty} {F_n e^{jn2\pi t}} \\        F_n = \int_{0}^{1}{f(t)e^{-jn2\pi t}} \, {\rm d}t    \end{array}\right.</script><hr><h2 id="2-复数系引入"><a href="#2-复数系引入" class="headerlink" title="2 复数系引入"></a>2 复数系引入</h2><p>当我们把一个矢量图像放到直角坐标系中，点 $(x,y)$ 的轨迹显然无法写出显性函数 $y=f(x) $ </p><p>然而我们可以想象一下，我们自己描图的时候怎样进行的，定义第一笔为时刻 $t = 0$，笔尖落在了开头位置，随着时刻的变化，笔尖的位置不断变化，最终在 $t=1$ 时笔尖落地到轨迹的末端，于是我们得到一个映射</p><script type="math/tex; mode=display">t \overset{\quad f \quad }{\to} (x_t, y_t) \quad t \in [0,1]</script><p>也即点的位置是 $t$ 的一元函数，那么我们需要一种方式来表达点的位置关系，于是我们引入复数系来解决这个问题</p><p>通过下列欧拉公式将点的直角坐标与复数坐标联系</p><script type="math/tex; mode=display">x(t)+jy(t) = r(t)e^{j\theta(t)} = r(t)\cdot\cos(\theta(t))+jr(t)\cdot\sin(\theta(t))</script><p>其中</p><script type="math/tex; mode=display">r(t) \, 表示点到原点的距离，\theta(t) \, 表示该点的向量与实轴的夹角</script><p>于是我们有了复数函数</p><script type="math/tex; mode=display">f(t) = r(t)e^{j\theta(t)} \quad t \in [0,1]</script><p>那么我们将 $f(t)$ 进行周期 $T_1=1$ 延拓，便可将 $f(t)$ 展开成傅里叶级数，可求得傅里叶级数系数 $F_n$ </p><script type="math/tex; mode=display">\begin{align}    f(t) & = \sum_{n=-\infty}^{\infty} {F_n e^{jn\pi t}} \\         & = \cdots + F_{-n}e^{-jw_nt} + \cdots + F_{-2}e^{-jw_2t}+F_{-1}e^{-jw_1t}+ F_0 + F_{1}e^{jw_1t} + F_{2}e^{jw_2t} + \cdots + F_{n}e^{jw_nt} + \cdots \end{align}</script><p>我们分别看各个分量的情况，以 $n=2, \; F_2e^{jw_2t}$为例</p><script type="math/tex; mode=display">F_2e^{jw_2t} = re^{j\theta}e^{jw_2t}=re^{j(\theta + w_2t)}</script><p>其中傅里叶级数的系数 $F_2=re^{j\theta}$ 为一个复数的定值，$e^{jw_2t}$ 只改变整体的相位，而不改变幅度，于是随着 $t$ 的连续变化，整体向量将会绕着自身的起点进行旋转</p><p>两个向量相加，三个相加，四个相加……相当于将向量进行首位依次相接</p><p>而把 $n=0$ 作为第一个向量，其相位始终为0，故是固定不动的</p><hr><h2 id="3-傅里叶展开系数的求解"><a href="#3-傅里叶展开系数的求解" class="headerlink" title="3 傅里叶展开系数的求解"></a>3 傅里叶展开系数的求解</h2><p>在之前我们已经介绍了傅里叶级数展开系数为</p><script type="math/tex; mode=display">F_n = \int_{0}^{1}{f(t)e^{-jw_n t}} \, {\rm d}t \quad 当 T_1 = 1时</script><p>定积分定义，函数在区间 $[0,1]$ 上的积分为</p><script type="math/tex; mode=display">\int_{0}^{1}{h(t)} \, {\rm d}t = \lim_{m\to \infty}{\sum_{i=0}^{m-1}{h(\frac{i}{m}) \, \frac{1}{m}}}</script><p>故</p><script type="math/tex; mode=display">\begin{align}    F_n & = \lim_{m\to \infty}{\sum_{i=0}^{m-1}{f(\frac{i}{m}) \; e^{-jw_n \frac{i}{m}} \, \frac{1}{m}}} \\        & \approx \sum_{i=0}^{m-1}{f(\frac{i}{m}) \; e^{-jw_n \frac{i}{m}} \, \frac{1}{m}}  \\        & = \sum_{i=0}^{m-1}{f(i\Delta{t}) \; e^{-jw_n\Delta{t} } \,  }\quad 其中\, \Delta{t}=\frac{1}{m}\end{align}</script><p>取 $m=10000$ ，对 $f(t)$ 在 $t\in [0,1]$ 进行均匀采样取值，根据上式进行计算近似得到 $F_n$ ，我们取有限次谐波频率，带入到傅里叶级数展开式中得到 $f(t)$ 的近似值</p><hr><h2 id="4-程序中一些参数"><a href="#4-程序中一些参数" class="headerlink" title="4 程序中一些参数"></a>4 程序中一些参数</h2><p>当 $T_1 = 1 $ 时，</p><script type="math/tex; mode=display">\left\{    \begin{array}{c}        f(t) = \sum_{n=-\infty}^{\infty} {F_n e^{jn2\pi t}} \\        F_n = \int_{0}^{1}{f(t)e^{-jn2\pi t}} \, {\rm d}t    \end{array}\right.</script><p><code>n_vectors</code>：取谐波频率的个数，决定傅里叶级数中的 $n$ ，取 $n\in [\frac{-n_vectors}{2}, \frac{n_vectors}{2}]$ 的整数</p><p><code>slow_factor</code>：速度因子，决定绘制一周的时间为 $\frac{1}{slow_factor}$ </p><p><code>start_drawn</code>：是否需要提前绘制好路径</p><p><code>interpolate_config</code>：默认值为 $[0,1]$ ，设置当前傅里叶画笔点与之前路径线的粗细比例，渐变设置</p><p><code>n_cycles 、 run_time</code>：均用于设置运行的时间，分别表示 绘制图像的周数和运行时间，其默认值分别为 <code>None</code> 和 <code>10</code> ，在适配的程序中，设置了 <code>n_cycles</code> 取较高的优先级，同时设置时，采用 <code>n_cycles</code> </p><p><code>wait_before_start</code>：绘制前的等待时间</p><p><code>center_point</code>：设置绘图的向量第一个向量的起点位置</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> manim </tag>
+            
+            <tag> 傅里叶级数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node.js版本管理工具nvm</title>
+      <link href="/p/36897.html"/>
+      <url>/p/36897.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul><li>在搭建hexo博客的时候需要使用<a href="http://nodejs.cn/">node.js</a>，但是有时候会出现安装的版本与使用的主题中有的插件不匹配，进行版本变更的时候很不方便，那么使用版本管理工具就会比较的方便。</li><li><a href="https://github.com/coreybutler/nvm-windows/releases">nvm</a>全名是<code>node.js version management</code>，是node.js的管理工具，可以在github上进行下载：<a href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a></li></ul><hr><h2 id="1-管理node-js"><a href="#1-管理node-js" class="headerlink" title="1 管理node.js"></a>1 管理<code>node.js</code></h2><ul><li>安装过程就不再详细说明，只要注意安装的时候会出现两次选择目录的选项，第一次出现<code>nvm</code>安装目录，第二次是你用<code>nvm</code>工具安装<code>node.js</code>的目录位置。</li><li>下面列出使用<code>nvm</code>进行管理的一些命令：</li></ul><pre class=" language-lang-cmd"><code class="language-lang-cmd"># 打开cmd命令行，输入nvm查看是否安装成功nvm list                # 查看本地安装的所有版本nvm list available        # 查看所有可以下载安装的版本nvm install 12.14        # 安装node.js 12.14版本nvm use 12.14            # 启用node.js 12.14版本nvm uninstall 12.15        # 卸载node.js 12.14版本nvm arch                # 显示node运行版本位数nvm on                    # 启用nvm版本管理工具nvm off                    # 关闭nvm版本管理工具nvm version                # 显示nvm版本nvm root                # 查看当前安装node.js使用的目录位置nvm root [path]            # 设置node.js安装的目录</code></pre><hr><h2 id="2-npm的换源使用"><a href="#2-npm的换源使用" class="headerlink" title="2 npm的换源使用"></a>2 <code>npm</code>的换源使用</h2><ul><li>安装.<code>node.js</code>时，会自动安装npm工具，但是默认安装源有时候下载速度不佳，所以可以设置使用淘宝的源。</li></ul><h3 id="2-1-方法一：安装cnpm"><a href="#2-1-方法一：安装cnpm" class="headerlink" title="2.1 方法一：安装cnpm"></a>2.1 方法一：安装<code>cnpm</code></h3><ul><li>安装<code>cnpm</code>与<code>npm</code>共存，与<code>npm</code>有相同的功能与命令，自动使用淘宝的源，但是我尝试在<code>nvm</code>环境下无法使用<code>cnpm</code>，所以使用<code>nvm</code>安装<code>node.js</code>时，可以使用第二种方法。</li></ul><pre class=" language-lang-cmd"><code class="language-lang-cmd"># 安装cnpmnpm install -g cnpm --registry=https://registry.npm.taobao.org</code></pre><h3 id="2-2-方法二：设置npm换源"><a href="#2-2-方法二：设置npm换源" class="headerlink" title="2.2 方法二：设置npm换源"></a>2.2 方法二：设置<code>npm</code>换源</h3><ul><li>在<code>cmd</code>中对<code>npm</code>进行换源</li></ul><pre class=" language-lang-cmd"><code class="language-lang-cmd"># 设置淘宝源npm config set registry https://registry.npm.taobao.org# 设置默认源npm config set registry https://registry.npmjs.org# 查看当前使用的源npm config get registry</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+            <tag> nvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PPT模板网站推荐</title>
+      <link href="/p/53034.html"/>
+      <url>/p/53034.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul><li>PPT已经成为学习、工作、展示等不可或缺的工具；</li><li>对所述内容进行展示与总结，可以提高彼此交流的效率；</li><li>下面推荐一些PPT模板网站。</li></ul><span id="more"></span><hr><h2 id="1-PPT模板网站"><a href="#1-PPT模板网站" class="headerlink" title="1 PPT模板网站"></a>1 PPT模板网站</h2><h4 id="1-OfficePLUS-cn-点击左侧网站名跳转"><a href="#1-OfficePLUS-cn-点击左侧网站名跳转" class="headerlink" title="(1) OfficePLUS.cn (点击左侧网站名跳转)"></a>(1) <a href="http://www.officeplus.cn/Template/Home.shtml">OfficePLUS.cn</a> (点击左侧网站名跳转)</h4><ul><li>网址：<a href="http://www.officeplus.cn/Template/Home.shtml">http://www.officeplus.cn/Template/Home.shtml</a></li><li>只需要登录自己的微软账户即可进行模板下载。</li><li>该网站为微软移动联新互联网服务有限公司运营，旨在为全球Office用户提供丰富的高品质原创PPT模板、Word实用文档、Excel数据图表及个性化定制服务，帮助用户随时随地提升效率，成就更多。</li></ul><h4 id="2-优品PPT"><a href="#2-优品PPT" class="headerlink" title="(2) 优品PPT"></a>(2) <a href="https://www.ypppt.com/">优品PPT</a></h4><ul><li>网址：<a href="https://www.ypppt.com/">https://www.ypppt.com/</a></li><li>无需登录即可下载。</li><li>一个有情怀的免费PPT模板下载网站，是一家专注于分享高质量的免费PPT模板下载网站。包括PPT图表、PPT背景图片、PPT素材、PPT教程等各类PPT资源。致力于打造国内最大最权威的PPT下载一站式服务平台。</li></ul><h4 id="3-PPT超级市场"><a href="#3-PPT超级市场" class="headerlink" title="(3) PPT超级市场"></a>(3) <a href="http://ppt.sotary.com/web/wxapp/index.html">PPT超级市场</a></h4><ul><li>网址：<a href="http://ppt.sotary.com/web/wxapp/index.html">http://ppt.sotary.com/web/wxapp/index.html</a></li><li>无需登录</li><li>免费、优质、高端、安全，文件下载永不收费，会员体系永不推出</li></ul><h4 id="4-第1PPT"><a href="#4-第1PPT" class="headerlink" title="(4) 第1PPT"></a>(4) <a href="http://www.1ppt.com/index.html">第1PPT</a></h4><ul><li>网址：<a href="http://www.1ppt.com/index.html">http://www.1ppt.com/index.html</a></li><li>无需登录</li><li>第一PPT，成立于2005年5月，最早网站名为 <a href="http://www.1ppt.com/">PPT中国</a> 是国内最早一批从事PPT模板下载服务的专业网站，为广大中国PowerPoint爱好者，提供PowerPoint模板下载、PowerPoint教程、PowerPoint素材等，建设中国PPT爱好者的网上家园，立志成为最大最权威的PPT中文网站</li></ul><h4 id="5-PPT宝藏"><a href="#5-PPT宝藏" class="headerlink" title="(5) PPT宝藏"></a>(5) <a href="http://www.pptbz.com/">PPT宝藏</a></h4><ul><li>网址：<a href="http://www.pptbz.com">http://www.pptbz.com</a></li><li>无需登录</li><li>PPT宝藏是一家专注于分享高质量的PPT模板下载网站。包括PPT图表、PPT背景图片、PPT素材、PPT教程等各类PPT资源。致力于打造国内最大最权威的PPT下载一站式服务平台</li></ul><h4 id="6-51PPT模板"><a href="#6-51PPT模板" class="headerlink" title="(6) 51PPT模板"></a>(6) <a href="http://www.51pptmoban.com/">51PPT模板</a></h4><ul><li>网址：<a href="http://www.51pptmoban.com">http://www.51pptmoban.com</a></li><li>无需登录</li><li>本站所涉及提供的PPT模板、PPT图片、PPT图表等PPT素材大多来自PPT设计大师（PPT原创作者个人）授权发布作品、PPT设计公司授权免费作品、互联网免费共享资源精选以及部分原创作品，分享给PPT爱好者交流学习之用</li></ul><hr><h2 id="2-素材网站"><a href="#2-素材网站" class="headerlink" title="2 素材网站"></a>2 素材网站</h2><h4 id="1-Iconfont-阿里巴巴矢量图标库"><a href="#1-Iconfont-阿里巴巴矢量图标库" class="headerlink" title="(1) Iconfont-阿里巴巴矢量图标库"></a>(1) <a href="https://www.iconfont.cn/?spm=a313x.7781069.1998910419.d4d0a486a">Iconfont-阿里巴巴矢量图标库</a></h4><ul><li>网址：<a href="https://www.iconfont.cn">https://www.iconfont.cn</a></li><li>矢量图、图标素材</li><li>需要登录</li><li>阿里妈妈MUX倾力打造的矢量图标管理、交流平台</li></ul><h4 id="2-Apache-Echarts"><a href="#2-Apache-Echarts" class="headerlink" title="(2) Apache Echarts"></a>(2) <a href="https://echarts.apache.org/zh/index.html">Apache Echarts</a></h4><ul><li>网址：<a href="https://echarts.apache.org/zh/index.html">https://echarts.apache.org/zh/index.html</a></li><li>图表素材</li><li>需要通过官网文档和示例快速入门使用</li><li>一个基于 JavaScript 的开源可视化图表库</li></ul><hr><h2 id="3-结语"><a href="#3-结语" class="headerlink" title="3 结语"></a>3 结语</h2><ul><li>推荐网站如上所列，点击网站标题即可跳转。</li><li>最后，感谢各大网站平台的开创者、运营者和模板提供者为我们提供优质的PPT模板和素材。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> PPT模板 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation</title>
+      <link href="/p/2717.html"/>
+      <url>/p/2717.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul><li>论文解读第二篇；</li><li>《Bidirectional Learning for Domain Adaptation of Semantic Segmentation》来自于CVPR 2019学术会议论文。</li></ul><span id="more"></span><hr><h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul><li>人工标注、合成图像</li><li>在大型数据集上训练深度学习神经网络推动了图像语义分割的迅速发展，但是由于需要大量的人工、收集和手动标注具有像素级标签的图像，成本过高。</li><li>计算机图像学进展的推动下，可以产生具有标签的较为逼真的合成图像，但是与实际图像之间仍然存在域适应问题。</li></ul><hr><h2 id="2-研究问题"><a href="#2-研究问题" class="headerlink" title="2 研究问题"></a>2 研究问题</h2><ul><li>无监督、域适应问题</li><li>由合成数据训练的模型面临的问题<ul><li>域迁移：生成图像（源域）与真实图像（目标域）不匹配问题；</li><li>无标签：极端情况下目标域无可用标签；</li></ul></li><li>应对<ul><li>域适应着重解决域不匹配问题；</li><li>极端情况下则属于是无监督域适应问题。</li></ul></li></ul><hr><h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3 创新点"></a>3 创新点</h2><h3 id="3-1-传统方法"><a href="#3-1-传统方法" class="headerlink" title="3.1 传统方法"></a>3.1 传统方法</h3><ul><li>传统方法是通过减小源域和目标域之间的均值或者方差度量标准，将源域的数据进行一定程度的变换，映射到目标域，但这种方法受限，且不易实现。</li><li>由于CycleGAN的提出，将语义分割分解为两个步骤，进一步减小了域间差异，语义分割自适应取得良好的发展。定义两个子网络，一个为域变换子网络（转换模型），另一个为分割子网络（分割自适应模型）。<ul><li>先使用域变换子网络将源域转换到目标域，将源图像与变换图像喂给分割网络，并在分割网络中加入判别器，对输出的特征图判别源域与目标域的对齐程度，进一步优化网络。</li><li>优点：转换模型F有助于减少域间误差，进而更容易学得分割模型M，获得更好的性能。</li><li>缺点：分割模型极其依赖于转换模型，一旦转换实效，在下一阶段无能为力。</li></ul></li></ul><img src="/p/2717/pic3.1.png" class=""><h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><ul><li>双向学习系统：在CycleGAN的基础之上，双向学习形成一个闭环，迭代优化两个子网络；</li><li>自监督学习算法：用于分割自适应模型，在特征级别上逐步对齐源域和目标域，有利于分割网络实现域适应，进而有利于反向过程优化；</li><li>感知损失（perceptual loss ）：通过更新分割自适应模型来监督转换模型。</li></ul><img src="/p/2717/pic3.2.png" class=""><hr><h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><h3 id="4-1-双向学习（Bidirectional-Learning）"><a href="#4-1-双向学习（Bidirectional-Learning）" class="headerlink" title="4.1 双向学习（Bidirectional Learning）"></a>4.1 双向学习（Bidirectional Learning）</h3><ul><li>正向学习：translation-to-segmentation（$F-&gt;M$）</li></ul><h4 id="未完……"><a href="#未完……" class="headerlink" title="未完……"></a>未完……</h4><p>首先简单介绍双向学习和自监督学习</p><p>然后放出网络结构图，通过算法解释网络结构图和算法，以及各个损失的作用。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 论文 </tag>
+            
+            <tag> 语义分割 </tag>
+            
+            <tag> 域适应 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown使用</title>
+      <link href="/p/61039.html"/>
+      <url>/p/61039.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul><li>markdown是一种轻量级的标记语言，非常方便进行文章排版，支持latex公式编辑显示。</li><li>可以算是一个程序员笔记的利器，支持许多的笔记软件，方便好用。</li></ul><span id="more"></span><hr><h2 id="1-资源推荐"><a href="#1-资源推荐" class="headerlink" title="1 资源推荐"></a>1 资源推荐</h2><ul><li>基本教程<ul><li><a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>：<a href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></li></ul></li><li>markdown软件<ul><li><a href="https://typora.io/">Typora 官网</a>：<a href="https://typora.io/">https://typora.io/</a></li></ul></li><li>公式编辑<ul><li><a href="https://ericp.cn/cmd">作业部落Markdown公式编辑手册</a>： <a href="https://ericp.cn/cmd">https://ericp.cn/cmd</a></li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</title>
+      <link href="/p/60859.html"/>
+      <url>/p/60859.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><ul><li>由于毕业设计需要，进行相关论文的学习</li><li>论文解读第一篇: Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</li></ul><span id="more"></span><hr><h2 id="1-研究背景"><a href="#1-研究背景" class="headerlink" title="1 研究背景"></a>1 研究背景</h2><ul><li>基于深度学习的语义分割方法是以像素级的人工标注为代价进行监督训练的，费时费力；借助计算机虚拟图像技术，几乎无成本地获得无限量自动标注数据，但虚拟图像和现实图像间存在严重的数据差异（域迁移），进而导致了训练的模型在真实图像上效果较差。</li><li>如下图所示，在图的第一行有虚拟图像训练得到的全卷积网络（FCN）在虚拟图像数据集上分割效果较好，但是当相同的网络模型迁移到真实数据（Cityscapes数据集）上之后，可以看出分割结果较差。</li></ul><img src="/p/60859/pic1.1.png" class=""><ul><li>总结来说就是就是 1)像素级人工标注的代价和 2)域迁移的影响。</li></ul><hr><h2 id="2-研究问题"><a href="#2-研究问题" class="headerlink" title="2 研究问题"></a>2 研究问题</h2><ul><li>全局体征分布、负迁移。</li><li>针对域迁移问题，常规的策略是通过对抗学习来调整源域Source与目标域Target之间的分布特征，但是这种全局特征分布（Marginal Distribution）对齐的策略，会产生语义不一致即负迁移（Negative Transfer）的问题。如下图所示：</li></ul><img src="/p/60859/pic2.1.png" class=""><ul><li>橙色区域表示源域，绿色区域表示目标域，“+”和“-”号表示特征分布，曲线表示分类边界，灰色箭头大小表示损失的大小。由于对抗损失作用于全局特征，原先分类良好的“+”类别特征为了迎合全局对齐，会被映射到源域中的其他类别，导致语义不一致。</li><li>举例来说，目标域中汽车这一类，假设源域中车辆的特征是接近的，因此，在没有经过域适应算法之前，目标域汽车类也能够正确分割；然而，为了迎合全局特征对齐，目标域中的汽车类特征反而可能被错误映射到源域中的其他类别。</li></ul><hr><h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3 创新点"></a>3 创新点</h2><h3 id="3-1-传统方法"><a href="#3-1-传统方法" class="headerlink" title="3.1 传统方法"></a>3.1 传统方法</h3><p>传统方法广泛使用的是：在网络中加入一个域判别器Discriminator(D)，利用对抗训练机制，减少源域、目标域的不同分布差异，加强原始网络G在域间的泛化能力：</p><ul><li>(1) 利用源域的有标签数据进行有监督学</li></ul><script type="math/tex; mode=display">ℒ_{seg}(G)=E[ℓ(𝐺(𝑋_𝑆 ),𝑌_𝑆)]</script><p>​            其中$X_S$、$Y_S$为源数据及其对应标签，$G$为生成网络，即生成器损失为$X_S$通过网络$G$后与$Y_S$的损失的数学期望。</p><ul><li>(2) 通过对抗学习，降低域判别器D的精度，对齐源域与目标域的特征分布</li></ul><script type="math/tex; mode=display">ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸[𝑙𝑜𝑔(𝐷(𝐺(𝑋_𝑆 )))]−𝐸[𝑙𝑜𝑔(1−𝐷(𝐺(𝑋_𝑇 )))]</script><p>​            其中$X_T$为目标域数据，无标签。</p><h3 id="3-2-创新"><a href="#3-2-创新" class="headerlink" title="3.2 创新"></a>3.2 创新</h3><p>语义级对抗学习域适应方法：</p><ul><li>在传统的对抗学习框架基础之上加入了协同训练的思想，加入了两个互斥的分类器。</li><li>自适应对抗损失权重实现<ul><li>当两个分类器预测一致时，该特征语义一致性较好，减少全局对齐策略对这些特征的影响；</li><li>反之，需要使用对抗损失，加大对齐力度进行特征对齐。</li></ul></li></ul><img src="/p/60859/pic3.1.png" class=""><blockquote><p>如上图所示，图(a)在第2节已经了解过，图(b)为自适应对抗损失示意图。使用了两个互斥的分类器，有两个曲线（分别边界线）。</p><p>可以看出，经过创新改进，判断出类别“+”起初便对齐较好，于是对抗损失较小，而类别“-”由于对齐较差，其对抗损失较差，进而起到了保护原来对齐较好特征不受影响，又促进对齐较差的特征对齐。</p></blockquote><hr><h2 id="4-方法总结"><a href="#4-方法总结" class="headerlink" title="4 方法总结"></a>4 方法总结</h2><p>论文中提出于一级对抗网络(Category-Level Adversarial Network，CLAN)</p><h3 id="4-1-网络结构"><a href="#4-1-网络结构" class="headerlink" title="4.1 网络结构"></a>4.1 网络结构</h3><p>语义级对抗网络由三部分组成：特征提取E、分类器C和判别器D，前两部分组成生成器G。</p><img src="/p/60859/pic4.1.png" class=""><blockquote><p>橙色线表示源域流，蓝色线表示目标域流。</p></blockquote><ul><li>其中两个互斥的分类器用于判断目标域的隐层特征是否已经达到局部对齐，在后续对抗训练时，网络依据互斥分了器产生的两个预测向量之差来判别网络所受反馈的对抗损失进行加权。</li><li>绿色箭头处使用余弦距离作为分类器损失，训练两个分类器预测产生不同的模型参数。</li><li>源域流通过两个互斥的分类器产生的预测作为源域的集成预测，一方面被标签监督产生分割损失，另一方面进入判别器D，作为源域样本。</li><li>目标域流同样由分类器产生的集成损失进入判别器，同时，求得两个分类器的预测差值，作为局部对齐程度的依据（local alignment score map），该距离与D所反馈的损失相乘得到语义级别的对抗损失。</li></ul><h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p>模型损失函数</p><script type="math/tex; mode=display">ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)=ℒ_{𝑠𝑒𝑔} (𝐺)+𝜆_{𝑤𝑒𝑖𝑔ℎ𝑡} ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)+𝜆_{𝑎𝑑𝑣} ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)𝐺^∗,𝐷^∗=arg⁡𝑚𝑖𝑛_𝐺 𝑚𝑎𝑥_𝐷 ℒ_{𝐶𝐿𝐴𝑁} (𝐺,𝐷)</script><p>训练目标，交替优化G和D，直至总损失收敛为止。</p><ul><li>分割损失：若给定形状为$3\times H \times W$的图像和形状为$C \times H \times W$的标签图，其中$C$是语义类别的数量</li></ul><script type="math/tex; mode=display">ℒ_{𝑠𝑒𝑔} (𝐺)=\sum _{i=1}^{H \times W} \sum _{j=1}^C -y_{ic}\log p_{ic}</script><p>​            其中，$p_{ic}$ 表示像素$i$为$C$类的概率，$y_{ic}$表示像素$i$为$C$类的真值(1 or 0)。</p><p>​            即分类器对各个像素分类预测值的负对数与真值的乘积的累加和。</p><ul><li>分类器损失：</li></ul><script type="math/tex; mode=display">ℒ_{𝑤𝑒𝑖𝑔ℎ𝑡} (𝐺)= \frac {\vec{w_1} \cdot \vec{w_2}}{\| \vec{w_1} \|\|\vec{w_2}\|}</script><p>​            即两个分类器网络中参数的余弦距离。</p><ul><li>对抗损失：</li></ul><script type="math/tex; mode=display">ℒ_{𝑎𝑑𝑣} (𝐺,𝐷)=−𝐸\left[\log (𝐷(𝐺(𝑋_𝑆 ))) \right]−𝐸\left[(𝜆_{𝑙𝑜𝑐𝑎𝑙} 𝑀(𝑝^{(1)},𝑝^{(2)})+𝜖)\log (1−𝐷(𝐺(𝑋_𝑇 )))\right]</script><p>​            其中，$𝑀(𝑝^{(1)},𝑝^{(2)})$表示两个分类器输出向量的余弦距离。</p><p>​            即在传统对抗损失上加权了由两个分类器的预测差异权重。</p><hr><h2 id="5-实验总结"><a href="#5-实验总结" class="headerlink" title="5 实验总结"></a>5 实验总结</h2><h3 id="5-1-语义分割可视化"><a href="#5-1-语义分割可视化" class="headerlink" title="5.1 语义分割可视化"></a>5.1 语义分割可视化</h3><ol><li>CLAN与传统对抗网络（TAN）的对比</li></ol><img src="/p/60859/pic5.1.png" class=""><blockquote><p>重点关注橙色框中的电线杆和交通标志。</p><p>图(e、f、g)为高维特征通过非线性降维算法(t-SNE)到二维空间（仅显示4个相关类，即建筑物为蓝色、交通标志为橙色、杆子为灰色、植被为绿色）</p></blockquote><ul><li>上图表明，有些类别特征在没有进行域迁移之前，就已经是对齐的。传统的全局域适应方法反而会破坏这种语义一致性，造成域迁移；而本文提出的语义级对抗网络降低了全局对齐对这些类的影响。</li></ul><ol><li>特征簇中心距离</li></ol><img src="/p/60859/pic5.2.png" class=""><blockquote><p>上图展示隐层隐层空间源域与目标域之间同语义特征簇的中心距离，该距离越小，说明两个域之间的语义对齐越好。</p></blockquote><ol><li>分割效果</li></ol><img src="/p/60859/pic5.3.png" class=""><blockquote><p>各列为：目标域图、无自适应分割效果、CLAN分割效果、标准效果图。</p></blockquote><h3 id="5-2-总结"><a href="#5-2-总结" class="headerlink" title="5.2 总结"></a>5.2 总结</h3><ul><li>论文提出的语义级对抗学习域适应网络(CLAN)，使用协同训练结合对抗学习的设计，旨在解决无监督域自适应(UDA)语义分割中，由全局特征对齐所引起的语义不一致问题，有效地防止了负迁移。</li><li>在两个域适应语义分割任务，即GTA5 -&gt; Cityscapes 和 SYNTHIA -&gt; Cityscapes 上进行了实验验证，以及实际的语义分割效果中都取得了较好的实验结果。具有良好的应用前景。</li></ul><hr><h2 id="6-相关链接"><a href="#6-相关链接" class="headerlink" title="6 相关链接"></a>6 相关链接</h2><ul><li><a href="https://arxiv.org/pdf/1809.09478.pdf">论文原文</a></li><li><a href="https://github.com/RoyalVane/CLAN">程序源码</a></li><li><a href="https://www.bilibili.com/video/av53561336/">CVPR2019 Oral Presentation: Taking A Closer Look at Domain Shift</a></li></ul><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cdn.jsdelivr.net/gh/jermainliu/cdn@1.0/videos/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look%20at%20-%201.Oral(Av53561336,P1).mp4","pic":"https://cdn.jsdelivr.net/gh/jermainliu/cdn/images/CVPR2019%20Oral%20Presentation%20Taking%20A%20Closer%20Look-Oral.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 论文 </tag>
+            
+            <tag> 语义分割 </tag>
+            
+            <tag> 深度学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown中公式的使用</title>
+      <link href="/p/23853.html"/>
+      <url>/p/23853.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul><li>学习中使用Markdown记笔记，少不了使用公式；</li><li>本次主要说明基本公式的使用，之后会继续更新。</li></ul><span id="more"></span><hr><h2 id="1-基本公式使用"><a href="#1-基本公式使用" class="headerlink" title="1. 基本公式使用"></a>1. 基本公式使用</h2><h3 id="1-1-插入公式"><a href="#1-1-插入公式" class="headerlink" title="1.1 插入公式"></a>1.1 插入公式</h3><ul><li>数学公式有两种：行中公式和独立公式。行中公式与文中其他文字混编，独立公式单独成行。</li><li>行中公式：</li></ul><pre><code>$数学公式$</code></pre><ul><li>独立公式：</li></ul><pre><code>$$独立公式$$</code></pre><ul><li>自动编号的公式可以用如下方法表示：</li></ul><pre><code>\begin{equation}数学公式\label{eq:当前公式名}\end{equation}</code></pre><blockquote><p>自动编号后的公式可在全文任意处使用<code>\eqref{eq:公式名}</code>语句引用。</p></blockquote><ul><li>例子1：</li></ul><pre><code>$\text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$</code></pre><blockquote><p>显示：$ \text {行中公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha} $</p></blockquote><ul><li>例子2：</li></ul><pre><code>$$\text {独立公式示例：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\text {独立公式：} J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac {x}{2} }\right)}^{2m + \alpha}</script></blockquote><h3 id="1-2-输入上下标"><a href="#1-2-输入上下标" class="headerlink" title="1.2 输入上下标"></a>1.2 输入上下标</h3><ul><li><code>^</code>表示上标，<code>_</code>表示下标。如果上下标的内容多于一个字符，需要使用<code>{}</code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</li><li>例子：</li></ul><pre><code>$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><p>另外，如果要在左右两边都有是上下标，可以用<code>\sideset</code>命令。</p></blockquote><ul><li>例子：</li></ul><pre><code>$$\sideset{^1_2}{^3_4} x$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\sideset{^1_2}{^3_4} x</script></blockquote><h3 id="1-3-输入括号和分隔符"><a href="#1-3-输入括号和分隔符" class="headerlink" title="1.3 输入括号和分隔符"></a>1.3 输入括号和分隔符</h3><ul><li><code>()</code>、<code>[]</code>和<code>|</code>表示符号本身，使用<code>\{\}</code>来表示<code>{}</code>。当要显示大号的括号或分隔符时，要用<code>\left</code>和<code>\right</code>命令。</li><li>一些特殊的括号：</li></ul><div class="table-container"><table><thead><tr><th style="text-align:center">输入</th><th style="text-align:center">显示</th><th style="text-align:center">输入</th><th style="text-align:center">显示</th></tr></thead><tbody><tr><td style="text-align:center">\langle</td><td style="text-align:center">$\langle$</td><td style="text-align:center">\rangle</td><td style="text-align:center">$\rangle$</td></tr><tr><td style="text-align:center">\lceil</td><td style="text-align:center">$\lceil$</td><td style="text-align:center">\rceil</td><td style="text-align:center">$\rceil$</td></tr><tr><td style="text-align:center">\lfloor</td><td style="text-align:center">$\lfloor$</td><td style="text-align:center">\rfloor</td><td style="text-align:center">$\rfloor$</td></tr><tr><td style="text-align:center">\lbrace</td><td style="text-align:center">$\lbrace$</td><td style="text-align:center">\rbrace</td><td style="text-align:center">$\rbrace$</td></tr></tbody></table></div><ul><li>例子1：</li></ul><pre><code>$$f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">f(x,y,z)=3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)</script><p>有时需要用<code>\left.</code>或者<code>\right.</code>进行匹配而不显示本身。</p></blockquote><ul><li>例子2：</li></ul><pre><code>$$\left. \frac{du}{dx} \right| _{x=0}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\left. \frac{du}{dx} \right| _{x=0}</script></blockquote><h3 id="1-4-输入分数"><a href="#1-4-输入分数" class="headerlink" title="1.4 输入分数"></a>1.4 输入分数</h3><ul><li>通常使用<code>\frac{分子}{分母}</code>命令产生一个分数，分数可以嵌套。</li><li>当分子（分母）只有一个字符时，可以不用花括号。</li><li><p>如果分式很复杂，也可以使用<code>分子 \over 分母</code>命令，此时分数仅有一层。</p></li><li><p>例子：</p></li></ul><pre><code>$$\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\frac{a-1}{b-1} \quad and \quad {a+1\over b+1}</script></blockquote><h3 id="1-5-输入开方"><a href="#1-5-输入开方" class="headerlink" title="1.5 输入开方"></a>1.5 输入开方</h3><ul><li>使用<code>\sqrt{根指数，省略时默认为2}{被开方数}</code>命令输入开方。</li><li>例子：</li></ul><pre><code>$$\sqrt{2} \quad and \quad \sqrt{n}{3}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\sqrt{2} \quad and \quad \sqrt{n}{3}</script></blockquote><h3 id="1-6-输入省略号"><a href="#1-6-输入省略号" class="headerlink" title="1.6 输入省略号"></a>1.6 输入省略号</h3><ul><li>常见的省略号有两种，<code>\ldots</code>表示与文本底线对齐的省略号，<code>\cdots</code>表示与文本中线对齐的省略号。</li><li>例子：</li></ul><pre><code>$$f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">f(x_1,x_2,\underbrace{\ldots}_{\rm ldots}, x_n) = x_1^2 + x_2^2 \underbrace{\cdots}_{rm \cdots} + x_n^2</script></blockquote><h3 id="1-7-输入矢量"><a href="#1-7-输入矢量" class="headerlink" title="1.7 输入矢量"></a>1.7 输入矢量</h3><ul><li>使用<code>\vec{矢量}</code>来自动产生一个矢量。也可以使用<code>\overrightarrow</code>等命令自定义字母上方的符号。</li><li>例子1：</li></ul><pre><code>$$\vec{a} \cdot \vec(b)=0$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\vec{a} \cdot \vec(b)=0</script></blockquote><ul><li>例子2：</li></ul><pre><code>$$\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow(xy)</script></blockquote><h3 id="1-8-输入积分"><a href="#1-8-输入积分" class="headerlink" title="1.8 输入积分"></a>1.8 输入积分</h3><ul><li>使用<code>\int_积分下限^积分上限 {被积表达式}</code>来输入一个积分。</li><li>例子：</li></ul><pre><code>$$\int_0^1 {x^2} \,{\rm d}x$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\int_0^1 {x^2} \,{\rm d}x</script><p>本式中<code>\,</code>和<code>{\rm d}</code>部分可以省略，但建议加入，能使式子更美观。</p></blockquote><h3 id="1-9-输入极限符号"><a href="#1-9-输入极限符号" class="headerlink" title="1.9 输入极限符号"></a>1.9 输入极限符号</h3><ul><li>使用<code>\lim_{变量 \to 表达式} 表达式</code>来输入一个极限。如有需求，可以更改<code>\to</code>符号至任意符号。</li><li>例子：</li></ul><pre><code>$$\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}</script></blockquote><h3 id="1-10-输入累加、累乘运算"><a href="#1-10-输入累加、累乘运算" class="headerlink" title="1.10 输入累加、累乘运算"></a>1.10 输入累加、累乘运算</h3><ul><li>使用<code>\sum_{下标表达式}^{上标表达式} {累加表达式}</code>来输入一个累加。</li><li>与之类似，使用<code>\prod</code>、<code>\bigcup</code>、<code>\bigcap</code>来分别输入累乘、并集和交集。</li><li>此符号在行内显示时上下标表达式将会移至右上角和右下角。</li><li>例子：</li></ul><pre><code>$$\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R$$</code></pre><blockquote><p>显示：</p><script type="math/tex; mode=display">\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R</script></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+            <tag> 公式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo主题添加网页访问计数功能</title>
+      <link href="/p/55524.html"/>
+      <url>/p/55524.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul><li>添加不蒜子访问计数</li><li>以Hexo的yilia主题为例子</li></ul><span id="more"></span><ul><li>以Hexo目录作为说明的基点</li></ul><hr><h2 id="1-配置文件修改"><a href="#1-配置文件修改" class="headerlink" title="1. 配置文件修改"></a>1. 配置文件修改</h2><ul><li>在<code>./themes/yilia/_config.yml</code>中添加属性<ul><li>本身yilia主题没有在_config.yml中保留不算子的属性，所有直接在末尾追加就行<pre><code># 开启不算子访问统计busuanzi:enable: true</code></pre></li></ul></li></ul><hr><h2 id="2-添加不蒜子插件"><a href="#2-添加不蒜子插件" class="headerlink" title="2. 添加不蒜子插件"></a>2. 添加不蒜子插件</h2><ul><li>添加统计数据显示以及不蒜子网站访问脚本</li><li><p>在<code>./themes/yilia/layout/_partla/footer.ejs</code>末尾<code>&lt;/footer&gt;</code>与其上面的<code>&lt;/div&gt;</code>之间插入下面代码：</p><pre><code>&lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable){ %&gt;  &lt;!-- 不蒜子统计 --&gt;  &lt;span id="busuanzi_container_site_pv"&gt;    本站总访问量&lt;span id="busuanzi_value_site_pv"&gt;&lt;/span&gt;次  &lt;/span&gt;  &lt;span class="post-meta-divider"&gt; | &lt;/span&gt;  &lt;span id="busuanzi_container_site_uv"&gt;    本站访客数&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;人次  &lt;/span&gt;  &lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;  &lt;/script&gt;&lt;% } %&gt;</code></pre></li></ul><hr><h2 id="3-资源"><a href="#3-资源" class="headerlink" title="3. 资源"></a>3. 资源</h2><ul><li>不蒜子本人官网链接：<a href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子 | 不如</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 不蒜子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>逻辑斯蒂回归与Softmax回归的极大似然估计</title>
+      <link href="/p/11737.html"/>
+      <url>/p/11737.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul><li>使用极大似然估计(i.i.d independent and identically distributed)</li><li>推导逻辑斯蒂回归和Softmax回归用于分类问题的目标函数</li></ul><span id="more"></span><hr><h2 id="1-逻辑斯蒂回归的极大似然估计"><a href="#1-逻辑斯蒂回归的极大似然估计" class="headerlink" title="1. 逻辑斯蒂回归的极大似然估计"></a>1. 逻辑斯蒂回归的极大似然估计</h2><ul><li><p>线性回归的任务是预测，单也可用来分类</p></li><li><p>伯努利分布<br>| $y_n$ |         1         |         0         |<br>| :—-: | :———————-: | :———————-: |<br>| $p_n$ | $p^1(x_n;\omega)$ | $p^2(x_n;\omega)$ |</p></li></ul><p>  其中</p><script type="math/tex; mode=display">p^1(x_n;\omega)+p^2(x_n;\omega)=1</script><script type="math/tex; mode=display">p^1(x_n;\omega)=\frac{e^{\omega^Tx_n}}{1+e^{\omega^Tx_n}}</script><script type="math/tex; mode=display">p^2(x_n;\omega)=\frac{1}{1+e^{\omega^Tx_n}}</script><ul><li>极大似然估计(i.i.d)<script type="math/tex; mode=display">p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}{[p^1(x_n;\omega)]^y_n [p^0(x_n;\omega)]^{1-y_n}}</script><script type="math/tex; mode=display">max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega [ -\ln{p(x_1,x_2,\cdots,x_N;\omega)}\large]</script></li><li>目标函数<script type="math/tex; mode=display">\begin{align}  L(\omega) & =-\ln{p(x_1,x_2,\cdots,x_N;\omega)} \\  & =-\sum_{n=1}^{N}{[y_n \ln{p^1(x_n;\omega)}+(1-y_N)\ln{p^0(x_n;\omega)}]} \\  & =-\sum_{n=1}^{N}{\lbrace y_n[\omega^Tx+\ln{(1+exp(\omega^Tx))}]+(1-y_n)\ln{(1+exp(\omega^Tx))} \rbrace} \\  & =\sum_{n=1}^{N}{[-y_n\omega^Tx+\ln{(1+exp(\omega^Tx))}]} \\  \end{align}</script></li></ul><hr><h2 id="2-Softmax回归的极大似然估计"><a href="#2-Softmax回归的极大似然估计" class="headerlink" title="2. Softmax回归的极大似然估计"></a>2. Softmax回归的极大似然估计</h2><ul><li><p>多类分类</p></li><li><p>概率分布列</p><p>| $y_n$ |          1          |          2          | $\cdots$ |          C          |<br>| :—-: | :————————-: | :————————-: | :———: | :————————-: |<br>| $p_n$ | $p^1(x_n;\omega_1)$ | $p^2(x_n;\omega_2)$ | $\cdots$ | $p^C(x_n;\omega_C)$ |</p></li></ul><p>  其中</p><script type="math/tex; mode=display">    \omega^T=    \begin{bmatrix}    \omega_1^T \\    \omega_2^T \\    \vdots \\    \omega_C^T \\    \end{bmatrix}=    \begin{bmatrix}    \omega_{1,1} & \omega_{1,2} & \cdots & \omega_{1,N} \\    \omega_{2,1} & \omega_{2,2} & \cdots & \omega_{2,N} \\    \vdots & \vdots & \ddots & \vdots \\    \omega_{C,1} & \omega_{C,2} \cdots & \omega_{C,N} \\    \end{bmatrix}</script><script type="math/tex; mode=display">\sum_{c=1}^{C}p^c(x_n;\omega_c)=1</script><script type="math/tex; mode=display">p^c(x_n;\omega_c)=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}</script><ul><li>极大似然估计(i.i.d)<script type="math/tex; mode=display">  \text{引入示性函数} \quad I(y_n=c)=  \begin{cases}  1, & y_n=c \\  0, & y_n\neq c \\  \end{cases}</script></li></ul><script type="math/tex; mode=display">p(x_1,x_2,\cdots,x_N;\omega)=\prod_{n=1}^{N}\prod_{c=1}^{C}{\large[p^c(x_n;\omega_c)]^{I(y_n)}}</script><script type="math/tex; mode=display">max_\omega p(x_1,x_2,\cdots,x_N;\omega) \iff min_\omega[-\ln p(x_1,x_2,\cdots,x_N;\omega)]</script><ul><li>目标函数<script type="math/tex; mode=display">\begin{align}  L(\omega) & =-\ln p(x_1,x_2,\cdots,x_N;\omega) \\  & =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\ln p^c(x_n;\omega_c)} \\  & =-\sum_{n=1}^{N}\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}} \\  \end{align}</script>令<script type="math/tex; mode=display">y_n=[\delta(y_n=1),\delta(y_n=2),\cdots,\delta(y_n=C)]</script><script type="math/tex; mode=display">h(\omega^Tx_n)=\frac{e^{\omega^Tx}}{\large{1}^T e^{\omega^Tx}}=\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}</script>则有<script type="math/tex; mode=display">\sum_{c=1}^{C}{I(y_n)\frac{e^{\omega_c^Tx_n}}{\sum_{k=1}^{C}e^{\omega_k^Tx_n}}}=y_n^T \ln h(\omega^Tx_n)</script>目标函数化简为<script type="math/tex; mode=display">  L(\omega)=-\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}</script></li><li>交叉熵损失函数(Cross Entropy Loss)<br>在目标函数的基础上乘以$\frac{1}{N}$<script type="math/tex; mode=display">J(\omega)=-\frac{1}{N}\sum_{n=1}^{N}{y_n^T\ln h(\omega^Tx_n)}</script></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 极大似然估计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客添加字数统计和阅读时长</title>
+      <link href="/p/25241.html"/>
+      <url>/p/25241.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><p>hexo-wordcount 插件提供了字数统计和阅读时长预计功能，项目地址为：<a href="https://www.npmjs.com/package/hexo-wordcount">hexo-wordcount</a></p><span id="more"></span><p>下面均以Hexo博客根目录为基点。</p><hr><h2 id="1-安装hexo-wordcount字数和阅读时长统计插件"><a href="#1-安装hexo-wordcount字数和阅读时长统计插件" class="headerlink" title="1. 安装hexo-wordcount字数和阅读时长统计插件"></a>1. 安装hexo-wordcount字数和阅读时长统计插件</h2><ul><li>进入博客根目录，使用npm安装hexo-wordcount插件</li></ul><pre><code>npm install hexo-wordcount --save</code></pre><blockquote><p> 加—save参数可以将安装信息写入package.json，方便以后可能需要再次安装。</p><p> 安装完成之后，可以在hexo根目录的node_modules文件夹中找到hexo_wordcount文件夹，里面的index.js就是插件的全部内容。</p></blockquote><hr><h2 id="2-添加字数和阅读时长数据"><a href="#2-添加字数和阅读时长数据" class="headerlink" title="2. 添加字数和阅读时长数据"></a>2. 添加字数和阅读时长数据</h2><ul><li>在文章的标题下方添加字数统计和时长估计数据</li><li>在目录 <code>./themes/yilia/layout/_partial/post/</code> 创建新文件 <code>wordcount.ejs</code>，文件内容如下：</li></ul><pre class=" language-lang-html"><code class="language-lang-html"><div style="margin-top:10px;">    <span class="post-time">        <span class="post-meta-item-icon">            <i class="fa fa-file-word"></i>            <span class="post-meta-item-text">  字数统计: </span>            <span class="post-count"><%= wordcount(post.content) %>字 </span>        </span>    </span>    <span class="post-time">        &nbsp; | &nbsp;        <span class="post-meta-item-icon">            <i class="fa fa-hourglass-half"></i>            <span class="post-meta-item-text">  阅读时长: </span>            <span class="post-count"><%= min2read(post.content) %>分 </span>        </span>    </span></div></code></pre><ul><li>然后，在<code>./themes/yilia/layout/_partial/artivle.ejs</code>中修改文件内容为：</li></ul><p>```html</p><pre><code>&lt;% if (post.link || post.title){ %&gt;  &lt;header class="article-header"&gt;    &lt;%- partial('post/title', {class_name: 'article-title'}) %&gt;    &lt;% if (!post.noDate){ %&gt;    &lt;%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %&gt;    &lt;!--添加字数统计位置--&gt;    &lt;% if(theme.word_count &amp;&amp; !post.no_word_count){%&gt;          &lt;%- partial('post/wordcount') %&gt;          &lt;% } %&gt;        <!--添加完成-->        &lt;% } %&gt;      ```&gt; 注意：并非在文件末尾追加，而是在文件中查找到该部分，添加中间汉字提示的部分&gt;&gt; tips: 由于文件中内容较多，可以使用一些编译器的查找功能---## 3. 开启功能- 在`./themes/yilia/_config.yml`添加如下内容：```# 是否开启字数统计# 不需要使用，直接设置值为`false`，或者注释掉word_count: true```---效果如图所示：{% asset_img pic2.1.png %}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> wordcount </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用Hexo部署一个属于自己的博客</title>
+      <link href="/p/60899.html"/>
+      <url>/p/60899.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0. 说明"></a>0. 说明</h2><ul><li>本次配置使用的环境为：deepin 15.11桌面版</li><li>其他操作系统类似</li></ul><span id="more"></span><hr><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="Node-js环境包"><a href="#Node-js环境包" class="headerlink" title="Node.js环境包"></a>Node.js环境包</h3><ul><li>因为Hexo是基于Node.js的第三方模块，所以缺少Node.js不可。访问<a href="https://nodejs.org/en/">Node.js官网</a>下载合适自己系统的Node.js安装包。此时最新版本为v13.9.0，我使用的平台为Linux Binaries (x64)</li><li>创建安装路径，并进行解压(我们以/usr/local/lib/nodejs文件夹为例)<pre><code>sudo mkdir -p /usr/local/lib/nodejs         # 创建解压安装目录sudo tar -xJvf node-v13.9.0-linux-x64.tar.xz -C /usr/local/lib/nodejs         # 将安装包解压安装</code></pre></li><li>添加换将变量，在～/.bashrc文件后追加<pre><code>export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin# 或者export PATH=/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin:$PATH# 或者直接使用命令添加echo 'export PATH=$PATH:/usr/local/lib/nodejs/node-v13.9.0-linux-x64/bin"' &gt;&gt; ~/.bashrc</code></pre></li><li>测试安装<pre><code>node -vnpm versionnpx -v</code></pre></li></ul><h3 id="Git工具包"><a href="#Git工具包" class="headerlink" title="Git工具包"></a>Git工具包</h3><ul><li>在bash中使用apt-get方法进行安装即可<pre><code>sudo apt-get install git-core</code></pre></li><li>测试安装<pre><code>git --version</code></pre></li></ul><hr><h2 id="2-开始工作"><a href="#2-开始工作" class="headerlink" title="2. 开始工作"></a>2. 开始工作</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul><li>Hexo是基于Node.js的第三方模块，所有我们需要对其进行单独安装，使用npm安装Hexo<pre><code>npm install -g hexo-cli# 对于熟悉npm的进阶用户，可以仅局部安装Hexo包# npm install hexo</code></pre></li><li>自动安装到Nodejs目录中,也无需添加环境变量，只有上一步安装Node.js中添加了即可</li><li>测试<pre><code>hexo -v</code></pre></li></ul><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><ul><li>安装Hexo完成后，清执行系列命令，Hexo将会在指定文件夹中新建所需要的文件<pre><code># 我以加家目录下创建Hexo文件夹为例进行cd ~        # 进入家目录sudo mkdir Hexo            # 创建Hexo目录hexo init ./Hexo         # 初始化Hexo目录cd ./Hexonpm install</code></pre></li><li>新建完成后，指定文件夹的目录如下：<pre><code>.├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</code></pre><h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4>-网站的<a href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>信息，可以在此配置大部分的参数<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4></li><li>应用程序的信息。<a href="https://ejs.co/">EJS</a>，<a href="https://stylus-lang.com/">Stylus</a>和<a href="https://daringfireball.net/projects/markdown/">Markdown</a> renderer已默认安装，可以自由移除<pre><code>package.json{"name": "hexo-site","version": "0.0.0","private": true,"hexo": {  "version": ""},"dependencies": {  "hexo": "^3.8.0",  "hexo-generator-archive": "^0.1.5",  "hexo-generator-category": "^0.1.3",  "hexo-generator-index": "^0.2.1",  "hexo-generator-tag": "^0.2.0",  "hexo-renderer-ejs": "^0.3.1",  "hexo-renderer-stylus": "^0.3.3",  "hexo-renderer-marked": "^0.3.2",  "hexo-server": "^0.3.3"}}</code></pre><h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4></li><li><a href="https://hexo.io/zh-cn/docs/writing">写作 | Hexo</a>模板文件夹。当新建文章时，Hexo会根据scaffold来建立文件。</li><li>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您需改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</li></ul><h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><ul><li>资源文件夹是存放用户资源的地方。除_posts文件夹之外，开头命名为_（下划线）的文件/文件夹和隐藏的文件将会被忽略。Markdown和HTML文件会被解析并防盗public文件夹，而其他文件会被拷贝过去。</li></ul><h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><ul><li><a href="https://hexo.io/zh-cn/docs/themes">主题 | Hexo</a>文件夹。Hexo会根据主题来生成静态网页。</li></ul><hr><h2 id="3-基本操作"><a href="#3-基本操作" class="headerlink" title="3. 基本操作"></a>3. 基本操作</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h4><ul><li>Hexo 3.0 把服务器独立成了个别模块，必须先安装hexo-server才能使用<pre><code>npm install hexo-server --save</code></pre></li><li>安装完成后，输入以下命令以启动服务器，您的网站会在<a href="http://localhost:4000">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无需重启服务器<pre><code>hexo server</code></pre></li><li>如果想要更改端口，或是在执行时遇到了EADDRINUSE错误，可以在执行时使用-p选项指定其他端口，如下：<pre><code>hexo server -p 5000</code></pre></li></ul><h4 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h4><ul><li>在静态模式下，服务器只处理public文件夹内的文件，而不会处理文件变动，在执行时，你应该先自动执行hexo generate，此模式通常用于生产环境（production mode）下。<pre><code>hexo server -s</code></pre></li></ul><h4 id="自定义IP"><a href="#自定义IP" class="headerlink" title="自定义IP"></a>自定义IP</h4><ul><li>服务器默认运行在0.0.0.0，你可以覆盖默认的IP地址，如下：<pre><code>hexo server -i 192.168.1.1</code></pre></li><li>使用这个参数后，你就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的127.0.0.1外，通常还有一个192.168.<em>.</em>的局域网IP，如果像上面那样使用-i参数，就不能用127.0.0.1来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为-i参数的值，那么就无法通过公网来访问站点。</li></ul><h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><ul><li>执行下列命令来创建一片新的文章或者新的页面<pre><code># hexo new [layout] &lt;title&gt;hexo new post “my_first_blog”</code></pre></li><li>可以在命令中指定文章的布局(layout)，默认为post，可以通过修改_config.yml中的default_layout参数来指定默认布局。</li><li>在./source/_posts/中产生新的.md文件</li><li>通过终端或者编辑器进行写入内容，网站会自动更新</li><li>其他有关命令<pre><code>hexo clean            # 清除缓存文件(db.json)和已生成的静态文件(public)hexo generate            # hexo g  生成静态文件hexo list &lt;type&gt;            # 列出网站资料</code></pre></li></ul><hr><h2 id="4-部署（github）"><a href="#4-部署（github）" class="headerlink" title="4. 部署（github）"></a>4. 部署（github）</h2><h3 id="github仓库"><a href="#github仓库" class="headerlink" title="github仓库"></a>github仓库</h3><ul><li>登录github仓库</li><li>在右上角点击“+”号，点击“New repository”</li><li>用户部署个人博客的github仓库的命令必须为 github用户名.github.io；简单写一下仓库的描述，可以不写；下面选择public，公开的，私人的需要付费，最后点击Create repository创建完成<img src="/p/60899/pic1.png" class=""></li><li>显示如下：<ul><li><img src="/p/60899/pic2.png" class=""></li><li>使用上面的http</li></ul></li></ul><h3 id="进行git部署"><a href="#进行git部署" class="headerlink" title="进行git部署"></a>进行git部署</h3><ul><li>进入创建的Hexo博客目录，执行下列命令安装git插件<pre><code>npm install --save hexo-deployer-git</code></pre></li><li>修改配置文件_config.yml，使用nano、或者使用vim编辑<pre><code>nano _config.yml</code></pre></li><li>下滑至最后，在# Deployment部分进行修改添加<pre><code># Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy:type: gitrepo: https://github.com/JermainLiu/JermainLiu.github.io.git         # 刚刚在上面的创建的仓库后出现的http地址branch: master         # 不写默认为master</code></pre></li><li>Ctrl+o，Enter，保存，Ctrl+x退出编辑</li><li>配置git信息，用自己的信息替换下面引号中的内容。如果之前配置过git config的话，跳过<pre><code>git config --global user.email "you@example.com"git config --global user.name "Your Name"</code></pre></li><li>执行部署命令<pre><code>hexo deploy</code></pre></li><li>在这个过程中会提示你输入github账户昵称和密码。</li><li>完成之后，刷新刚刚新建的github仓库，文件已经部署进github中，在地址栏访问你的仓库名称“username.github.io”即可访问博客。</li></ul><hr><!--toc--><p><span id="busuanzi_container_page_pv">  本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次&lt;/span&gt;</span></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>First Blog</title>
+      <link href="/p/45015.html"/>
+      <url>/p/45015.html</url>
+      
+        <content type="html"><![CDATA[<p>自己的博客基本搭建完成，接下来进行部署即可。</p><span id="more"></span><p>第一次使用这种博客来写东西，心情还是很激动的呢！！</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
