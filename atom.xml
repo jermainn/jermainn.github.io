@@ -6,7 +6,7 @@
   <link href="http://jermainliu.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jermainliu.gitee.io/"/>
-  <updated>2023-01-21T06:16:22.711Z</updated>
+  <updated>2023-02-13T03:32:02.000Z</updated>
   <id>http://jermainliu.gitee.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启用 wordpress 博客</title>
+    <link href="http://jermainliu.gitee.io/p/6cc8.html"/>
+    <id>http://jermainliu.gitee.io/p/6cc8.html</id>
+    <published>2023-02-13T03:32:02.000Z</published>
+    <updated>2023-02-13T03:32:02.000Z</updated>
+    
+    
+    <summary type="html">Wordpress 博客，Hexo 博客</summary>
+    
+    
+    
+    
+    <category term="wordpress" scheme="http://jermainliu.gitee.io/tags/wordpress/"/>
+    
+  </entry>
   
   <entry>
     <title>当傅里叶拿起画笔</title>
