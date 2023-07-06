@@ -3,11 +3,11 @@
   <title>Jermain Liu</title>
   
   <subtitle>my blog</subtitle>
-  <link href="http://jermainliu.gitee.io/atom.xml" rel="self"/>
+  <link href="http://jermainn.gitee.io/atom.xml" rel="self"/>
   
-  <link href="http://jermainliu.gitee.io/"/>
+  <link href="http://jermainn.gitee.io/"/>
   <updated>2023-02-13T03:32:02.000Z</updated>
-  <id>http://jermainliu.gitee.io/</id>
+  <id>http://jermainn.gitee.io/</id>
   
   <author>
     <name>Jermain</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>启用 wordpress 博客</title>
-    <link href="http://jermainliu.gitee.io/p/6cc8.html"/>
-    <id>http://jermainliu.gitee.io/p/6cc8.html</id>
+    <link href="http://jermainn.gitee.io/p/6cc8.html"/>
+    <id>http://jermainn.gitee.io/p/6cc8.html</id>
     <published>2023-02-13T03:32:02.000Z</published>
     <updated>2023-02-13T03:32:02.000Z</updated>
     
@@ -29,14 +29,14 @@
     
     
     
-    <category term="wordpress" scheme="http://jermainliu.gitee.io/tags/wordpress/"/>
+    <category term="wordpress" scheme="http://jermainn.gitee.io/tags/wordpress/"/>
     
   </entry>
   
   <entry>
     <title>当傅里叶拿起画笔</title>
-    <link href="http://jermainliu.gitee.io/p/8719.html"/>
-    <id>http://jermainliu.gitee.io/p/8719.html</id>
+    <link href="http://jermainn.gitee.io/p/8719.html"/>
+    <id>http://jermainn.gitee.io/p/8719.html</id>
     <published>2023-01-21T06:16:22.711Z</published>
     <updated>2023-01-21T06:16:22.711Z</updated>
     
@@ -46,16 +46,16 @@
     
     
     
-    <category term="manim" scheme="http://jermainliu.gitee.io/tags/manim/"/>
+    <category term="manim" scheme="http://jermainn.gitee.io/tags/manim/"/>
     
-    <category term="傅里叶级数" scheme="http://jermainliu.gitee.io/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/"/>
+    <category term="傅里叶级数" scheme="http://jermainn.gitee.io/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>node.js版本管理工具nvm</title>
-    <link href="http://jermainliu.gitee.io/p/36897.html"/>
-    <id>http://jermainliu.gitee.io/p/36897.html</id>
+    <link href="http://jermainn.gitee.io/p/36897.html"/>
+    <id>http://jermainn.gitee.io/p/36897.html</id>
     <published>2021-03-21T08:48:14.000Z</published>
     <updated>2021-03-21T08:48:14.000Z</updated>
     
@@ -72,16 +72,16 @@
     
     
     
-    <category term="node.js" scheme="http://jermainliu.gitee.io/tags/node-js/"/>
+    <category term="node.js" scheme="http://jermainn.gitee.io/tags/node-js/"/>
     
-    <category term="nvm" scheme="http://jermainliu.gitee.io/tags/nvm/"/>
+    <category term="nvm" scheme="http://jermainn.gitee.io/tags/nvm/"/>
     
   </entry>
   
   <entry>
     <title>PPT模板网站推荐</title>
-    <link href="http://jermainliu.gitee.io/p/53034.html"/>
-    <id>http://jermainliu.gitee.io/p/53034.html</id>
+    <link href="http://jermainn.gitee.io/p/53034.html"/>
+    <id>http://jermainn.gitee.io/p/53034.html</id>
     <published>2021-02-02T13:27:48.000Z</published>
     <updated>2021-02-02T13:27:48.000Z</updated>
     
@@ -95,14 +95,14 @@
     
     
     
-    <category term="PPT模板" scheme="http://jermainliu.gitee.io/tags/PPT%E6%A8%A1%E6%9D%BF/"/>
+    <category term="PPT模板" scheme="http://jermainn.gitee.io/tags/PPT%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
   <entry>
     <title>论文解读--Bidirectional Learning for Domain Adaptation of Semantic Segmentation</title>
-    <link href="http://jermainliu.gitee.io/p/2717.html"/>
-    <id>http://jermainliu.gitee.io/p/2717.html</id>
+    <link href="http://jermainn.gitee.io/p/2717.html"/>
+    <id>http://jermainn.gitee.io/p/2717.html</id>
     <published>2021-01-29T01:22:36.000Z</published>
     <updated>2021-01-29T01:22:36.000Z</updated>
     
@@ -115,18 +115,18 @@
     
     
     
-    <category term="论文" scheme="http://jermainliu.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
+    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
     
-    <category term="语义分割" scheme="http://jermainliu.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    <category term="语义分割" scheme="http://jermainn.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     
-    <category term="域适应" scheme="http://jermainliu.gitee.io/tags/%E5%9F%9F%E9%80%82%E5%BA%94/"/>
+    <category term="域适应" scheme="http://jermainn.gitee.io/tags/%E5%9F%9F%E9%80%82%E5%BA%94/"/>
     
   </entry>
   
   <entry>
     <title>markdown使用</title>
-    <link href="http://jermainliu.gitee.io/p/61039.html"/>
-    <id>http://jermainliu.gitee.io/p/61039.html</id>
+    <link href="http://jermainn.gitee.io/p/61039.html"/>
+    <id>http://jermainn.gitee.io/p/61039.html</id>
     <published>2021-01-24T12:25:10.000Z</published>
     <updated>2021-01-24T12:25:10.000Z</updated>
     
@@ -139,14 +139,14 @@
     
     
     
-    <category term="markdown" scheme="http://jermainliu.gitee.io/tags/markdown/"/>
+    <category term="markdown" scheme="http://jermainn.gitee.io/tags/markdown/"/>
     
   </entry>
   
   <entry>
     <title>论文解读--Taking A Closer Look at Domain Shift: Category-level Adversaries for Semantics Consistent Domain Adaptation</title>
-    <link href="http://jermainliu.gitee.io/p/60859.html"/>
-    <id>http://jermainliu.gitee.io/p/60859.html</id>
+    <link href="http://jermainn.gitee.io/p/60859.html"/>
+    <id>http://jermainn.gitee.io/p/60859.html</id>
     <published>2021-01-22T10:02:41.000Z</published>
     <updated>2021-01-22T10:02:41.000Z</updated>
     
@@ -159,18 +159,18 @@
     
     
     
-    <category term="论文" scheme="http://jermainliu.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
+    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
     
-    <category term="语义分割" scheme="http://jermainliu.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    <category term="语义分割" scheme="http://jermainn.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     
-    <category term="深度学习" scheme="http://jermainliu.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="http://jermainn.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Markdown中公式的使用</title>
-    <link href="http://jermainliu.gitee.io/p/23853.html"/>
-    <id>http://jermainliu.gitee.io/p/23853.html</id>
+    <link href="http://jermainn.gitee.io/p/23853.html"/>
+    <id>http://jermainn.gitee.io/p/23853.html</id>
     <published>2020-03-10T12:24:04.000Z</published>
     <updated>2020-03-10T12:24:04.000Z</updated>
     
@@ -183,16 +183,16 @@
     
     
     
-    <category term="Markdown" scheme="http://jermainliu.gitee.io/tags/Markdown/"/>
+    <category term="Markdown" scheme="http://jermainn.gitee.io/tags/Markdown/"/>
     
-    <category term="公式" scheme="http://jermainliu.gitee.io/tags/%E5%85%AC%E5%BC%8F/"/>
+    <category term="公式" scheme="http://jermainn.gitee.io/tags/%E5%85%AC%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Hexo主题添加网页访问计数功能</title>
-    <link href="http://jermainliu.gitee.io/p/55524.html"/>
-    <id>http://jermainliu.gitee.io/p/55524.html</id>
+    <link href="http://jermainn.gitee.io/p/55524.html"/>
+    <id>http://jermainn.gitee.io/p/55524.html</id>
     <published>2020-03-09T14:24:29.000Z</published>
     <updated>2020-03-09T14:24:29.000Z</updated>
     
@@ -205,16 +205,16 @@
     
     
     
-    <category term="Hexo" scheme="http://jermainliu.gitee.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="http://jermainn.gitee.io/tags/Hexo/"/>
     
-    <category term="不蒜子" scheme="http://jermainliu.gitee.io/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/"/>
+    <category term="不蒜子" scheme="http://jermainn.gitee.io/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/"/>
     
   </entry>
   
   <entry>
     <title>逻辑斯蒂回归与Softmax回归的极大似然估计</title>
-    <link href="http://jermainliu.gitee.io/p/11737.html"/>
-    <id>http://jermainliu.gitee.io/p/11737.html</id>
+    <link href="http://jermainn.gitee.io/p/11737.html"/>
+    <id>http://jermainn.gitee.io/p/11737.html</id>
     <published>2020-03-08T14:56:46.000Z</published>
     <updated>2020-03-08T14:56:46.000Z</updated>
     
@@ -227,16 +227,16 @@
     
     
     
-    <category term="机器学习" scheme="http://jermainliu.gitee.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="http://jermainn.gitee.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="极大似然估计" scheme="http://jermainliu.gitee.io/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/"/>
+    <category term="极大似然估计" scheme="http://jermainn.gitee.io/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客添加字数统计和阅读时长</title>
-    <link href="http://jermainliu.gitee.io/p/25241.html"/>
-    <id>http://jermainliu.gitee.io/p/25241.html</id>
+    <link href="http://jermainn.gitee.io/p/25241.html"/>
+    <id>http://jermainn.gitee.io/p/25241.html</id>
     <published>2020-03-07T15:32:36.000Z</published>
     <updated>2020-03-07T15:32:36.000Z</updated>
     
@@ -246,16 +246,16 @@
     
     
     
-    <category term="Hexo" scheme="http://jermainliu.gitee.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="http://jermainn.gitee.io/tags/Hexo/"/>
     
-    <category term="wordcount" scheme="http://jermainliu.gitee.io/tags/wordcount/"/>
+    <category term="wordcount" scheme="http://jermainn.gitee.io/tags/wordcount/"/>
     
   </entry>
   
   <entry>
     <title>使用Hexo部署一个属于自己的博客</title>
-    <link href="http://jermainliu.gitee.io/p/60899.html"/>
-    <id>http://jermainliu.gitee.io/p/60899.html</id>
+    <link href="http://jermainn.gitee.io/p/60899.html"/>
+    <id>http://jermainn.gitee.io/p/60899.html</id>
     <published>2020-03-05T14:39:09.000Z</published>
     <updated>2020-03-05T14:39:09.000Z</updated>
     
@@ -268,14 +268,14 @@
     
     
     
-    <category term="Hexo" scheme="http://jermainliu.gitee.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="http://jermainn.gitee.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>First Blog</title>
-    <link href="http://jermainliu.gitee.io/p/45015.html"/>
-    <id>http://jermainliu.gitee.io/p/45015.html</id>
+    <link href="http://jermainn.gitee.io/p/45015.html"/>
+    <id>http://jermainn.gitee.io/p/45015.html</id>
     <published>2020-03-04T15:41:29.000Z</published>
     <updated>2020-03-04T15:41:29.000Z</updated>
     
