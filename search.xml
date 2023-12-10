@@ -8,7 +8,7 @@
       <link href="/p/7cfb.html"/>
       <url>/p/7cfb.html</url>
       
-        <content type="html"><![CDATA[<p>案例界面采用了旧港口的场景</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/OldSeaPort_Scene.webp" alt="OldSeaPort_Scene"></p><p>针对主角主视角，主要设计有相机视角跟随、鼠标控制视角运动、按键控制主角移动、简单的攻击效果和攻击音效。配置界面UI，分别显示生命值、得分值和子弹数量。</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/player_view_mark.webp" alt="player_view_mark"></p><p>子弹攻击效果和主角游戏结束分别如下：</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/attack_view1.webp" alt="attack_view1" style="zoom:80%;"></p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/GAMEOVER_view.webp" alt="GAMEOVER_view" style="zoom:80%;"></p><p>主角生命为0后，游戏结束。画面中释放了鼠标，中间部分显示“GAME OVER”，并提供“TRY AGAIN”按键重新开始。<br>针对敌人，实现了自动寻路，始终向着主角运动，并通过状态控制，在追踪、攻击、死亡等状态进行切换。下面展示简单游戏动图。</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/GamePlay.gif" alt="GamePlay"></p><p>GitHub：<a href="https://github.com/jermainn/Unity3D">jermainn/Unity3D: Unity3D案例开发 (github.com)</a> </p><p>下载地址：</p><p>​        github：<a href="https://github.com/jermainn/Unity3D/releases/tag/Unity3D">Release 测试 · jermainn/Unity3D (github.com)</a> </p><p>​        百度网盘：链接：<a href="https://pan.baidu.com/s/16e0VTI-ueueOr3JRBx_sbw?pwd=6iij">https://pan.baidu.com/s/16e0VTI-ueueOr3JRBx_sbw?pwd=6iij</a>   提取码：6iij </p>]]></content>
+        <content type="html"><![CDATA[<p>案例界面采用了旧港口的场景</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/OldSeaPort_Scene.webp" alt="OldSeaPort_Scene"></p><p>针对主角主视角，主要设计有相机视角跟随、鼠标控制视角运动、按键控制主角移动、简单的攻击效果和攻击音效。配置界面UI，分别显示生命值、得分值和子弹数量。</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/player_view_mark.webp" alt="player_view_mark"></p><p>子弹攻击效果和主角游戏结束分别如下：</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/attack_view1.webp" alt="attack_view1" style="zoom:80%;"></p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/GAMEOVER_view.webp" alt="GAMEOVER_view" style="zoom:80%;"></p><p>主角生命为0后，游戏结束。画面中释放了鼠标，中间部分显示“GAME OVER”，并提供“TRY AGAIN”按键重新开始。<br>针对敌人，实现了自动寻路，始终向着主角运动，并通过状态控制，在追踪、攻击、死亡等状态进行切换。下面展示简单游戏动图。</p><p><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/GamePlay.gif" alt="GamePlay"></p><p>GitHub：<a href="https://github.com/jermainn/Unity3D">jermainn/Unity3D: Unity3D案例开发 (github.com)</a> </p><p>下载地址：</p><p>​        github：<a href="https://github.com/jermainn/Unity3D/releases/tag/Unity3D">Release 测试 · jermainn/Unity3D (github.com)</a> </p><p>​        百度网盘：链接：<a href="https://pan.baidu.com/s/16e0VTI-ueueOr3JRBx_sbw?pwd=6iij">https://pan.baidu.com/s/16e0VTI-ueueOr3JRBx_sbw?pwd=6iij</a>   提取码：6iij </p><blockquote><p>当前案例尚存在较多问题，需要接下来对其进行进一步修整优化</p></blockquote>]]></content>
       
       
       
@@ -28,19 +28,6 @@
       <url>/p/548b.html</url>
       
         <content type="html"><![CDATA[<p>点击文字查看相应图片</p><h3 id="春熙路-amp-太古里"><a href="#春熙路-amp-太古里" class="headerlink" title="春熙路&amp;太古里"></a><a href="https://s1.vika.cn/space/2023/10/01/924008f5082845748233a7bd8d7c3707">春熙路&amp;太古里</a></h3><p><img src="https://s1.vika.cn/space/2023/10/01/924008f5082845748233a7bd8d7c3707" alt="春熙路&amp;太古里"></p><h3 id="空港体育公园成都花展"><a href="#空港体育公园成都花展" class="headerlink" title="空港体育公园成都花展"></a><a href="https://s1.vika.cn/space/2023/10/01/75bfe3a3b22f49aa8b609dd60691a019">空港体育公园成都花展</a></h3><p><img src="https://s1.vika.cn/space/2023/10/01/75bfe3a3b22f49aa8b609dd60691a019" alt="成都花展"></p><h3 id="双子塔"><a href="#双子塔" class="headerlink" title="双子塔"></a><a href="https://s1.vika.cn/space/2023/10/01/63f39915c7964ab7ba71436a23cd0e1d">双子塔</a></h3><p><img src="https://s1.vika.cn/space/2023/10/01/63f39915c7964ab7ba71436a23cd0e1d" alt="双子塔"></p><h3 id="人山人海"><a href="#人山人海" class="headerlink" title="人山人海"></a><a href="https://s1.vika.cn/space/2023/10/01/66ef1ae8974a4bd68fd5d997183855cb">人山人海</a></h3><p><img src="https://s1.vika.cn/space/2023/10/01/66ef1ae8974a4bd68fd5d997183855cb" alt="人山人海"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>成都游玩</title>
-      <link href="/p/970e.html"/>
-      <url>/p/970e.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="春熙路-amp-太古里"><a href="#春熙路-amp-太古里" class="headerlink" title="春熙路&amp;太古里"></a><a href="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/ChunXiLu.webp">春熙路&amp;太古里</a></h3><p><img src="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/ChunXiLu.webp" alt="春熙路&amp;太古里"></p><h3 id="空港体育公园成都花展"><a href="#空港体育公园成都花展" class="headerlink" title="空港体育公园成都花展"></a><a href="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/CD_flowerShow.webp">空港体育公园成都花展</a></h3><p><img src="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/CD_flowerShow.webp" alt="成都花展"></p><h3 id="双子塔"><a href="#双子塔" class="headerlink" title="双子塔"></a><a href="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/ShuangZiTa.webp">双子塔</a></h3><p><img src="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/ShuangZiTa.webp" alt="双子塔"></p><h3 id="人山人海"><a href="#人山人海" class="headerlink" title="人山人海"></a><a href="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/people_many.webp">人山人海</a></h3><p><img src="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/people_many.webp" alt="人山人海"></p>]]></content>
       
       
       
