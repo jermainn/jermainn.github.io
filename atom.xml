@@ -6,7 +6,7 @@
   <link href="http://jermainn.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jermainn.gitee.io/"/>
-  <updated>2023-12-10T08:40:58.000Z</updated>
+  <updated>2024-01-25T03:42:03.000Z</updated>
   <id>http://jermainn.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cmd Markdown 公式指导手册 - 转载</title>
+    <link href="http://jermainn.gitee.io/p/7b45.html"/>
+    <id>http://jermainn.gitee.io/p/7b45.html</id>
+    <published>2024-01-25T03:42:03.000Z</published>
+    <updated>2024-01-25T03:42:03.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;0-说明&quot;&gt;&lt;a href=&quot;#0-说明&quot; class=&quot;headerlink&quot; title=&quot;0 说明&quot;&gt;&lt;/a&gt;0 说明&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;点击跳转至 &lt;a href=&quot;https://links.jianshu.com/go?to=https%3A%2F%2Fwww.zybuluo.com%2Fmdeditor%3Furl%3Dhttps%3A%2F%2Fwww.zybuluo.com%2Fstatic%2Feditor%2Fmd-help.markdown&quot;&gt;Cmd Markdown 简明语法手册&lt;/a&gt; ，立刻开始 Cmd Markdown 编辑阅读器的记录和写作之旅！&lt;/p&gt;
+&lt;p&gt;转载：&lt;a href=&quot;https://links.jianshu.com/go?to=https%3A%2F%2Fwww.zybuluo.com%2Fcodeep%2Fnote%2F163962%23cmd-markdown-%E5%85%AC%E5%BC%8F%E6%8C%87%E5%AF%BC%E6%89%8B%E5%86%8C&quot;&gt;Cmd Markdown 公式指导手册&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文为 MathJax 在 Cmd Markdown 环境下的语法指引。&lt;/p&gt;
+&lt;p&gt;Cmd Markdown 编辑阅读器支持 $\LaTeX$ 编辑显示支持，例如：&lt;img src=&quot;https://math.jianshu.com/math?formula=%5Csum_%7Bi%3D1%7D%5En%20a_i%3D0&quot; alt=&quot;\sum_{i=1}^n a_i=0&quot;&gt;，访问 &lt;a href=&quot;https://links.jianshu.com/go?to=http%3A%2F%2Fmeta.math.stackexchange.com%2Fquestions%2F5020%2Fmathjax-basic-tutorial-and-quick-reference&quot;&gt;MathJax&lt;/a&gt; 以参考更多使用方法。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="markdown" scheme="http://jermainn.gitee.io/tags/markdown/"/>
+    
+    <category term="latex" scheme="http://jermainn.gitee.io/tags/latex/"/>
+    
+  </entry>
   
   <entry>
     <title>Unity3D_IslandSurvival 案例开发</title>
