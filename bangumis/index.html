@@ -1,0 +1,1218 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;zh-HK&quot;,&quot;zh-TW&quot;,&quot;default&quot;]" data-theme="light"><head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>追番列表 | Jermain Liu</title><meta name="author" content="Jermain"><meta name="copyright" content="Jermain"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="过去、现在、和未来        .bangumi-tabs{margin-bottom:15px;margin-top:15px}.bangumi-tab{padding:5px}a.bangumi-tab{text-decoration:none}.bangumi-active{background:#657b83;color:#fff}.bangumi-item{position">
+<meta property="og:type" content="website">
+<meta property="og:title" content="追番列表">
+<meta property="og:url" content="http://jermainn.gitee.io/bangumis/index.html">
+<meta property="og:site_name" content="Jermain Liu">
+<meta property="og:description" content="过去、现在、和未来        .bangumi-tabs{margin-bottom:15px;margin-top:15px}.bangumi-tab{padding:5px}a.bangumi-tab{text-decoration:none}.bangumi-active{background:#657b83;color:#fff}.bangumi-item{position">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/avatar.webp">
+<meta property="article:author" content="Jermain">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/avatar.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/avatar.webp"><link rel="canonical" href="http://jermainn.gitee.io/bangumis/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '追番列表',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2024-02-19 19:52:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/music.css" media="defer" onload="this.media='all'"><script async data-pjax src="/js/anzhiyu.js"></script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Jermain Liu" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://music.jermain.cn"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/cover/background_9.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="Jermain Liu"><span class="site-name">Jermain Liu</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://music.jermain.cn"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">追番列表</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container">
+<blockquote>
+    <p>过去、现在、和未来</p>
+</blockquote>
+
+<style>
+    .bangumi-tabs{margin-bottom:15px;margin-top:15px}.bangumi-tab{padding:5px}a.bangumi-tab{text-decoration:none}.bangumi-active{background:#657b83;color:#fff}.bangumi-item{position:relative;clear:both;padding:10px 0;border-bottom:1px solid #ddd;min-height:180px}@media screen and (max-width:600px){.bangumi-item{width:100%}}.bangumi-picture{position:absolute;left:0;top:10px;width:110px}.bangumi-picture img{margin:10px 0}.bangumi-info{padding-left:120px;margin-top:10px}.bangumi-meta{font-size:12px;padding-right:10px;height:45px}.bangumi-comments{font-size:12px;margin-top:10px}.bangumi-comments>p{word-break:break-all;text-overflow:ellipsis;overflow:hidden;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3}.bangumi-pagination{margin-top:15px;text-align:center;margin-bottom:10px}.bangumi-button{padding:5px}.bangumi-button:hover{background:#657b83;color:#fff}.bangumi-hide{display:none}.bangumi-show{display:block}.bangumi-title{font-size:18px}.bangumi-title a{line-height:1;text-decoration:none}.bangumi-info-items{font-size:12px;color:#555;padding-top:10px;line-height:1;float:left;width:100%}.bangumi-info-item{display:inline-block;width:13%;border-right:1px solid #555;text-align:center;height:34px}.bangumi-info-label{display:block;line-height:12px}.bangumi-info-item em{display:block;padding-top:6px;line-height:17px;font-style:normal;font-weight:700}.bangumi-info-total{padding-top:11px;display:block;line-height:12px;font-weight:700}.bangumi-info-item-score{border-right:1px solid #0000;width:50px}.bangumi-info-label-em{color:transparent;opacity:0;visibility:hidden;line-height:6px!important;padding:0!important}@media (max-width:650px){.bangumi-coin,.bangumi-type{display:none}.bangumi-info-item{width:16%}}@media (max-width:590px){.bangumi-danmaku,.bangumi-wish{display:none}.bangumi-info-item{width:19%}}@media (max-width:520px){.bangumi-doing,.bangumi-play{display:none}.bangumi-info-item{width:24%}}@media (max-width:480px){.bangumi-collect,.bangumi-follow{display:none}.bangumi-info-item{width:30%}}@media (max-width:400px){.bangumi-area{display:none}.bangumi-info-item{width:45%}}
+</style>
+<div class="bangumi-tabs">
+    <a class="bangumi-tab" id="bangumi-tab1" href="javascript:;" rel="external" target="_self" onclick="return false">
+    想看
+    (2)</a>
+    <a class="bangumi-tab" id="bangumi-tab2" href="javascript:;" rel="external" target="_self" onclick="return false">
+        在看
+        (4)</a>
+    <a class="bangumi-tab" id="bangumi-tab3" href="javascript:;" rel="external" target="_self" onclick="return false">
+        已看
+        (13)</a>
+</div>
+<div>
+    <div id="bangumi-item1">
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/d1/8d/394885_GKzi7.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/394885">黑话律师</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共16话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>3</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>3</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>25</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.1</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：一桩有预谋的杀人案令三流律师“大嘴巴”朴昌浩（李钟硕 饰）一夜之间成为天才诈骗犯“大老鼠”，被诬陷进入狱黑化成为监狱大佬，以恶制恶同黑暗势力对抗。妻子高薇瑚（林允儿 饰）为拯救丈夫，同他里应外合共同查案，夫妻二人誓要揭出幕后黑手。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/dd/02/285437_p98BK.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/285437">三体</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共15话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>137</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>533</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>1761</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>1.7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：无数细线横亘在星空之中，如同一把巨大的刷子。三体星舰队将于400年后抵达。遥远蝴蝶扇动着翅膀，也改变了罗辑的命运，轰然打开的门后是世界中心——面壁计划开启。同时，智子所创建的破壁室内，破壁人一一就位……</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-pagination">
+    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
+    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
+    <span class="bangumi-pagenum">2 / 3</span>
+    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
+    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
+</div>
+    </div>
+    <div id="bangumi-item2">
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/71/1f/419042_k4zKO.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/419042">神隐</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共40话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>-</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>2</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：《神隐》讲述了励志上进的水凝兽阿音和神力被封的真神之子古晋因一场意外相识，从此走上寻找凤隐仙元之路，此后在妖族狐狸鸿奕、鹰族公主宴爽这些小伙伴的陪伴下，一路收集凤隐仙元，历经重重险阻，屡次挫败反派青霖及其属下的阻挠，助力凤隐涅槃回归，收获爱情友情亲情，维护世间和平、承担苍生大义的励志故事。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/0a/3f/402811_SekIa.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/402811">一年一度喜剧大赛 第二季</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共12话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>-</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>9</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7.3</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：《一年一度喜剧大赛 第二季》是由爱奇艺出品、米未联合出品并制作的原创喜剧竞演综艺，节目将从赛制、主题、作品等多方位带来全新升级，延续这一爆款IP。借平凡生活小事挖掘喜剧人创作能力、表演能力和合作能力，让喜剧人用他们创造的快乐感染观众。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/d9/69/351510_NaqqP.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/351510">灵笼 · 月魁传</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共20话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>书籍</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>7</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>6</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>21</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>5.3</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：漫画《灵笼·月魁传》是国内首部原创末日幻想题材动画剧集《灵笼》的前传。
+
+不久的未来，月相异动、异物滋生，引发了长达数十年的剧烈地质变化。在这场浩劫中，人类所剩无几，地表也被玛娜生态系统侵蚀、占 领，不再适宜居住。
+
+幸存的人类登上一座飞行在空中的堡垒——“灯塔”，从此开始了流亡之旅。很久以后，“灯塔”上的人发现，被玛娜生态系统覆盖的地面上竟然有人类活动，而其中一名来历神秘的女子白月魁，似乎拥有某种特殊能力……
+
+而《灵笼·月魁传》讲述的是灾难降临前后，白月魁经历浩劫的蜕变故事。在这场天灾发生之前，天才脑科学家白月魁和老师霍恩研发了“天使”药剂，让大脑移植术成为可能。就在两人准备将这一突破性技术推向全世界时，地底钻出巨型不明植物，引发地震。霍恩受伤，危在旦夕。而霍恩曾经的学生琼斯...</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/01/88/899_Q3F3X.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/899">名侦探柯南</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">暂未播出</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>692</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>7032</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>6429</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7.6</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：主角工藤新一原本是一位颇具名声的高中生侦探，在目击黑暗组织的地下交易后，正准备追踪时却被突袭击昏，并被灌下代号为“APTX4869”（アポトキシン4869）的不明药物。后来虽然幸免于死，但身体就此缩小为小学时期的模样。之后他化名为江户川柯南，在邻居阿笠博士的建议下，寄住在女友毛利兰的父亲—侦探毛利小五郎家中，继续秘密从事追查黑暗组织的工作，并私下探寻获得解药的管道，希望能够恢复原来新一的样貌。与此同时，柯南凭着自己的推理天份，配合阿笠博士为他发明的道具，帮助毛利小五郎成为出名的大侦探。故事内容当中穿插许多爱情、友情、犯罪、背叛、复仇等情节。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-pagination">
+    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
+    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
+    <span class="bangumi-pagenum">2 / 3</span>
+    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
+    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
+</div>
+    </div>
+    <div id="bangumi-item3">
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/16/9a/230568_fuE9N.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/230568">明星大侦探 第一季</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共12话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>4</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>3</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>35</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>8</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：《明星大侦探》作为中国首档明星推理综艺秀，节目创意源自韩国《犯罪现场》，内容包括“30%跌宕剧情+40%综艺搞笑+30%智能推理”，堪称综艺版的《唐人街探案》。韩国原版付费频道收视1.54%(收费频道VS普通频道收视比率为10倍)，受众集中为高知、高收入人群。超高收视、超高人气及好口碑让节目组对本土化悬疑推理大IP《明星大侦探》的播出信心满满。 
+　　另外，从《神探夏洛克》、《心理罪》、《唐人街探案》等悬疑推理题材电视剧、电影的热播情况来看，一大波忠实“悬疑推理”粉丝基础，佐证了《明星大侦探》的巨大市场潜力。 
+　　据了解，每期节目6位嘉宾参与，1人扮演侦探，5人为嫌疑人。每期节目解决1起不可思议的杀人事件，真凶就在嫌疑人之中。6位玩家需在现场6-8个场景内，寻找线索指认真凶!据悉，节目将在芒果TV和芒果直播APP平台播出，网友可以全程参与互动竞猜嫌疑人，还可点播回看精彩剧情。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/10/f8/362574_5REaF.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/362574">一年一度喜剧大赛</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共12话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>2</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>13</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>8.1</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：《一年一度喜剧大赛》是一档由爱奇艺出品、米未联合出品并制作的原创新喜剧竞演综艺。节目将通过一群喜剧人的作品展演，全方位展示品质优良、类型多样的中国原创新喜剧作品，选拔出创作能力、协作能力、表演能力最突出的团体和个人。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/e1/fd/423537_WMxiW.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/423537">终极三国</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共53话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>-</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>14</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7.1</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：银时空的两兄弟关羽（胡宇崴 饰）和张飞（博焱 饰）经常被勒令退学，在被第二十四所学校退学后,和刘备（陈德修 饰）相遇。正当三人英雄惜英雄时，金时空的汪大东（汪东城 饰）、王亚瑟（辰亦儒 饰）、丁小雨（炎亚纶 饰）和铁时空的呼延觉罗脩（陈德修 饰）等人来到银时空旅行，而汪大东不小心掉落的硬币引发一连串的意外令刘备身受重伤，导致身为刘备时空分身的脩必须代替刘备留下以维持时空秩序，故事主线由脩的事件开始。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/df/1d/294699_3i122.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/294699">从前有座灵剑山</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共37话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>-</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>2</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>10</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.4</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：讲述了灵剑派几千年来始终致力于培养人才，为进一步扩充门派力量，补充新鲜血液，召开资质选拔大会，诚邀各路精英前来。因彗星陨落，末法大劫而降临的奇才王陆，怀着千年未有的空灵根，带着现代人思维，踏入灵剑派山门，凭借科学知识和超级情商碾压异界，走上成为绝世强者的反套路之路的故事。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/2d/7d/462350_l61n1.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/462350">死期将至</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共8话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>14</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>6</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>56</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7.9</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：此剧改编自人气漫画，由《再次十八岁》导演执导，讲述与死亡一起开始全新人生的人物的故事，姜河那饰演因为就业和恋爱失败后做出极端选择后还生的崔以才。对生活彻底绝望的崔以载选择终结这一失败的人生。随后，奇怪的事情发生了，一个神秘的存在出现在他面前对他说，他将迎接十三个不同的人生。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/25/15/311724_AMiwe.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/311724">灵笼 中章</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共1话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>55</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>12</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>1502</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.8</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：暂无简介</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/40/84/291095_I9Mmq.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/291095">灵笼 下半季</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共6话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>143</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>55</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>1958</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>7.1</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：暂无简介</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/5c/c8/269537_jRyHs.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/269537">灵笼 上半季</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共6话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>186</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>103</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>2188</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.7</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：不久的未来，人类的世界早已拥挤不堪，迈向星河、寻找新家园的行动迫在眉捷。正当一切有条不紊的推进之时，月相异动，脚下的大地爆发了长达数十年、剧烈的地质变化，人类在这场浩劫中所剩无几。当天地逐渐恢复平静，人们从废墟和深渊中重新踏上了这片熟悉而又陌生的大地。习惯了主宰一切的我们是否还是这个世界的主人？</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/f5/29/123707_h1FuT.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/123707">花千骨</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共58话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>5</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>60</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>4.9</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：花千骨，出生时命格诡异、坚强善良的孤女，被长留上仙白子画下凡化身墨冰仙所救，对他暗生情愫；白子画，身负重任一心想保护天下苍生的长留掌门，明知花千骨是自己生死劫，非但不忍杀生反救花千骨一命。 为寻恩人，花千骨前往长留仙山。在白子画暗暗帮助下，花千骨几经波折经过重重考验拜为其座下唯一的弟子。师徒二人亦师亦友，皆以匡扶正义保护上古十大神器为己任。二人游历人间，救助孤寡，锄强扶弱。朝夕相对，让花千骨对白子画产生了深深的爱慕执念。而深爱白子画的堕仙夏紫薰为异朽阁主设计，为破白子画的劫数，投毒加害花千骨，白子画为救花千骨身中剧毒。花千骨不惜偷盗神器为师父解毒，不料阴差阳错之下放出妖神，并于无意中得到蛮荒之力。自此，六界动乱不堪，百姓民不聊生。白子画既要匡顾天下，又要保护花千骨，费尽心力，身受重伤。 糖宝等人意外之死让花千骨彻底绝望，突破白子画的封印，成为妖神。白子画为引导花千骨回归正道，孤身来到妖神殿陪在她身边。最后得知白子画为她付出的真相和情意的花千骨，决定以死让天下恢复安宁，白子画亦决定以死相随......</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/9c/be/123223_VtyQ7.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/123223">魔幻手机Ⅱ：傻妞归来</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共42话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>1</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>-</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>18</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>3.2</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：在时光实验室里面，时光轮盘在时光隧道中顺序运转。就在这时，邪恶的魔法师马雷伸出罪恶之手企图搅乱时光轮盘，毁灭地球。 
+　　一位神秘的时光卫士阻止了他的阴谋并破坏了他的部分法力。但地球没有脱离毁灭的危险。魔幻手机傻妞带一个名叫陆冬雨的男孩回到现代，一来是帮助他找到自己的妈妈，另一个更重要的任务是要阻止搅动时光转盘的阴谋。 　　马雷用魔法得知了陆冬雨的妈妈就是时光隧道的卫士，就跟随着陆冬雨，利用他来找到他的妈妈，进而除掉她，然后搅动时光轮盘毁灭地球。 　　为了拯救地球，陆小千只有恢复傻妞的新系统，才能阻止马雷毁灭地球的阴谋。马雷探知到这情况，企图将陆小千与傻妞隔绝，以来实现他邪恶的阴谋。 　　在魔幻手机傻妞新系统慢慢的恢复中，陆小千和他的朋友们一起在傻妞的帮助下穿越时空，克服了各种困难。最后，粉碎了马雷的阴谋，保护了人类赖以生存的地球 。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/ea/28/123222_N1sFU.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/123222">魔幻手机</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共42话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>4</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>3</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>103</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.5</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：公元2060年，科学家发明了一种穿梭多维空间的手机，取名“傻妞”（舒畅 饰）。“傻妞”穿越回唐朝，它协助孙悟空（丁健 饰）制服黄眉大王（陈创 饰），连战数日能量耗尽，穿过时光隧道，落在当代生性梗直的小千（李滨 饰）手中。“傻妞”的出现对小千来说如有神助，他请来孙悟空师兄弟，击败了贪念尚存的黄眉大王。游所为（焦恩俊 饰）趁小千喝醉得到“傻妞”，但同时也收获了贪婪。他让黒客东子（曲高位 饰）为其复制“傻妞”，同样贪婪的东子和王天霸媳妇孙飞燕（张倩 饰）得知“傻妞”魔力，悄悄多复制一台占为已有。知晓真相的游所为不容他人夺己之爱，他把东子和孙飞燕发配到千年以上的古战场，从此三人水火不容，由此拉开了当今与未来、未来与古代、正义与邪恶的时空大战……</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/fe/53/28754_3o9Ma.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/28754">仙剑奇侠传三</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共37话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>三次元</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>14</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>6</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>320</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>6.4</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：根据同名电脑游戏改编，与游戏原故事大相径庭。介绍一下游戏：景天，唐家堡永安当伙计。热爱古董，擅长粘合破损的文物，使之焕然一新。（电视剧里是擅长盗版）雪见：唐家堡大小姐，武功高强（最起码刚开始景天打不过她）是景天前前世神界飞蓬将军恋人夕瑶投至人间的圣果。有花楹陪伴，从两人一起闯荡开始就深爱景天。长卿：曾蜀山大弟子，因年幼常梦见一女子，终巧遇紫萱，脱离蜀山。（在电视剧完全不一样！紫萱就没必要介绍了吧？）龙葵：为景天前世姜国太子龙阳妹矣，殉剑，封于魔剑中待千年终见兄长转世景天。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-item">
+    <div class="bangumi-picture">
+        
+        <img src="/images/bangumis/loading.gif" data-src="/images/bangumis/84/45/9565_s98m3.jpg" referrerPolicy="no-referrer" width="110" style="width:110px;margin:20px auto;" />
+        
+    </div>
+    <div class="bangumi-info">
+        <div class="bangumi-title">
+            <a target="_blank" href="https://bangumi.tv/subject/9565">龙珠</a>
+        </div>
+        <div class="bangumi-meta">
+            <span class="bangumi-info-items" style="color:#555">
+                <span class="bangumi-info-item" style="color:#555">
+                
+                <span class="bangumi-info-total">共153话</span><em
+                    class="bangumi-info-label-em">0</em>
+                </span>
+                
+                <span class="bangumi-info-item bangumi-type">
+                    <span class="bangumi-info-label">类型</span> <em>动画</em>
+                </span>
+                <span class="bangumi-info-item bangumi-wish">
+                    <span class="bangumi-info-label">想看</span> <em>350</em>
+                </span>
+                <span class="bangumi-info-item bangumi-doing">
+                    <span class="bangumi-info-label">在看</span> <em>125</em>
+                </span>
+                <span class="bangumi-info-item bangumi-collect">
+                    <span class="bangumi-info-label">已看</span> <em>6789</em>
+                </span>
+                <span class="bangumi-info-item bangumi-info-item-score">
+                    <span class="bangumi-info-label">评分</span> <em>8.2</em>
+                </span>
+            </span>
+        </div>
+        <div class="bangumi-comments" ><p>简介：鸟山明最早在《少年JUMP》周刊连载《龙珠》时，该漫画早期（1-194篇）比较偏重于搞笑，而且打斗一般并不在这儿占主流，因此这个时期，鸟山明的画风对人物性格刻画得很精准，可以让人爆笑起来，因此东映动画公司决定把这个时期的漫画改成一部153集的动画，这也是中国内地在三部《龙珠》系列动画中唯一引进的一部，故也称龙珠TV。而且第一部有很多风格和人物剧情都根源于《西游记》，而且鸟山明的前作《阿拉蕾》中的人物也有客串。</p> </div>
+    </div>
+</div>
+
+        
+        <div class="bangumi-pagination">
+    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
+    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
+    <span class="bangumi-pagenum">2 / 3</span>
+    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
+    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
+</div>
+    </div>
+</div>
+<script>
+    "use strict";/* eslint-disable no-plusplus */(function(){// eslint-disable-next-line func-style
+function a(){this.classList.add("bangumi-active");for(var a=this.siblings(),b=0;b<a.length;b++)a[b].classList.remove("bangumi-active");// 显示对应板块
+var c=this.id.replace("tab","item"),d=document.getElementById(c);d.classList.remove("bangumi-hide"),d.classList.add("bangumi-show"),a=document.getElementById(c).siblings();for(var e=0;e<a.length;e++)a[e].classList.remove("bangumi-show"),a[e].classList.add("bangumi-hide")}Element.prototype.siblings=function(){for(var a=[],b=this.parentNode.children,c=0;c<b.length;c++)b[c]!==this&&a.push(b[c]);return a};for(var b=document.getElementsByClassName("bangumi-tab"),c=0;c<b.length;c++)b[c].onclick=a,b[c].onclick.apply(b[c])})();
+
+    document.getElementsByClassName('bangumi-tab')[1].click();
+    /* eslint-disable no-plusplus, func-style */(function(){var a=Math.ceil;function b(b,c){return`${b+1} / ${a(0==c.length/10?1:a(c.length/10))}`}function c(){const a=this.parentNode.siblings();g(a,0),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(0,a)}function d(){const a=this.parentNode.siblings();let c=this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText;c=c.substr(0,c.indexOf("/")-1),c=parseInt(c,10)-1,0<c&&c--,g(a,c),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(c,a)}function e(){const c=this.parentNode.siblings();let d=this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText;d=d.substr(0,d.indexOf("/")-1),d=parseInt(d,10)-1,d<a(c.length/10)-1&&d++,g(c,d),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(d,c)}function f(){const c=this.parentNode.siblings();g(c,a(c.length/10)-1),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(-1==a(c.length/10)-1?0:a(c.length/10)-1,c)}function g(a,b){for(let c=0;c<a.length;c++)if(Math.floor(c/10)===b){a[c].classList.remove("bangumi-hide");const[b]=a[c].getElementsByTagName("img");b.src=b.getAttribute("data-src")}else a[c].classList.add("bangumi-hide")}const h=document.getElementsByClassName("bangumi-firstpage"),j=document.getElementsByClassName("bangumi-previouspage"),k=document.getElementsByClassName("bangumi-nextpage"),l=document.getElementsByClassName("bangumi-lastpage"),m=document.getElementsByClassName("bangumi-pagenum");for(let b=0;b<h.length;b++){h[b].onclick=c,j[b].onclick=d,k[b].onclick=e,l[b].onclick=f;// set page num
+const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(g/10)}`,h[b].click()}})();
+
+</script>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><span id="switch-btn"></span><span class="second-comment">Livere</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="lv-container" data-id="city" data-uid="MTAyMC81Nzk5NC8zNDQ1Nw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jermain</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jermainn"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jermainn" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/7b45.html" title="Cmd Markdown 公式指导手册 - 转载"><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/cover_photo/post_markdown.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cmd Markdown 公式指导手册 - 转载"/></a><div class="content"><a class="title" href="/p/7b45.html" title="Cmd Markdown 公式指导手册 - 转载">Cmd Markdown 公式指导手册 - 转载</a><time datetime="2024-01-25T03:42:03.000Z" title="发表于 2024-01-25 11:42:03">2024-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/7cfb.html" title="Unity3D_IslandSurvival 案例开发"><img src="https://cdn.jsdelivr.net/gh/jermainn/cdn@master/images/temp/OldSeaPort_Scene.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity3D_IslandSurvival 案例开发"/></a><div class="content"><a class="title" href="/p/7cfb.html" title="Unity3D_IslandSurvival 案例开发">Unity3D_IslandSurvival 案例开发</a><time datetime="2023-12-10T08:40:58.000Z" title="发表于 2023-12-10 16:40:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/548b.html" title="成都游玩(备份)"><img src="https://cdn.jsdelivr.net/gh/jermainn/imgpic@master/note_img/Chengdu.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="成都游玩(备份)"/></a><div class="content"><a class="title" href="/p/548b.html" title="成都游玩(备份)">成都游玩(备份)</a><time datetime="2023-10-01T17:26:12.000Z" title="发表于 2023-10-02 01:26:12">2023-10-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/6cc8.html" title="启用 wordpress 博客"><img src="https://cdn.jsdelivr.net/gh/jermainliu/cdn@master/images/cover_photo/post_wordpress.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="启用 wordpress 博客"/></a><div class="content"><a class="title" href="/p/6cc8.html" title="启用 wordpress 博客">启用 wordpress 博客</a><time datetime="2023-02-13T03:32:02.000Z" title="发表于 2023-02-13 11:32:02">2023-02-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/8719.html" title="当傅里叶拿起画笔"><img src="https://cdn.jsdelivr.net/gh/jermainliu/cdn@master/images/cover_photo/post_fourier.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="当傅里叶拿起画笔"/></a><div class="content"><a class="title" href="/p/8719.html" title="当傅里叶拿起画笔">当傅里叶拿起画笔</a><time datetime="2023-01-21T06:16:22.711Z" title="发表于 2023-01-21 14:16:22">2023-01-21</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/manim/" style="font-size: 1.1em; color: #999">manim</a> <a href="/tags/node-js/" style="font-size: 1.1em; color: #999">node.js</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 1.1em; color: #999">公式</a> <a href="/tags/%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1/" style="font-size: 1.1em; color: #999">极大似然估计</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 1.1em; color: #999">傅里叶级数</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">机器学习</a> <a href="/tags/wordpress/" style="font-size: 1.1em; color: #999">wordpress</a> <a href="/tags/latex/" style="font-size: 1.1em; color: #999">latex</a> <a href="/tags/nvm/" style="font-size: 1.1em; color: #999">nvm</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.3em; color: #99a1ac">论文</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">深度学习</a> <a href="/tags/%E5%9F%9F%E9%80%82%E5%BA%94/" style="font-size: 1.1em; color: #999">域适应</a> <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" style="font-size: 1.3em; color: #99a1ac">语义分割</a> <a href="/tags/wordcount/" style="font-size: 1.1em; color: #999">wordcount</a> <a href="/tags/Unity3D/" style="font-size: 1.1em; color: #999">Unity3D</a> <a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/tags/%E4%B8%8D%E8%92%9C%E5%AD%90/" style="font-size: 1.1em; color: #999">不蒜子</a> <a href="/tags/markdown/" style="font-size: 1.3em; color: #99a1ac">markdown</a> <a href="/tags/PPT%E6%A8%A1%E6%9D%BF/" style="font-size: 1.1em; color: #999">PPT模板</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-02-19T11:52:56.178Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jermain</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">莫三天打鱼两天晒网</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'QrcYEhiL8orR8yRwAgiypuZs-gzGzoHsz',
+      appKey: 'hSwyEB3KDN2GpD8Bmt627OxP',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><script>(()=>{
+  const loadLivere = () => {
+    if (typeof LivereTower === 'object') window.LivereTower.init()
+    else {
+      (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    }
+  }
+
+  if ('Valine' === 'Livere' || !false) {
+    if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+    else loadLivere()
+  } else {
+    window.loadOtherComment = loadLivere
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
