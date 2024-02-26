@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>node 版本管理</title>
+      <link href="/p/d72e.html"/>
+      <url>/p/d72e.html</url>
+      
+        <content type="html"><![CDATA[<p>版本管理工具之前有使用到 <code>nvm</code> ，最近发现了一款新的管理工具 <code>nvs</code><br>起因是我想要在 <code>Hexo</code> 博客中添加豆瓣追剧页面，但是使用 <code>nvm</code> 配置的插件有问题，无法使用，在安装插件时也会报一些 <code>warning</code> ，安装较高版本的 <code>node.js</code> 时无法自动安装 <code>npm</code>，所以又去找原因，发现了新的工具 <code>nvs</code><br><code>nvs</code> 工具是一个跨平台的 <code>node</code> 版本管理工具，深刻借鉴了 <code>nvm</code> 的一些命令<br><strong>参考：</strong><br>官网github仓库：<a href="https://github.com/jasongin/nvs/releases">Releases · jasongin/nvs (github.com)</a><br>下面的使用方法也主要来自于官方仓库内容<br>本文主要介绍在 <code>windows</code> 平台上的安装和使用，其他平台可以参考官方仓库</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果已经在环境中配置了 <a href="https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&amp;gl=US">winget</a> ，则可以直接通过 <code>winget</code> 命令安装</p><pre class=" language-lang-winget"><code class="language-lang-winget">winget install jasongin.nvs</code></pre><p>如果配置了 <a href="https://chocolatey.org">chocolatey</a> 则</p><pre class=" language-lang-choco"><code class="language-lang-choco">choco install nvs</code></pre><p>或者直接安装 <code>.msi</code> 文件，下载地址：<br><a href="https://github.com/jasongin/nvs/releases">nvs release</a> </p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装完成之后，可以直接在命令行输入 <code>nvs</code> ，然后可以操作下载或者切换 <code>node</code> 版本</p><pre class=" language-lang-cmd"><code class="language-lang-cmd">╰─  nvs.------------------------------.| Select a version             |+------------------------------+| [a] node/20.2.0/x64          ||                              ||  ,) Download another version ||  .) Don't use any version    |'------------------------------'Type a hotkey or use Down/Up arrows then Enter to choose an item.</code></pre><p>如上，我已经安装了 <code>20.2.0</code> 版本，输入 <code>nvs</code> 后显示如上，可以选择不同的行进行操作<br>如果选择已安装版本后按 <code>enter</code> 键后，将该版本写入当前命令的环境中使用，如果想要永久添加，需要使用 <code>nvs link</code> 命令</p><pre class=" language-lang-nvs"><code class="language-lang-nvs">nvs link [version]</code></pre><p><strong>基础命令</strong><br>添加最新版的 <code>node</code> :</p><pre><code>nvs add latest</code></pre><p>添加最新的 <code>LTS</code> 版本：</p><pre><code>nvs add lts</code></pre><p>在当前命令行工具中配置 <code>LTS</code> 版本的 <code>node</code> :</p><pre><code>nvs use lts显示：PATH += ~/.nvs/node/6.9.1/x64</code></pre><p>永久添加到环境中，使用 <code>nvs link</code>:</p><pre><code>nvs link lts</code></pre><p><strong>其他命令</strong> </p><div class="table-container"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>nvs help &lt;command&gt;</code></td><td>获取帮助</td></tr><tr><td><code>nvs install</code></td><td>初始化 <code>nvs</code> 配置</td></tr><tr><td><code>nvs uninstall</code></td><td>从环境变量删除nvs</td></tr><tr><td><code>nvs --version</code></td><td>显示nvs的版本</td></tr><tr><td><code>nvs add [version]</code></td><td>下载安装某个版本的 <code>Node.js</code></td></tr><tr><td><code>nvs rm &lt;version&gt;</code></td><td>删除某个版本</td></tr><tr><td><code>nvs migrate &lt;fromver&gt; [tover]</code></td><td>迁移全局模块</td></tr><tr><td><code>nvs upgrade [fromver]</code></td><td>升级到主版本的最新补丁</td></tr><tr><td><code>nvs use [version]</code></td><td>在当前 <code>shell</code> 中使用某个版本的 <code>Node.js</code></td></tr><tr><td><code>nvs auto [on/off]</code></td><td>根据 <code>cwd</code>（当前工作路径）自动切换 <code>Node.js</code> 版本</td></tr><tr><td><code>nvs run &lt;ver&gt; &lt;js&gt; [args...]</code></td><td>使用某个版本的 <code>Node.js</code> 运行 <code>js</code> 脚本</td></tr><tr><td><code>nvs exec &lt;ver&gt; &lt;exe&gt; [args...]</code></td><td>使用某个版本的 <code>Node.js</code> 运行可执行文件</td></tr><tr><td><code>nvs which [version]</code></td><td>显示某个版本的 <code>Node.js</code> 二进制文件的路径</td></tr><tr><td><code>nvs ls [filter]</code></td><td>显示本地已安装的 <code>Node.js</code> 列表</td></tr><tr><td><code>nvs ls-remote [filter]</code></td><td>显示远端可安装的 <code>Node.js</code> 列表</td></tr><tr><td><code>nvs link [version]</code></td><td>链接一个默认版本</td></tr><tr><td><code>nvs unlink [version]</code></td><td>删除指向默认版本的链接</td></tr><tr><td><code>nvs alias [name] [value]</code></td><td>设置或收回版本的别名</td></tr><tr><td><code>nvs remote [name] [value]</code></td><td>设置或收回下载基础 <code>uri</code></td></tr></tbody></table></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+            <tag> nvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cmd Markdown 公式指导手册 - 转载</title>
       <link href="/p/7b45.html"/>
       <url>/p/7b45.html</url>
