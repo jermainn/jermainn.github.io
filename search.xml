@@ -8,7 +8,7 @@
       <link href="/p/e9c.html"/>
       <url>/p/e9c.html</url>
       
-        <content type="html"><![CDATA[<p>[toc]<br>当系统引导出现问题，或者需要 windows 系统日常出现问题，无法正常使用。</p><p>需要进行系统引导修复或者进行 windows 系统重装，这是就需要进行系统 u 盘刻录进行系统引导重装，或者 u 盘刻录为 pe 系统盘。引导进入 pe 系统进行相关的操作</p><p>当搜索 pe 系统盘制作时，网上有多个版本的启动盘制作工具。各个工具大致功能相同，但也有点点差别。</p><p>我较为常用的 pe 启动盘工具是： </p><ul><li><a href="https://www.wepe.com.cn/download.html">微PE工具箱 - 下载 (wepe.com.cn)</a> ：该工具体积小巧，功能齐全好用👍，缺点是没有无线网驱动</li><li><a href="https://firpe.cn/">FirPE</a> ：类似 win11 界面，有无线网络驱动，但是测试发现有的笔记本采用该 pe 系统某些功能不太好用</li></ul><p>直接使用这种 pe 系统盘制作工具直接将 pe 系统刻录到了 u 盘里，然后直接使用 u 盘引导</p><p>作为喜欢捣鼓的人，想要尝试不同的 pe 系统，就只能重复刻录 u 盘操作，较为繁琐。这时候就不得不提到一个 <strong>多系统启动 u 盘工具</strong> <strong><a href="https://ventoy.net/cn/download.html">Ventoy</a></strong> </p><p>下面介绍我平时进行系统重装常用的工具软件以及启动盘制作工具</p><h2 id="多系统启动-u-盘工具（Ventoy）"><a href="#多系统启动-u-盘工具（Ventoy）" class="headerlink" title="多系统启动 u 盘工具（Ventoy）"></a>多系统启动 u 盘工具（Ventoy）</h2><p>简单来说，Ventoy是一个制作可启动U盘的开源工具。  </p><p>有了Ventoy你就无需反复地格式化U盘，你只需要把 ISO/WIM/IMG/VHD(x)/EFI 等类型的文件直接拷贝到U盘里面就可以启动了，无需其他操作。</p><p>下载地址： <a href="https://ventoy.net/cn/download.html">Download . Ventoy</a> </p><p>只需要使用 Ventoy 工具安装进入 u 盘，然后将相应的 pe 系统 iso 或者别的系统文件导入到 u 盘任意位置</p><p>通过 u 盘引导后便会出现 Ventoy 多系统引导界面，如下： </p><p><img src="https://jsd.onmicrosoft.cn/gh/jermainn/imgpic@master/note_img/Ventoy_UI.webp" alt="Ventoy_UI.webp|500" style="zoom:50%;"></p><h2 id="启动盘制作"><a href="#启动盘制作" class="headerlink" title="启动盘制作"></a>启动盘制作</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>首先下载工具： </p><p>我的 alist 地址：<a href="https://alist.jermain.cn/test/Ventoy">Ventoy | AList (jermain.cn)</a> </p><ul><li><code>启动盘制作.7z</code> ：包含了 Ventoy 和 wepe.iso 文件<blockquote><p>使用上述我的打包好的更方便哦😄</p></blockquote></li></ul><p>或者前往官网下载： </p><ul><li><a href="https://ventoy.net/cn/index.html">Ventoy</a> </li><li><a href="https://www.wepe.com.cn/">微PE工具箱 - 超好用的装机维护工具 (wepe.com.cn)</a> <h3 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h3></li></ul><p>解压下载的文件后，打开 <code>Ventoy</code> 文件夹，双击打开 <code>Ventoy2Disk.exe</code> 工具： </p><p><img src="https://jsd.onmicrosoft.cn/gh/jermainn/imgpic@master/note_img/20240306220324.png" alt="image.png"></p><p>安装成功后，将镜像文件 <code>WePE_64_V2.3.iso</code> 复制到 u 盘存储部分的任意位置</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>u 盘插入电脑，更改 bios 设置 u 盘为第一启动项进行引导启动</p><p>选择相应的进行进行引导启动</p>]]></content>
+        <content type="html"><![CDATA[<p>[toc]<br>当系统引导出现问题，或者需要 windows 系统日常出现问题，无法正常使用。</p><p>需要进行系统引导修复或者进行 windows 系统重装，这是就需要进行系统 u 盘刻录进行系统引导重装，或者 u 盘刻录为 pe 系统盘。引导进入 pe 系统进行相关的操作</p><p>当搜索 pe 系统盘制作时，网上有多个版本的启动盘制作工具。各个工具大致功能相同，但也有点点差别。</p><p>我较为常用的 pe 启动盘工具是： </p><ul><li><a href="https://www.wepe.com.cn/download.html">微PE工具箱 - 下载 (wepe.com.cn)</a> ：该工具体积小巧，功能齐全好用👍，缺点是没有无线网驱动</li><li><a href="https://firpe.cn/">FirPE</a> ：类似 win11 界面，有无线网络驱动，但是测试发现有的笔记本采用该 pe 系统某些功能不太好用</li></ul><p>直接使用这种 pe 系统盘制作工具直接将 pe 系统刻录到了 u 盘里，然后直接使用 u 盘引导</p><p>作为喜欢捣鼓的人，想要尝试不同的 pe 系统，就只能重复刻录 u 盘操作，较为繁琐。这时候就不得不提到一个 <strong>多系统启动 u 盘工具</strong> <strong><a href="https://ventoy.net/cn/download.html">Ventoy</a></strong> </p><p>下面介绍我平时进行系统重装常用的工具软件以及启动盘制作工具</p><h2 id="多系统启动-u-盘工具（Ventoy）"><a href="#多系统启动-u-盘工具（Ventoy）" class="headerlink" title="多系统启动 u 盘工具（Ventoy）"></a>多系统启动 u 盘工具（Ventoy）</h2><p>简单来说，Ventoy是一个制作可启动U盘的开源工具。  </p><p>有了Ventoy你就无需反复地格式化U盘，你只需要把 ISO/WIM/IMG/VHD(x)/EFI 等类型的文件直接拷贝到U盘里面就可以启动了，无需其他操作。</p><p>下载地址： <a href="https://ventoy.net/cn/download.html">Download . Ventoy</a> </p><p>只需要使用 Ventoy 工具安装进入 u 盘，然后将相应的 pe 系统 iso 或者别的系统文件导入到 u 盘任意位置</p><p>通过 u 盘引导后便会出现 Ventoy 多系统引导界面，如下： </p><p><img src="https://jsd.onmicrosoft.cn/gh/jermainn/imgpic@master/note_img/Ventoy_UI.webp" alt="Ventoy_UI.webp|500" style="zoom:50%;"></p><h2 id="启动盘制作"><a href="#启动盘制作" class="headerlink" title="启动盘制作"></a>启动盘制作</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>首先下载工具： </p><p>我的 alist 地址：<a href="https://alist.jermain.cn/d/test/Ventoy/%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C.7z?sign=_xhkGEDJ2w6z-IuuodGLa-bYSaZzA1bT8roUlBxZIe4=:0">Ventoy | AList (jermain.cn)</a> </p><ul><li><code>启动盘制作.7z</code> ：包含了 Ventoy 和 wepe.iso 文件<blockquote><p>使用上述我的打包好的更方便哦😄</p></blockquote></li></ul><p>或者前往官网下载： </p><ul><li><a href="https://ventoy.net/cn/index.html">Ventoy</a> </li><li><a href="https://www.wepe.com.cn/">微PE工具箱 - 超好用的装机维护工具 (wepe.com.cn)</a> <h3 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h3></li></ul><p>解压下载的文件后，打开 <code>Ventoy</code> 文件夹，双击打开 <code>Ventoy2Disk.exe</code> 工具： </p><p><img src="https://jsd.onmicrosoft.cn/gh/jermainn/imgpic@master/note_img/20240306220324.png" alt="image.png"></p><p>安装成功后，将镜像文件 <code>WePE_64_V2.3.iso</code> 复制到 u 盘存储部分的任意位置</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>u 盘插入电脑，更改 bios 设置 u 盘为第一启动项进行引导启动</p><p>选择相应的进行进行引导启动</p>]]></content>
       
       
       
@@ -191,9 +191,9 @@
       
         <tags>
             
-            <tag> 语义分割 </tag>
-            
             <tag> 论文 </tag>
+            
+            <tag> 语义分割 </tag>
             
             <tag> 域适应 </tag>
             
@@ -233,11 +233,11 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
+            <tag> 论文 </tag>
             
             <tag> 语义分割 </tag>
             
-            <tag> 论文 </tag>
+            <tag> 深度学习 </tag>
             
         </tags>
       
