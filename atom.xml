@@ -6,7 +6,7 @@
   <link href="http://jermainn.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://jermainn.gitee.io/"/>
-  <updated>2024-02-26T13:49:34.000Z</updated>
+  <updated>2024-03-06T14:07:40.000Z</updated>
   <id>http://jermainn.gitee.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多系统启动盘制作</title>
+    <link href="http://jermainn.gitee.io/p/e9c.html"/>
+    <id>http://jermainn.gitee.io/p/e9c.html</id>
+    <published>2024-03-06T14:07:40.000Z</published>
+    <updated>2024-03-06T14:07:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;br&gt;当系统引导出现问题，或者需要 windows 系统日常出现问题，无法正常使用。&lt;/p&gt;
+&lt;p&gt;需要进行系统引导修复或者进行 windows 系统重装，这是就需要进行系统 u 盘刻录进行系统引导重装，或者 u 盘刻录为 pe 系统盘。引导进入 pe</summary>
+        
+      
+    
+    
+    
+    
+    <category term="windows" scheme="http://jermainn.gitee.io/tags/windows/"/>
+    
+    <category term="ventoy" scheme="http://jermainn.gitee.io/tags/ventoy/"/>
+    
+    <category term="启动盘" scheme="http://jermainn.gitee.io/tags/%E5%90%AF%E5%8A%A8%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>node 版本管理</title>
@@ -206,9 +234,9 @@
     
     
     
-    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
     <category term="语义分割" scheme="http://jermainn.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
     
     <category term="域适应" scheme="http://jermainn.gitee.io/tags/%E5%9F%9F%E9%80%82%E5%BA%94/"/>
     
@@ -250,11 +278,11 @@
     
     
     
-    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
+    <category term="深度学习" scheme="http://jermainn.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="语义分割" scheme="http://jermainn.gitee.io/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     
-    <category term="深度学习" scheme="http://jermainn.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="论文" scheme="http://jermainn.gitee.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
